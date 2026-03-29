@@ -1,0 +1,2927 @@
+--- 极简标本目录: Twinkle Star Knights X ---
+规则：同类型的文件夹（如 ID 不同但前缀相同的）仅保留第一个样本，其余彻底隐藏。
+
+├── [Folder] Twinkle Star Knights X/ (该类文件夹的典型结构)
+│   ├── [Folder] Adventure/ (该类文件夹的典型结构)
+│   │   ├── Master.chapter.json
+│   │   ├── NAME.txt
+│   │   ├── NEW.txt
+│   │   ├── [Folder] BackGrounds/ (该类文件夹的典型结构)
+│   │   │   ├── bg_adv_001_1.png
+│   │   │   ├── bg_adv_001_2.png
+│   │   │   ├── bg_adv_001_3.png
+│   │   │   ├── bg_adv_001_4.png
+│   │   │   ├── bg_adv_001_6.png
+│   │   │   ├── bg_adv_001_7.png
+│   │   │   ├── bg_adv_001_8.png
+│   │   │   ├── bg_adv_001_9.png
+│   │   │   ├── bg_adv_002_1.png
+│   │   │   ├── bg_adv_002_2.png
+│   │   │   ├── bg_adv_002_3.png
+│   │   │   ├── bg_adv_002_4.png
+│   │   │   ├── bg_adv_003_1.png
+│   │   │   ├── bg_adv_003_4.png
+│   │   │   ├── bg_adv_003_5.png
+│   │   │   ├── bg_adv_004_1.png
+│   │   │   ├── bg_adv_004_2.png
+│   │   │   ├── bg_adv_004_3.png
+│   │   │   ├── bg_adv_004_4.png
+│   │   │   ├── bg_adv_004_6.png
+│   │   │   ├── bg_adv_004_7.png
+│   │   │   ├── bg_adv_004_8.png
+│   │   │   ├── bg_adv_004_9.png
+│   │   │   ├── bg_adv_005_1.png
+│   │   │   ├── bg_adv_005_2.png
+│   │   │   ├── bg_adv_005_3.png
+│   │   │   ├── bg_adv_005_4.png
+│   │   │   ├── bg_adv_006_1.png
+│   │   │   ├── bg_adv_006_10.png
+│   │   │   ├── bg_adv_006_11.png
+│   │   │   ├── bg_adv_006_12.png
+│   │   │   ├── bg_adv_006_13.png
+│   │   │   ├── bg_adv_006_14.png
+│   │   │   ├── bg_adv_006_15.png
+│   │   │   ├── bg_adv_006_16.png
+│   │   │   ├── bg_adv_006_17.png
+│   │   │   ├── bg_adv_006_18.png
+│   │   │   ├── bg_adv_006_19.png
+│   │   │   ├── bg_adv_006_2.png
+│   │   │   ├── bg_adv_006_20.png
+│   │   │   ├── bg_adv_006_21.png
+│   │   │   ├── bg_adv_006_3.png
+│   │   │   ├── bg_adv_006_4.png
+│   │   │   ├── bg_adv_006_6.png
+│   │   │   ├── bg_adv_006_7.png
+│   │   │   ├── bg_adv_006_8.png
+│   │   │   ├── bg_adv_006_9.png
+│   │   │   ├── bg_adv_007_1.png
+│   │   │   ├── bg_adv_007_10.png
+│   │   │   ├── bg_adv_007_2.png
+│   │   │   ├── bg_adv_007_3.png
+│   │   │   ├── bg_adv_007_4.png
+│   │   │   ├── bg_adv_007_5.png
+│   │   │   ├── bg_adv_008_1.png
+│   │   │   ├── bg_adv_008_10.png
+│   │   │   ├── bg_adv_008_2.png
+│   │   │   ├── bg_adv_008_3.png
+│   │   │   ├── bg_adv_008_4.png
+│   │   │   ├── bg_adv_009_1.png
+│   │   │   ├── bg_adv_009_2.png
+│   │   │   ├── bg_adv_009_3.png
+│   │   │   ├── bg_adv_009_4.png
+│   │   │   ├── bg_adv_010_1.png
+│   │   │   ├── bg_adv_010_2.png
+│   │   │   ├── bg_adv_010_3.png
+│   │   │   ├── bg_adv_010_4.png
+│   │   │   ├── bg_adv_011_1.png
+│   │   │   ├── bg_adv_011_10.png
+│   │   │   ├── bg_adv_011_2.png
+│   │   │   ├── bg_adv_011_3.png
+│   │   │   ├── bg_adv_011_4.png
+│   │   │   ├── bg_adv_011_6.png
+│   │   │   ├── bg_adv_012_1.png
+│   │   │   ├── bg_adv_012_5.png
+│   │   │   ├── bg_adv_013_1.png
+│   │   │   ├── bg_adv_013_5.png
+│   │   │   ├── bg_adv_014_1.png
+│   │   │   ├── bg_adv_014_2.png
+│   │   │   ├── bg_adv_014_3.png
+│   │   │   ├── bg_adv_014_4.png
+│   │   │   ├── bg_adv_015_1.png
+│   │   │   ├── bg_adv_016_1.png
+│   │   │   ├── bg_adv_016_2.png
+│   │   │   ├── bg_adv_016_3.png
+│   │   │   ├── bg_adv_016_4.png
+│   │   │   ├── bg_adv_017_1.png
+│   │   │   ├── bg_adv_017_4.png
+│   │   │   ├── bg_adv_018_1.png
+│   │   │   ├── bg_adv_018_2.png
+│   │   │   ├── bg_adv_018_3.png
+│   │   │   ├── bg_adv_018_4.png
+│   │   │   ├── bg_adv_019_10_back.png
+│   │   │   ├── bg_adv_019_10_front.png
+│   │   │   ├── bg_adv_019_1_back.png
+│   │   │   ├── bg_adv_019_1_front.png
+│   │   │   ├── bg_adv_019_2_back.png
+│   │   │   ├── bg_adv_019_2_front.png
+│   │   │   ├── bg_adv_019_3_back.png
+│   │   │   ├── bg_adv_019_3_front.png
+│   │   │   ├── bg_adv_019_6_back.png
+│   │   │   ├── bg_adv_019_6_front.png
+│   │   │   ├── bg_adv_019_7_back.png
+│   │   │   ├── bg_adv_019_7_front .png
+│   │   │   ├── bg_adv_019_7_front.png
+│   │   │   ├── bg_adv_020_1.png
+│   │   │   ├── bg_adv_020_2.png
+│   │   │   ├── bg_adv_020_3.png
+│   │   │   ├── bg_adv_020_4.png
+│   │   │   ├── bg_adv_021_1.png
+│   │   │   ├── bg_adv_021_2.png
+│   │   │   ├── bg_adv_021_3.png
+│   │   │   ├── bg_adv_021_4.png
+│   │   │   ├── bg_adv_022_1.png
+│   │   │   ├── bg_adv_022_2.png
+│   │   │   ├── bg_adv_022_3.png
+│   │   │   ├── bg_adv_022_4.png
+│   │   │   ├── bg_adv_023_1.png
+│   │   │   ├── bg_adv_023_2.png
+│   │   │   ├── bg_adv_023_3.png
+│   │   │   ├── bg_adv_023_4.png
+│   │   │   ├── bg_adv_024_1.png
+│   │   │   ├── bg_adv_024_2.png
+│   │   │   ├── bg_adv_024_3.png
+│   │   │   ├── bg_adv_024_4.png
+│   │   │   ├── bg_adv_026_1.png
+│   │   │   ├── bg_adv_026_10.png
+│   │   │   ├── bg_adv_026_2.png
+│   │   │   ├── bg_adv_026_3.png
+│   │   │   ├── bg_adv_026_4.png
+│   │   │   ├── bg_adv_026_5.png
+│   │   │   ├── bg_adv_027_1.png
+│   │   │   ├── bg_adv_027_10.png
+│   │   │   ├── bg_adv_027_2.png
+│   │   │   ├── bg_adv_027_3.png
+│   │   │   ├── bg_adv_027_4.png
+│   │   │   ├── bg_adv_027_5.png
+│   │   │   ├── bg_adv_028_1.png
+│   │   │   ├── bg_adv_028_10.png
+│   │   │   ├── bg_adv_028_2.png
+│   │   │   ├── bg_adv_028_3.png
+│   │   │   ├── bg_adv_028_4.png
+│   │   │   ├── bg_adv_028_5.png
+│   │   │   ├── bg_adv_029_1.png
+│   │   │   ├── bg_adv_030_1.png
+│   │   │   ├── bg_adv_030_2.png
+│   │   │   ├── bg_adv_030_3.png
+│   │   │   ├── bg_adv_030_4.png
+│   │   │   ├── bg_adv_031_1.png
+│   │   │   ├── bg_adv_032_1.png
+│   │   │   ├── bg_adv_032_6.png
+│   │   │   ├── bg_adv_033_1.png
+│   │   │   ├── bg_adv_033_2.png
+│   │   │   ├── bg_adv_034_1.png
+│   │   │   ├── bg_adv_035_1.png
+│   │   │   ├── bg_adv_036_1.png
+│   │   │   ├── bg_adv_036_2.png
+│   │   │   ├── bg_adv_036_3.png
+│   │   │   ├── bg_adv_036_4.png
+│   │   │   ├── bg_adv_037_1.png
+│   │   │   ├── bg_adv_037_2.png
+│   │   │   ├── bg_adv_037_3.png
+│   │   │   ├── bg_adv_037_4.png
+│   │   │   ├── bg_adv_038_1.png
+│   │   │   ├── bg_adv_038_2.png
+│   │   │   ├── bg_adv_038_3.png
+│   │   │   ├── bg_adv_038_4.png
+│   │   │   ├── bg_adv_039_1.png
+│   │   │   ├── bg_adv_039_2.png
+│   │   │   ├── bg_adv_039_3.png
+│   │   │   ├── bg_adv_039_6.png
+│   │   │   ├── bg_adv_039_7.png
+│   │   │   ├── bg_adv_039_8.png
+│   │   │   ├── bg_adv_040_1.png
+│   │   │   ├── bg_adv_040_5.png
+│   │   │   ├── bg_adv_041_1.png
+│   │   │   ├── bg_adv_042_1.png
+│   │   │   ├── bg_adv_042_2.png
+│   │   │   ├── bg_adv_042_3.png
+│   │   │   ├── bg_adv_043_1.png
+│   │   │   ├── bg_adv_043_3.png
+│   │   │   ├── bg_adv_043_6.png
+│   │   │   ├── bg_adv_044_1.png
+│   │   │   ├── bg_adv_044_3.png
+│   │   │   ├── bg_adv_044_4.png
+│   │   │   ├── bg_adv_044_6.png
+│   │   │   ├── bg_adv_044_8.png
+│   │   │   ├── bg_adv_044_9.png
+│   │   │   ├── bg_adv_045_1.png
+│   │   │   ├── bg_adv_045_2.png
+│   │   │   ├── bg_adv_045_3.png
+│   │   │   ├── bg_adv_045_6.png
+│   │   │   ├── bg_adv_046_1.png
+│   │   │   ├── bg_adv_046_2.png
+│   │   │   ├── bg_adv_046_3.png
+│   │   │   ├── bg_adv_046_4.png
+│   │   │   ├── bg_adv_046_5.png
+│   │   │   ├── bg_adv_046_6.png
+│   │   │   ├── bg_adv_046_7.png
+│   │   │   ├── bg_adv_046_8.png
+│   │   │   ├── bg_adv_047_1.png
+│   │   │   ├── bg_adv_047_3.png
+│   │   │   ├── bg_adv_047_6.png
+│   │   │   ├── bg_adv_048_1.png
+│   │   │   ├── bg_adv_048_2.png
+│   │   │   ├── bg_adv_048_3.png
+│   │   │   ├── bg_adv_048_4.png
+│   │   │   ├── bg_adv_049_1.png
+│   │   │   ├── bg_adv_049_2.png
+│   │   │   ├── bg_adv_049_3.png
+│   │   │   ├── bg_adv_050_1.png
+│   │   │   ├── bg_adv_050_2.png
+│   │   │   ├── bg_adv_050_3.png
+│   │   │   ├── bg_adv_050_6.png
+│   │   │   ├── bg_adv_050_7.png
+│   │   │   ├── bg_adv_050_8.png
+│   │   │   ├── bg_adv_051_1.png
+│   │   │   ├── bg_adv_051_2.png
+│   │   │   ├── bg_adv_051_3.png
+│   │   │   ├── bg_adv_051_4.png
+│   │   │   ├── bg_adv_052_1.png
+│   │   │   ├── bg_adv_052_2.png
+│   │   │   ├── bg_adv_052_3.png
+│   │   │   ├── bg_adv_052_4.png
+│   │   │   ├── bg_adv_052_6.png
+│   │   │   ├── bg_adv_052_7.png
+│   │   │   ├── bg_adv_052_8.png
+│   │   │   ├── bg_adv_052_9.png
+│   │   │   ├── bg_adv_053_6.png
+│   │   │   ├── bg_adv_053_7.png
+│   │   │   ├── bg_adv_054_1.png
+│   │   │   ├── bg_adv_054_3.png
+│   │   │   ├── bg_adv_055_1.png
+│   │   │   ├── bg_adv_055_3.png
+│   │   │   ├── bg_adv_055_6.png
+│   │   │   ├── bg_adv_055_9.png
+│   │   │   ├── bg_adv_056_1.png
+│   │   │   ├── bg_adv_056_2.png
+│   │   │   ├── bg_adv_056_3.png
+│   │   │   ├── bg_adv_056_4.png
+│   │   │   ├── bg_adv_057_1.png
+│   │   │   ├── bg_adv_057_2.png
+│   │   │   ├── bg_adv_057_3.png
+│   │   │   ├── bg_adv_058_1.png
+│   │   │   ├── bg_adv_059_1.png
+│   │   │   ├── bg_adv_060_1.png
+│   │   │   ├── bg_adv_060_3.png
+│   │   │   ├── bg_adv_061_1.png
+│   │   │   ├── bg_adv_062_1.png
+│   │   │   ├── bg_adv_063_1.png
+│   │   │   ├── bg_adv_064_1.png
+│   │   │   ├── bg_adv_065_3.png
+│   │   │   ├── bg_adv_066_1.png
+│   │   │   ├── bg_adv_067_1.png
+│   │   │   ├── bg_adv_067_2.png
+│   │   │   ├── bg_adv_067_3.png
+│   │   │   ├── bg_adv_067_4.png
+│   │   │   ├── bg_adv_068_1.png
+│   │   │   ├── bg_adv_068_4.png
+│   │   │   ├── bg_adv_069_1.png
+│   │   │   ├── bg_adv_069_10.png
+│   │   │   ├── bg_adv_069_11.png
+│   │   │   ├── bg_adv_069_12.png
+│   │   │   ├── bg_adv_069_13.png
+│   │   │   ├── bg_adv_069_14.png
+│   │   │   ├── bg_adv_069_15.png
+│   │   │   ├── bg_adv_069_2.png
+│   │   │   ├── bg_adv_069_3.png
+│   │   │   ├── bg_adv_069_4.png
+│   │   │   ├── bg_adv_069_5.png
+│   │   │   ├── bg_adv_069_6.png
+│   │   │   ├── bg_adv_069_7.png
+│   │   │   ├── bg_adv_069_8.png
+│   │   │   ├── bg_adv_069_9.png
+│   │   │   ├── bg_adv_070_1.png
+│   │   │   ├── bg_adv_070_2.png
+│   │   │   ├── bg_adv_070_3.png
+│   │   │   ├── bg_adv_070_4.png
+│   │   │   ├── bg_adv_071_1.png
+│   │   │   ├── bg_adv_071_2.png
+│   │   │   ├── bg_adv_071_3.png
+│   │   │   ├── bg_adv_071_4.png
+│   │   │   ├── bg_adv_072_1.png
+│   │   │   ├── bg_adv_072_2.png
+│   │   │   ├── bg_adv_072_4.png
+│   │   │   ├── bg_adv_072_6.png
+│   │   │   ├── bg_adv_072_7.png
+│   │   │   ├── bg_adv_072_8.png
+│   │   │   ├── bg_adv_073_1.png
+│   │   │   ├── bg_adv_073_2.png
+│   │   │   ├── bg_adv_073_4.png
+│   │   │   ├── bg_adv_074_1.png
+│   │   │   ├── bg_adv_074_2.png
+│   │   │   ├── bg_adv_074_3.png
+│   │   │   ├── bg_adv_074_4.png
+│   │   │   ├── bg_adv_075_1.png
+│   │   │   ├── bg_adv_075_2.png
+│   │   │   ├── bg_adv_075_3.png
+│   │   │   ├── bg_adv_075_4.png
+│   │   │   ├── bg_adv_076_1.png
+│   │   │   ├── bg_adv_076_2.png
+│   │   │   ├── bg_adv_076_3.png
+│   │   │   ├── bg_adv_076_4.png
+│   │   │   ├── bg_adv_077_1.png
+│   │   │   ├── bg_adv_077_2.png
+│   │   │   ├── bg_adv_077_3.png
+│   │   │   ├── bg_adv_077_4.png
+│   │   │   ├── bg_adv_078_1.png
+│   │   │   ├── bg_adv_078_2.png
+│   │   │   ├── bg_adv_078_3.png
+│   │   │   ├── bg_adv_078_4.png
+│   │   │   ├── bg_adv_079_1.png
+│   │   │   ├── bg_adv_079_2.png
+│   │   │   ├── bg_adv_079_3.png
+│   │   │   ├── bg_adv_079_4.png
+│   │   │   ├── bg_adv_079_5.png
+│   │   │   ├── bg_adv_079_6.png
+│   │   │   ├── bg_adv_079_7.png
+│   │   │   ├── bg_adv_079_8.png
+│   │   │   ├── bg_adv_080_1.png
+│   │   │   ├── bg_adv_081_1.png
+│   │   │   ├── bg_adv_082_2.png
+│   │   │   ├── bg_adv_083_1.png
+│   │   │   ├── bg_adv_084_1.png
+│   │   │   ├── bg_adv_085_1.png
+│   │   │   ├── bg_adv_086_1.png
+│   │   │   ├── bg_adv_087_1.png
+│   │   │   ├── bg_adv_087_2.png
+│   │   │   ├── bg_adv_087_3.png
+│   │   │   ├── bg_adv_087_4.png
+│   │   │   ├── bg_adv_088_1.png
+│   │   │   ├── bg_adv_088_2.png
+│   │   │   ├── bg_adv_088_3.png
+│   │   │   ├── bg_adv_088_4.png
+│   │   │   ├── bg_adv_089_1.png
+│   │   │   ├── bg_adv_089_2.png
+│   │   │   ├── bg_adv_089_3.png
+│   │   │   ├── bg_adv_089_4.png
+│   │   │   ├── bg_adv_090_1.png
+│   │   │   ├── bg_adv_090_2.png
+│   │   │   ├── bg_adv_090_3.png
+│   │   │   ├── bg_adv_090_4.png
+│   │   │   ├── bg_adv_091_1.png
+│   │   │   ├── bg_adv_091_2.png
+│   │   │   ├── bg_adv_091_3.png
+│   │   │   ├── bg_adv_091_4.png
+│   │   │   ├── bg_adv_092_1.png
+│   │   │   ├── bg_adv_092_2.png
+│   │   │   ├── bg_adv_092_4.png
+│   │   │   ├── bg_adv_093_1.png
+│   │   │   ├── bg_adv_093_2.png
+│   │   │   ├── bg_adv_093_4.png
+│   │   │   ├── bg_adv_094_1.png
+│   │   │   ├── bg_adv_094_2.png
+│   │   │   ├── bg_adv_094_3.png
+│   │   │   ├── bg_adv_094_4.png
+│   │   │   ├── bg_adv_999_1.png
+│   │   │   ├── bg_adv_999_2.png
+│   │   ├── [Folder] CharaScenario/ (该类文件夹的典型结构)
+│   │   │   ├── CharaScenario1001001.book.json
+│   │   │   ├── CharaScenario1001002.book.json
+│   │   │   ├── CharaScenario1001003.book.json
+│   │   │   ├── CharaScenario1001004.book.json
+│   │   │   ├── CharaScenario1001005.book.json
+│   │   │   ├── CharaScenario1002001.book.json
+│   │   │   ├── CharaScenario1002002.book.json
+│   │   │   ├── CharaScenario1002004.book.json
+│   │   │   ├── CharaScenario1003001.book.json
+│   │   │   ├── CharaScenario1003003.book.json
+│   │   │   ├── CharaScenario1003004.book.json
+│   │   │   ├── CharaScenario1003005.book.json
+│   │   │   ├── CharaScenario1004003.book.json
+│   │   │   ├── CharaScenario1004004.book.json
+│   │   │   ├── CharaScenario1004005.book.json
+│   │   │   ├── CharaScenario1005001.book.json
+│   │   │   ├── CharaScenario1005002.book.json
+│   │   │   ├── CharaScenario1005003.book.json
+│   │   │   ├── CharaScenario1007001.book.json
+│   │   │   ├── CharaScenario1007002.book.json
+│   │   │   ├── CharaScenario1007003.book.json
+│   │   │   ├── CharaScenario1007004.book.json
+│   │   │   ├── CharaScenario1008001.book.json
+│   │   │   ├── CharaScenario1008002.book.json
+│   │   │   ├── CharaScenario1008003.book.json
+│   │   │   ├── CharaScenario1009001.book.json
+│   │   │   ├── CharaScenario1009002.book.json
+│   │   │   ├── CharaScenario1009003.book.json
+│   │   │   ├── CharaScenario1010001.book.json
+│   │   │   ├── CharaScenario1011001.book.json
+│   │   │   ├── CharaScenario1011002.book.json
+│   │   │   ├── CharaScenario1011003.book.json
+│   │   │   ├── CharaScenario1011004.book.json
+│   │   │   ├── CharaScenario1012001.book.json
+│   │   │   ├── CharaScenario1012002.book.json
+│   │   │   ├── CharaScenario1013001.book.json
+│   │   │   ├── CharaScenario1013002.book.json
+│   │   │   ├── CharaScenario1014001.book.json
+│   │   │   ├── CharaScenario1014002.book.json
+│   │   │   ├── CharaScenario1014003.book.json
+│   │   │   ├── CharaScenario1015001.book.json
+│   │   │   ├── CharaScenario1016001.book.json
+│   │   │   ├── CharaScenario1016002.book.json
+│   │   │   ├── CharaScenario1017001.book.json
+│   │   │   ├── CharaScenario1018001.book.json
+│   │   │   ├── CharaScenario1019001.book.json
+│   │   │   ├── CharaScenario1019002.book.json
+│   │   │   ├── CharaScenario1019003.book.json
+│   │   │   ├── CharaScenario1020001.book.json
+│   │   │   ├── CharaScenario1020002.book.json
+│   │   │   ├── CharaScenario1020004.book.json
+│   │   │   ├── CharaScenario1021001.book.json
+│   │   │   ├── CharaScenario1022001.book.json
+│   │   │   ├── CharaScenario1022002.book.json
+│   │   │   ├── CharaScenario1022003.book.json
+│   │   │   ├── CharaScenario1023001.book.json
+│   │   │   ├── CharaScenario1023002.book.json
+│   │   │   ├── CharaScenario1024001.book.json
+│   │   │   ├── CharaScenario1024002.book.json
+│   │   │   ├── CharaScenario1024003.book.json
+│   │   │   ├── CharaScenario1025001.book.json
+│   │   │   ├── CharaScenario1025002.book.json
+│   │   │   ├── CharaScenario1026001.book.json
+│   │   │   ├── CharaScenario1026002.book.json
+│   │   │   ├── CharaScenario1026003.book.json
+│   │   │   ├── CharaScenario1027001.book.json
+│   │   │   ├── CharaScenario1027002.book.json
+│   │   │   ├── CharaScenario1028001.book.json
+│   │   │   ├── CharaScenario1029001.book.json
+│   │   │   ├── CharaScenario1029002.book.json
+│   │   │   ├── CharaScenario1030001.book.json
+│   │   │   ├── CharaScenario1030002.book.json
+│   │   │   ├── CharaScenario1031001.book.json
+│   │   │   ├── CharaScenario1031002.book.json
+│   │   │   ├── CharaScenario1032001.book.json
+│   │   │   ├── CharaScenario1032002.book.json
+│   │   │   ├── CharaScenario1032003.book.json
+│   │   │   ├── CharaScenario1033001.book.json
+│   │   │   ├── CharaScenario1033002.book.json
+│   │   │   ├── CharaScenario1034001.book.json
+│   │   │   ├── CharaScenario1035001.book.json
+│   │   │   ├── CharaScenario1035002.book.json
+│   │   │   ├── CharaScenario1035003.book.json
+│   │   │   ├── CharaScenario1036001.book.json
+│   │   │   ├── CharaScenario1036002.book.json
+│   │   │   ├── CharaScenario1037001.book.json
+│   │   │   ├── CharaScenario1037002.book.json
+│   │   │   ├── CharaScenario1037003.book.json
+│   │   │   ├── CharaScenario1038001.book.json
+│   │   │   ├── CharaScenario1038002.book.json
+│   │   │   ├── CharaScenario1039001.book.json
+│   │   │   ├── CharaScenario1040001.book.json
+│   │   │   ├── CharaScenario1041001.book.json
+│   │   │   ├── CharaScenario1041002.book.json
+│   │   │   ├── CharaScenario1041003.book.json
+│   │   │   ├── CharaScenario1041004.book.json
+│   │   │   ├── CharaScenario1042001.book.json
+│   │   │   ├── CharaScenario1042002.book.json
+│   │   │   ├── CharaScenario1043001.book.json
+│   │   │   ├── CharaScenario1043002.book.json
+│   │   │   ├── CharaScenario1044001.book.json
+│   │   │   ├── CharaScenario1044002.book.json
+│   │   │   ├── CharaScenario1045001.book.json
+│   │   │   ├── CharaScenario1046001.book.json
+│   │   │   ├── CharaScenario1047001.book.json
+│   │   │   ├── CharaScenario1047002.book.json
+│   │   │   ├── CharaScenario1048001.book.json
+│   │   │   ├── CharaScenario1048002.book.json
+│   │   │   ├── CharaScenario1048003.book.json
+│   │   │   ├── CharaScenario1049001.book.json
+│   │   │   ├── CharaScenario1049002.book.json
+│   │   │   ├── CharaScenario1049003.book.json
+│   │   │   ├── CharaScenario1050001.book.json
+│   │   │   ├── CharaScenario1051001.book.json
+│   │   │   ├── CharaScenario1051002.book.json
+│   │   │   ├── CharaScenario1052001.book.json
+│   │   │   ├── CharaScenario1052002.book.json
+│   │   │   ├── CharaScenario1053001.book.json
+│   │   │   ├── CharaScenario1054001.book.json
+│   │   │   ├── CharaScenario1054002.book.json
+│   │   │   ├── CharaScenario1055001.book.json
+│   │   │   ├── CharaScenario1055002.book.json
+│   │   │   ├── CharaScenario1056001.book.json
+│   │   │   ├── CharaScenario1056002.book.json
+│   │   │   ├── CharaScenario1057001.book.json
+│   │   │   ├── CharaScenario1057002.book.json
+│   │   │   ├── CharaScenario1057003.book.json
+│   │   │   ├── CharaScenario1058001.book.json
+│   │   │   ├── CharaScenario1058002.book.json
+│   │   │   ├── CharaScenario1059001.book.json
+│   │   │   ├── CharaScenario1059002.book.json
+│   │   │   ├── CharaScenario1060001.book.json
+│   │   │   ├── CharaScenario1060002.book.json
+│   │   │   ├── CharaScenario1061001.book.json
+│   │   │   ├── CharaScenario1061002.book.json
+│   │   │   ├── CharaScenario1062001.book.json
+│   │   │   ├── CharaScenario1062002.book.json
+│   │   │   ├── CharaScenario1063001.book.json
+│   │   │   ├── CharaScenario1064001.book.json
+│   │   │   ├── CharaScenario1065001.book.json
+│   │   │   ├── CharaScenario1065002.book.json
+│   │   │   ├── CharaScenario1066001.book.json
+│   │   │   ├── CharaScenario1066002.book.json
+│   │   │   ├── CharaScenario1067001.book.json
+│   │   │   ├── CharaScenario1068001.book.json
+│   │   │   ├── CharaScenario1069001.book.json
+│   │   │   ├── CharaScenario1069002.book.json
+│   │   │   ├── CharaScenario1070001.book.json
+│   │   │   ├── CharaScenario1070002.book.json
+│   │   │   ├── CharaScenario1071001.book.json
+│   │   │   ├── CharaScenario1072001.book.json
+│   │   │   ├── CharaScenario1073001.book.json
+│   │   │   ├── CharaScenario1073002.book.json
+│   │   │   ├── CharaScenario1074001.book.json
+│   │   │   ├── CharaScenario1075001.book.json
+│   │   │   ├── CharaScenario1076001.book.json
+│   │   │   ├── CharaScenario1077001.book.json
+│   │   │   ├── CharaScenario1077002.book.json
+│   │   │   ├── CharaScenario1077003.book.json
+│   │   │   ├── CharaScenario1078001.book.json
+│   │   │   ├── CharaScenario1079001.book.json
+│   │   │   ├── CharaScenario1080001.book.json
+│   │   │   ├── CharaScenario1081001.book.json
+│   │   │   ├── CharaScenario1082001.book.json
+│   │   │   ├── CharaScenario1083001.book.json
+│   │   │   ├── CharaScenario1084001.book.json
+│   │   │   ├── CharaScenario1085001.book.json
+│   │   │   ├── CharaScenario1086001.book.json
+│   │   │   ├── CharaScenario1087001.book.json
+│   │   │   ├── CharaScenario1088001.book.json
+│   │   │   ├── CharaScenario1089001.book.json
+│   │   │   ├── CharaScenario1090001.book.json
+│   │   │   ├── CharaScenario1090002.book.json
+│   │   │   ├── CharaScenario1091001.book.json
+│   │   │   ├── CharaScenario1092001.book.json
+│   │   │   ├── CharaScenario1093001.book.json
+│   │   │   ├── CharaScenario1094001.book.json
+│   │   │   ├── CharaScenario1095001.book.json
+│   │   │   ├── CharaScenario1096001.book.json
+│   │   │   ├── CharaScenario1097001.book.json
+│   │   │   ├── CharaScenario1098001.book.json
+│   │   │   ├── CharaScenario1099001.book.json
+│   │   │   ├── CharaScenario1100001.book.json
+│   │   │   ├── CharaScenario1101001.book.json
+│   │   │   ├── CharaScenario1102001.book.json
+│   │   │   ├── CharaScenario1103001.book.json
+│   │   │   ├── CharaScenario1104001.book.json
+│   │   │   ├── CharaScenario1105001.book.json
+│   │   │   ├── CharaScenario1106001.book.json
+│   │   │   ├── CharaScenario1107001.book.json
+│   │   │   ├── CharaScenario1109001.book.json
+│   │   │   ├── CharaScenario1110001.book.json
+│   │   │   ├── CharaScenario1111001.book.json
+│   │   │   ├── CharaScenario1116001.book.json
+│   │   │   ├── CharaScenario1117001.book.json
+│   │   │   ├── CharaScenario1118001.book.json
+│   │   │   ├── CharaScenario1119001.book.json
+│   │   │   ├── CharaScenario1120001.book.json
+│   │   │   ├── CharaScenario1121001.book.json
+│   │   │   ├── CharaScenario1122001.book.json
+│   │   │   ├── CharaScenario1123001.book.json
+│   │   │   ├── CharaScenario1125001.book.json
+│   │   │   ├── CharaScenario1126001.book.json
+│   │   │   ├── CharaScenario1128001.book.json
+│   │   │   ├── CharaScenario1129001.book.json
+│   │   │   ├── CharaScenario1130001.book.json
+│   │   │   ├── CharaScenario1131001.book.json
+│   │   │   ├── CharaScenario1132001.book.json
+│   │   │   ├── CharaScenario1133001.book.json
+│   │   ├── [Folder] Effects/ (该类文件夹的典型结构)
+│   │   │   ├── [Folder] AE_0010/ (该类文件夹的典型结构)
+│   │   │   │   ├── Line1.png
+│   │   │   │   ├── Parts1.png
+│   │   │   │   ├── parts2.png
+│   │   │   ├── [Folder] 새 폴더/ (该类文件夹的典型结构)
+│   │   │   │   ├── [Folder] Animator/ (该类文件夹的典型结构)
+│   │   │   │   │   ├── [Folder] TitleBand/ (该类文件夹的典型结构)
+│   │   │   │   │   │   ├── TitleBand.fbx
+│   │   │   │   ├── [Folder] Mesh/ (该类文件夹的典型结构)
+│   │   │   │   │   └── (空文件夹)
+│   │   │   │   ├── [Folder] Texture2D/ (该类文件夹的典型结构)
+│   │   │   │   │   └── (空文件夹)
+│   │   ├── [Folder] MainScenario/ (该类文件夹的典型结构)
+│   │   │   ├── MainScenario0000.book.json
+│   │   │   ├── MainScenario0001.book.json
+│   │   │   ├── MainScenario0002.book.json
+│   │   │   ├── MainScenario0003.book.json
+│   │   │   ├── MainScenario0004.book.json
+│   │   │   ├── MainScenario0005.book.json
+│   │   │   ├── MainScenario0006.book.json
+│   │   │   ├── MainScenario0007.book.json
+│   │   │   ├── MainScenario0008.book.json
+│   │   │   ├── MainScenario0009.book.json
+│   │   │   ├── MainScenario0010.book.json
+│   │   │   ├── MainScenario0011.book.json
+│   │   │   ├── MainScenario0012.book.json
+│   │   │   ├── MainScenario0013.book.json
+│   │   │   ├── MainScenario0014.book.json
+│   │   │   ├── MainScenario0015.book.json
+│   │   │   ├── MainScenario0016.book.json
+│   │   │   ├── MainScenario0017.book.json
+│   │   │   ├── MainScenario1001.book.json
+│   │   │   ├── MainScenario1002.book.json
+│   │   │   ├── MainScenario1003.book.json
+│   │   │   ├── MainScenario1004.book.json
+│   │   │   ├── MainScenario1005.book.json
+│   │   │   ├── MainScenario2001.book.json
+│   │   │   ├── MainScenario2002.book.json
+│   │   │   ├── MainScenario2003.book.json
+│   │   │   ├── MainScenario2004.book.json
+│   │   │   ├── MainScenario2005.book.json
+│   │   ├── [Folder] Spine/ (该类文件夹的典型结构)
+│   │   │   ├── [Folder] AE_0050/ (该类文件夹的典型结构)
+│   │   │   │   ├── AE_0050.atlas.txt
+│   │   │   │   ├── AE_0050.png
+│   │   │   │   ├── AE_0050.skel.bytes
+│   │   ├── [Folder] StoryEventScenario/ (该类文件夹的典型结构)
+│   │   │   ├── StoryEventScenario0001.book.json
+│   │   │   ├── StoryEventScenario0002.book.json
+│   │   │   ├── StoryEventScenario0003.book.json
+│   │   │   ├── StoryEventScenario0004.book.json
+│   │   │   ├── StoryEventScenario0005.book.json
+│   │   │   ├── StoryEventScenario0006.book.json
+│   │   │   ├── StoryEventScenario0007.book.json
+│   │   │   ├── StoryEventScenario0008.book.json
+│   │   │   ├── StoryEventScenario0009.book.json
+│   │   │   ├── StoryEventScenario0010.book.json
+│   │   │   ├── StoryEventScenario0011.book.json
+│   │   │   ├── StoryEventScenario0012.book.json
+│   │   │   ├── StoryEventScenario0013.book.json
+│   │   │   ├── StoryEventScenario0014.book.json
+│   │   │   ├── StoryEventScenario0015.book.json
+│   │   │   ├── StoryEventScenario0016.book.json
+│   │   │   ├── StoryEventScenario0017.book.json
+│   │   │   ├── StoryEventScenario0018.book.json
+│   │   │   ├── StoryEventScenario0019.book.json
+│   │   │   ├── StoryEventScenario0020.book.json
+│   │   │   ├── StoryEventScenario0021.book.json
+│   │   │   ├── StoryEventScenario0022.book.json
+│   │   │   ├── StoryEventScenario0023.book.json
+│   │   │   ├── StoryEventScenario0024.book.json
+│   │   │   ├── StoryEventScenario0025.book.json
+│   │   │   ├── StoryEventScenario0026.book.json
+│   │   │   ├── StoryEventScenario0027.book.json
+│   │   │   ├── StoryEventScenario0028.book.json
+│   │   │   ├── StoryEventScenario9019.book.json
+│   │   ├── [Folder] SubjugationEventScenario/ (该类文件夹的典型结构)
+│   │   │   ├── SubjugationEventScenario0001.book.json
+│   │   │   ├── SubjugationEventScenario0002.book.json
+│   │   │   ├── SubjugationEventScenario0003.book.json
+│   │   │   ├── SubjugationEventScenario0004.book.json
+│   │   │   ├── SubjugationEventScenario0005.book.json
+│   │   │   ├── SubjugationEventScenario0006.book.json
+│   │   │   ├── SubjugationEventScenario0007.book.json
+│   │   │   ├── SubjugationEventScenario0008.book.json
+│   │   │   ├── SubjugationEventScenario0009.book.json
+│   │   │   ├── SubjugationEventScenario0010.book.json
+│   │   │   ├── SubjugationEventScenario0011.book.json
+│   │   │   ├── SubjugationEventScenario0012.book.json
+│   │   │   ├── SubjugationEventScenario0013.book.json
+│   │   │   ├── SubjugationEventScenario0014.book.json
+│   │   │   ├── SubjugationEventScenario0015.book.json
+│   │   │   ├── SubjugationEventScenario0016.book.json
+│   │   │   ├── SubjugationEventScenario0017.book.json
+│   │   │   ├── SubjugationEventScenario0018.book.json
+│   │   │   ├── SubjugationEventScenario0019.book.json
+│   │   │   ├── SubjugationEventScenario0020.book.json
+│   │   │   ├── SubjugationEventScenario0021.book.json
+│   │   │   ├── SubjugationEventScenario0022.book.json
+│   │   │   ├── SubjugationEventScenario0023.book.json
+│   │   │   ├── SubjugationEventScenario0024.book.json
+│   │   │   ├── SubjugationEventScenario0025.book.json
+│   │   │   ├── SubjugationEventScenario0026.book.json
+│   │   │   ├── SubjugationEventScenario0027.book.json
+│   │   │   ├── SubjugationEventScenario9006.book.json
+│   │   ├── [Folder] Textures/ (该类文件夹的典型结构)
+│   │   │   ├── [Folder] Spines/ (该类文件夹的典型结构)
+│   │   │   │   ├── [Folder] Emote/ (该类文件夹的典型结构)
+│   │   │   │   │   ├── EM_001.atlas.txt
+│   │   │   │   │   ├── EM_001.png
+│   │   │   │   │   ├── EM_001.skel.bytes
+│   │   │   │   │   ├── EM_002.atlas.txt
+│   │   │   │   │   ├── EM_002.png
+│   │   │   │   │   ├── EM_002.skel.bytes
+│   │   │   │   │   ├── EM_003.atlas.txt
+│   │   │   │   │   ├── EM_003.png
+│   │   │   │   │   ├── EM_003.skel.bytes
+│   │   │   │   │   ├── EM_004.atlas.txt
+│   │   │   │   │   ├── EM_004.png
+│   │   │   │   │   ├── EM_004.skel.bytes
+│   │   │   │   │   ├── EM_005.atlas.txt
+│   │   │   │   │   ├── EM_005.png
+│   │   │   │   │   ├── EM_005.skel.bytes
+│   │   │   │   │   ├── EM_006.atlas.txt
+│   │   │   │   │   ├── EM_006.png
+│   │   │   │   │   ├── EM_006.skel.bytes
+│   │   │   │   │   ├── EM_007.atlas.txt
+│   │   │   │   │   ├── EM_007.png
+│   │   │   │   │   ├── EM_007.skel.bytes
+│   │   │   │   │   ├── EM_008.atlas.txt
+│   │   │   │   │   ├── EM_008.png
+│   │   │   │   │   ├── EM_008.skel.bytes
+│   │   │   │   │   ├── EM_009.atlas.txt
+│   │   │   │   │   ├── EM_009.png
+│   │   │   │   │   ├── EM_009.skel.bytes
+│   │   │   │   │   ├── EM_010.atlas.txt
+│   │   │   │   │   ├── EM_010.png
+│   │   │   │   │   ├── EM_010.skel.bytes
+│   │   │   │   │   ├── EM_011.atlas.txt
+│   │   │   │   │   ├── EM_011.png
+│   │   │   │   │   ├── EM_011.skel.bytes
+│   │   │   ├── [Folder] Sprites/ (该类文件夹的典型结构)
+│   │   │   │   ├── [Folder] BgEffects/ (该类文件夹的典型结构)
+│   │   │   │   │   ├── BE_001.png
+│   │   │   │   │   ├── BE_002.png
+│   │   │   │   ├── [Folder] MiniGraphic/ (该类文件夹的典型结构)
+│   │   │   │   │   ├── minigra_001.png
+│   │   │   │   │   ├── minigra_002.png
+│   │   │   │   │   ├── minigra_003.png
+│   │   │   │   │   ├── minigra_004.png
+│   │   │   │   │   ├── minigra_005.png
+│   │   │   │   │   ├── minigra_006.png
+│   │   │   │   │   ├── minigra_007.png
+│   │   │   │   │   ├── minigra_008.png
+│   │   │   │   │   ├── minigra_009.png
+│   │   │   │   │   ├── minigra_010.png
+│   │   │   │   │   ├── minigra_011.png
+│   │   │   │   │   ├── minigra_012.png
+│   │   │   │   │   ├── minigra_013.png
+│   │   │   │   │   ├── minigra_014.png
+│   │   │   │   ├── [Folder] UI/ (该类文件夹的典型结构)
+│   │   │   │   │   ├── btn_select_01.png
+│   │   │   │   │   ├── btn_select_02.png
+│   │   │   │   │   ├── common_white.png
+│   │   │   │   │   ├── eff_kira1.png
+│   │   │   │   │   ├── eff_kira2.png
+│   ├── [Folder] Characters/ (该类文件夹的典型结构)
+│   │   ├── [Folder] ch_1001001/ (该类文件夹的典型结构)
+│   │   │   ├── ch_1001001_b.atlas.txt
+│   │   │   ├── ch_1001001_b.png
+│   │   │   ├── ch_1001001_b.skel.bytes
+│   │   │   ├── ch_1001001_c.atlas.txt
+│   │   │   ├── ch_1001001_c.png
+│   │   │   ├── ch_1001001_c.skel.bytes
+│   │   │   ├── ch_1001001_f.atlas.txt
+│   │   │   ├── ch_1001001_f.png
+│   │   │   ├── ch_1001001_f.skel.bytes
+│   │   │   ├── ch_1001001_m0.atlas.txt
+│   │   │   ├── ch_1001001_m0.png
+│   │   │   ├── ch_1001001_m0.skel.bytes
+│   │   │   ├── ch_1001001_m1.atlas.txt
+│   │   │   ├── ch_1001001_m1.png
+│   │   │   ├── ch_1001001_m1.skel.bytes
+│   ├── [Folder] Cutin/ (该类文件夹的典型结构)
+│   │   ├── [Folder] 1001001/ (该类文件夹的典型结构)
+│   │   │   ├── bc_1001001.atlas.txt
+│   │   │   ├── bc_1001001.png
+│   │   │   ├── bc_1001001.skel.bytes
+│   │   │   ├── ex_1001001.atlas.txt
+│   │   │   ├── ex_1001001.png
+│   │   │   ├── ex_1001001.skel.bytes
+│   ├── [Folder] GachaCharaAnim/ (该类文件夹的典型结构)
+│   │   ├── [Folder] GachaCharaAnim/ (该类文件夹的典型结构)
+│   │   │   ├── [Folder] tf_1001001/ (该类文件夹的典型结构)
+│   │   │   │   ├── tf_1001001_m0.atlas.txt
+│   │   │   │   ├── tf_1001001_m0.png
+│   │   │   │   ├── tf_1001001_m0.skel.bytes
+│   │   │   │   ├── tf_1001001_m1.atlas.txt
+│   │   │   │   ├── tf_1001001_m1.png
+│   │   │   │   ├── tf_1001001_m1.skel.bytes
+│   │   ├── [Folder] gacha_bg_effect/ (该类文件夹的典型结构)
+│   │   │   ├── gacha_bg_effect.atlas.txt
+│   │   │   ├── gacha_bg_effect.png
+│   │   │   ├── gacha_bg_effect.skel.bytes
+│   │   ├── [Folder] gacha_intro/ (该类文件夹的典型结构)
+│   │   │   ├── gacha_intro.atlas.txt
+│   │   │   ├── gacha_intro.png
+│   │   │   ├── gacha_intro.skel.bytes
+│   │   ├── [Folder] new_chara_staging/ (该类文件夹的典型结构)
+│   │   │   ├── new_chara_staging.atlas.txt
+│   │   │   ├── new_chara_staging.png
+│   │   │   ├── new_chara_staging.skel.bytes
+│   │   ├── [Folder] transform_eff/ (该类文件夹的典型结构)
+│   │   │   ├── kirarin01_1.png
+│   │   │   ├── kirarin01_2.png
+│   │   │   ├── star_02_1.png
+│   │   │   ├── transform_eff.atlas.txt
+│   │   │   ├── transform_eff.png
+│   │   │   ├── transform_eff.skel.bytes
+│   │   │   ├── [Folder] ReferenceAssets/ (该类文件夹的典型结构)
+│   │   │   │   ├── cut_1.json
+│   │   │   │   ├── cut_2.json
+│   │   │   │   ├── cut_3.json
+│   │   │   │   ├── cut_4.json
+│   │   │   │   ├── cut_out.json
+│   ├── [Folder] Sound/ (该类文件夹的典型结构)
+│   │   ├── [Folder] Bgm/ (该类文件夹的典型结构)
+│   │   │   ├── BGM_A001_intro.ogg
+│   │   │   ├── BGM_A001_loop.ogg
+│   │   │   ├── BGM_A002_intro.ogg
+│   │   │   ├── BGM_A002_loop.ogg
+│   │   │   ├── BGM_A003_intro.ogg
+│   │   │   ├── BGM_A003_loop.ogg
+│   │   │   ├── BGM_A004_intro.ogg
+│   │   │   ├── BGM_A004_loop.ogg
+│   │   │   ├── BGM_A005_intro.ogg
+│   │   │   ├── BGM_A005_loop.ogg
+│   │   │   ├── BGM_A006_intro.ogg
+│   │   │   ├── BGM_A006_loop.ogg
+│   │   │   ├── BGM_A007_intro.ogg
+│   │   │   ├── BGM_A007_loop.ogg
+│   │   │   ├── BGM_A008_intro.ogg
+│   │   │   ├── BGM_A008_loop.ogg
+│   │   │   ├── BGM_A009_intro.ogg
+│   │   │   ├── BGM_A009_loop.ogg
+│   │   │   ├── BGM_A010_intro.ogg
+│   │   │   ├── BGM_A010_loop.ogg
+│   │   │   ├── BGM_A011_intro.ogg
+│   │   │   ├── BGM_A011_loop.ogg
+│   │   │   ├── BGM_A012_intro.ogg
+│   │   │   ├── BGM_A012_loop.ogg
+│   │   │   ├── BGM_A013_intro.ogg
+│   │   │   ├── BGM_A013_loop.ogg
+│   │   │   ├── BGM_A014_intro.ogg
+│   │   │   ├── BGM_A014_loop.ogg
+│   │   │   ├── BGM_A015_intro.ogg
+│   │   │   ├── BGM_A015_loop.ogg
+│   │   │   ├── BGM_A101_intro.ogg
+│   │   │   ├── BGM_A101_loop.ogg
+│   │   │   ├── BGM_A102_intro.ogg
+│   │   │   ├── BGM_A102_loop.ogg
+│   │   │   ├── BGM_A103_intro.ogg
+│   │   │   ├── BGM_A103_loop.ogg
+│   │   │   ├── BGM_A104_intro.ogg
+│   │   │   ├── BGM_A104_loop.ogg
+│   │   │   ├── BGM_A105_intro.ogg
+│   │   │   ├── BGM_A105_loop.ogg
+│   │   │   ├── BGM_A106_intro.ogg
+│   │   │   ├── BGM_A106_loop.ogg
+│   │   │   ├── BGM_A107_intro.ogg
+│   │   │   ├── BGM_A107_loop.ogg
+│   │   │   ├── BGM_A108_intro.ogg
+│   │   │   ├── BGM_A108_loop.ogg
+│   │   │   ├── BGM_A109_intro.ogg
+│   │   │   ├── BGM_A109_loop.ogg
+│   │   │   ├── BGM_A110_intro.ogg
+│   │   │   ├── BGM_A110_loop.ogg
+│   │   │   ├── BGM_A111_intro.ogg
+│   │   │   ├── BGM_A111_loop.ogg
+│   │   │   ├── BGM_A112_intro.ogg
+│   │   │   ├── BGM_A112_loop.ogg
+│   │   │   ├── BGM_A113_intro.ogg
+│   │   │   ├── BGM_A113_loop.ogg
+│   │   │   ├── BGM_A114_intro.ogg
+│   │   │   ├── BGM_A114_loop.ogg
+│   │   │   ├── BGM_A115_intro.ogg
+│   │   │   ├── BGM_A115_loop.ogg
+│   │   │   ├── BGM_A116_intro.ogg
+│   │   │   ├── BGM_A116_loop.ogg
+│   │   │   ├── BGM_A117_intro.ogg
+│   │   │   ├── BGM_A117_loop.ogg
+│   │   │   ├── BGM_A118_intro.ogg
+│   │   │   ├── BGM_A118_loop.ogg
+│   │   │   ├── BGM_A119_intro.ogg
+│   │   │   ├── BGM_A119_loop.ogg
+│   │   │   ├── BGM_A120_intro.ogg
+│   │   │   ├── BGM_A120_loop.ogg
+│   │   │   ├── BGM_A121_intro.ogg
+│   │   │   ├── BGM_A121_loop.ogg
+│   │   │   ├── BGM_A122_intro.ogg
+│   │   │   ├── BGM_A122_loop.ogg
+│   │   │   ├── BGM_A123_intro.ogg
+│   │   │   ├── BGM_A123_loop.ogg
+│   │   │   ├── BGM_A124_intro.ogg
+│   │   │   ├── BGM_A124_loop.ogg
+│   │   │   ├── BGM_A125_intro.ogg
+│   │   │   ├── BGM_A125_loop.ogg
+│   │   │   ├── BGM_A126_intro.ogg
+│   │   │   ├── BGM_A126_loop.ogg
+│   │   │   ├── BGM_A127_intro.ogg
+│   │   │   ├── BGM_A127_loop.ogg
+│   │   │   ├── BGM_A128_intro.ogg
+│   │   │   ├── BGM_A128_loop.ogg
+│   │   │   ├── BGM_A201_intro.ogg
+│   │   │   ├── BGM_A201_loop.ogg
+│   │   │   ├── BGM_A202_intro.ogg
+│   │   │   ├── BGM_A202_loop.ogg
+│   │   │   ├── BGM_A203_intro.ogg
+│   │   │   ├── BGM_A203_loop.ogg
+│   │   │   ├── BGM_A204_intro.ogg
+│   │   │   ├── BGM_A204_loop.ogg
+│   │   │   ├── BGM_A210_intro.ogg
+│   │   │   ├── BGM_A210_loop.ogg
+│   │   │   ├── BGM_A212_intro.ogg
+│   │   │   ├── BGM_A212_loop.ogg
+│   │   │   ├── BGM_A213_intro.ogg
+│   │   │   ├── BGM_A213_loop.ogg
+│   │   │   ├── BGM_A214_intro.ogg
+│   │   │   ├── BGM_A214_loop.ogg
+│   │   │   ├── BGM_A215_intro.ogg
+│   │   │   ├── BGM_A215_loop.ogg
+│   │   │   ├── BGM_A219_intro.ogg
+│   │   │   ├── BGM_A219_loop.ogg
+│   │   │   ├── BGM_B001_intro.ogg
+│   │   │   ├── BGM_B001_loop.ogg
+│   │   │   ├── BGM_B002_loop.ogg
+│   │   │   ├── BGM_B002_RankB_intro.ogg
+│   │   │   ├── BGM_B002_RankG_intro.ogg
+│   │   │   ├── BGM_B002_RankS_intro.ogg
+│   │   │   ├── BGM_B003_intro.ogg
+│   │   │   ├── BGM_B003_loop.ogg
+│   │   │   ├── BGM_B004_intro.ogg
+│   │   │   ├── BGM_B004_loop.ogg
+│   │   │   ├── BGM_B005_intro.ogg
+│   │   │   ├── BGM_B005_loop.ogg
+│   │   │   ├── BGM_B006_intro.ogg
+│   │   │   ├── BGM_B006_loop.ogg
+│   │   │   ├── BGM_B007_intro.ogg
+│   │   │   ├── BGM_B007_loop.ogg
+│   │   │   ├── BGM_B008_intro.ogg
+│   │   │   ├── BGM_B008_loop.ogg
+│   │   │   ├── BGM_B009_intro.ogg
+│   │   │   ├── BGM_B009_loop.ogg
+│   │   │   ├── BGM_B010_intro.ogg
+│   │   │   ├── BGM_B010_loop.ogg
+│   │   │   ├── BGM_B011_intro.ogg
+│   │   │   ├── BGM_B011_loop.ogg
+│   │   │   ├── BGM_B012_intro.ogg
+│   │   │   ├── BGM_B012_loop.ogg
+│   │   │   ├── BGM_B013_intro.ogg
+│   │   │   ├── BGM_B013_loop.ogg
+│   │   │   ├── BGM_B014_intro.ogg
+│   │   │   ├── BGM_B014_loop.ogg
+│   │   │   ├── BGM_B015_intro.ogg
+│   │   │   ├── BGM_B015_loop.ogg
+│   │   │   ├── BGM_B016_intro.ogg
+│   │   │   ├── BGM_B016_loop.ogg
+│   │   │   ├── BGM_B101_intro.ogg
+│   │   │   ├── BGM_B101_loop.ogg
+│   │   │   ├── BGM_B102_intro.ogg
+│   │   │   ├── BGM_B102_loop.ogg
+│   │   │   ├── BGM_B103_intro.ogg
+│   │   │   ├── BGM_B103_loop.ogg
+│   │   │   ├── BGM_B104_intro.ogg
+│   │   │   ├── BGM_B104_loop.ogg
+│   │   │   ├── BGM_B105_intro.ogg
+│   │   │   ├── BGM_B105_loop.ogg
+│   │   │   ├── BGM_B106_intro.ogg
+│   │   │   ├── BGM_B106_loop.ogg
+│   │   │   ├── BGM_B107_intro.ogg
+│   │   │   ├── BGM_B107_loop.ogg
+│   │   │   ├── BGM_B108_intro.ogg
+│   │   │   ├── BGM_B108_loop.ogg
+│   │   │   ├── BGM_B109_intro.ogg
+│   │   │   ├── BGM_B109_loop.ogg
+│   │   │   ├── BGM_B110_intro.ogg
+│   │   │   ├── BGM_B110_loop.ogg
+│   │   │   ├── BGM_B111_intro.ogg
+│   │   │   ├── BGM_B111_loop.ogg
+│   │   │   ├── BGM_B112_intro.ogg
+│   │   │   ├── BGM_B112_loop.ogg
+│   │   │   ├── BGM_B113_intro.ogg
+│   │   │   ├── BGM_B113_loop.ogg
+│   │   │   ├── BGM_B114_intro.ogg
+│   │   │   ├── BGM_B114_loop.ogg
+│   │   │   ├── BGM_B115_intro.ogg
+│   │   │   ├── BGM_B115_loop.ogg
+│   │   │   ├── BGM_B116_intro.ogg
+│   │   │   ├── BGM_B116_loop.ogg
+│   │   │   ├── BGM_B117_intro.ogg
+│   │   │   ├── BGM_B117_loop.ogg
+│   │   │   ├── BGM_B118_intro.ogg
+│   │   │   ├── BGM_B118_loop.ogg
+│   │   │   ├── BGM_B119_intro.ogg
+│   │   │   ├── BGM_B119_loop.ogg
+│   │   │   ├── BGM_B120_intro.ogg
+│   │   │   ├── BGM_B120_loop.ogg
+│   │   │   ├── BGM_B121_intro.ogg
+│   │   │   ├── BGM_B121_loop.ogg
+│   │   │   ├── BGM_B122_intro.ogg
+│   │   │   ├── BGM_B122_loop.ogg
+│   │   │   ├── BGM_B123_intro.ogg
+│   │   │   ├── BGM_B123_loop.ogg
+│   │   │   ├── BGM_B125_intro.ogg
+│   │   │   ├── BGM_B125_loop.ogg
+│   │   │   ├── BGM_B127_intro.ogg
+│   │   │   ├── BGM_B127_loop.ogg
+│   │   │   ├── BGM_B201_intro.ogg
+│   │   │   ├── BGM_B201_loop.ogg
+│   │   │   ├── BGM_B202_intro.ogg
+│   │   │   ├── BGM_B202_loop.ogg
+│   │   │   ├── BGM_B203_intro.ogg
+│   │   │   ├── BGM_B203_loop.ogg
+│   │   │   ├── BGM_B209_intro.ogg
+│   │   │   ├── BGM_B209_loop.ogg
+│   │   │   ├── BGM_B210_intro.ogg
+│   │   │   ├── BGM_B210_loop.ogg
+│   │   │   ├── BGM_B217_intro.ogg
+│   │   │   ├── BGM_B217_loop.ogg
+│   │   │   ├── BGM_B218_intro.ogg
+│   │   │   ├── BGM_B218_loop.ogg
+│   │   │   ├── BGM_B219_intro.ogg
+│   │   │   ├── BGM_B219_loop.ogg
+│   │   │   ├── BGM_B220_intro.ogg
+│   │   │   ├── BGM_B220_loop.ogg
+│   │   │   ├── BGM_H001_intro.ogg
+│   │   │   ├── BGM_H001_loop.ogg
+│   │   │   ├── BGM_H002_intro.ogg
+│   │   │   ├── BGM_H002_loop.ogg
+│   │   │   ├── BGM_H003_intro.ogg
+│   │   │   ├── BGM_H003_loop.ogg
+│   │   │   ├── BGM_H004_intro.ogg
+│   │   │   ├── BGM_H004_loop.ogg
+│   │   │   ├── BGM_H005_intro.ogg
+│   │   │   ├── BGM_H005_loop.ogg
+│   │   │   ├── BGM_H006_intro.ogg
+│   │   │   ├── BGM_H006_loop.ogg
+│   │   │   ├── BGM_V001.ogg
+│   │   │   ├── BGM_V002.ogg
+│   │   │   ├── BGM_V003.ogg
+│   │   │   ├── BGM_V004.ogg
+│   │   │   ├── BGM_V005.ogg
+│   │   │   ├── BGM_V006.ogg
+│   │   │   ├── BGM_V007.ogg
+│   │   │   ├── BGM_V008.ogg
+│   │   │   ├── BGM_V009.ogg
+│   │   │   ├── BGM_V010.ogg
+│   │   │   ├── BGM_V011.ogg
+│   │   │   ├── BGM_V012.ogg
+│   │   │   ├── BGM_V013.ogg
+│   │   │   ├── BGM_V014.ogg
+│   │   │   ├── BGM_V015.ogg
+│   │   │   ├── BGM_V016.ogg
+│   │   │   ├── BGM_V017.ogg
+│   │   │   ├── BGM_V018.ogg
+│   │   │   ├── BGM_V019.ogg
+│   │   │   ├── BGM_V020.ogg
+│   │   │   ├── BGM_V021.ogg
+│   │   │   ├── BGM_V022.ogg
+│   │   │   ├── BGM_V023.ogg
+│   │   │   ├── BGM_V024.ogg
+│   │   │   ├── BGM_V025.ogg
+│   │   │   ├── BGM_V101.ogg
+│   │   │   ├── BGM_V102.ogg
+│   │   │   ├── BGM_V103.ogg
+│   │   │   ├── BGM_V104.ogg
+│   │   │   ├── BGM_V105.ogg
+│   │   │   ├── BGM_V106.ogg
+│   │   │   ├── BGM_V107.ogg
+│   │   │   ├── BGM_V108.ogg
+│   │   │   ├── BGM_V109.ogg
+│   │   │   ├── BGM_V110.ogg
+│   │   │   ├── BGM_V111.ogg
+│   │   │   ├── BGM_V112.ogg
+│   │   │   ├── BGM_V113.ogg
+│   │   │   ├── BGM_V114.ogg
+│   │   │   ├── BGM_V115.ogg
+│   │   │   ├── BGM_V116.ogg
+│   │   │   ├── BGM_V117.ogg
+│   │   │   ├── BGM_V118.ogg
+│   │   │   ├── BGM_V119.ogg
+│   │   │   ├── BGM_V120.ogg
+│   │   │   ├── BGM_V121.ogg
+│   │   │   ├── BGM_V122.ogg
+│   │   │   ├── BGM_V123.ogg
+│   │   │   ├── BGM_V124.ogg
+│   │   │   ├── BGM_V125.ogg
+│   │   │   ├── BGM_V222_intro.ogg
+│   │   │   ├── BGM_V222_loop.ogg
+│   │   │   ├── BGM_V306_intro.ogg
+│   │   │   ├── BGM_V306_loop.ogg
+│   │   │   ├── BGM_V314_intro.ogg
+│   │   │   ├── BGM_V314_loop.ogg
+│   │   │   ├── BGM_V319_intro.ogg
+│   │   │   ├── BGM_V319_loop.ogg
+│   │   │   ├── BGM_V320_intro.ogg
+│   │   │   ├── BGM_V320_loop.ogg
+│   │   │   ├── BGM_V321_intro.ogg
+│   │   │   ├── BGM_V321_loop.ogg
+│   │   │   ├── BGM_V322_intro.ogg
+│   │   │   ├── BGM_V322_loop.ogg
+│   │   ├── [Folder] BgSe/ (该类文件夹的典型结构)
+│   │   │   ├── SE_2003.ogg
+│   │   │   ├── SE_3017.ogg
+│   │   │   ├── SE_3018.ogg
+│   │   │   ├── SE_3019.ogg
+│   │   │   ├── SE_3020.ogg
+│   │   │   ├── SE_3021.ogg
+│   │   │   ├── SE_3022.ogg
+│   │   │   ├── SE_3023.ogg
+│   │   │   ├── SE_3024.ogg
+│   │   │   ├── SE_3025.ogg
+│   │   │   ├── SE_3026.ogg
+│   │   │   ├── SE_3027.ogg
+│   │   │   ├── SE_3028.ogg
+│   │   │   ├── SE_3029.ogg
+│   │   │   ├── SE_3030.ogg
+│   │   │   ├── SE_3031.ogg
+│   │   │   ├── SE_3032.ogg
+│   │   ├── [Folder] BgVoice/ (该类文件夹的典型结构)
+│   │   │   ├── a052_003_000297.ogg
+│   │   │   ├── a052_003_000297a.ogg
+│   │   │   ├── a052_003_000298.ogg
+│   │   │   ├── a052_003_000299.ogg
+│   │   │   ├── a052_003_000300.ogg
+│   │   │   ├── a052_003_000301.ogg
+│   │   │   ├── b000_000_0000.ogg
+│   │   │   ├── b0012_003_000079.ogg
+│   │   │   ├── b0012_003_000080.ogg
+│   │   │   ├── b0012_003_000081.ogg
+│   │   │   ├── b0013_012_000070.ogg
+│   │   │   ├── b0013_012_000071.ogg
+│   │   │   ├── b0013_012_000072.ogg
+│   │   │   ├── b0013_012_000073.ogg
+│   │   │   ├── b0014_019_000064.ogg
+│   │   │   ├── b0014_019_000065.ogg
+│   │   │   ├── b0014_019_000066.ogg
+│   │   │   ├── b0015_025_000056.ogg
+│   │   │   ├── b0015_025_000057.ogg
+│   │   │   ├── b0015_025_000058.ogg
+│   │   │   ├── b001_002_0068.ogg
+│   │   │   ├── b001_002_0069.ogg
+│   │   │   ├── b001_002_0070.ogg
+│   │   │   ├── b001_002_0070a.ogg
+│   │   │   ├── b001_002_0070b.ogg
+│   │   │   ├── b001_002_0071.ogg
+│   │   │   ├── b001_002_0072.ogg
+│   │   │   ├── b0022_003_000077.ogg
+│   │   │   ├── b0022_003_000078.ogg
+│   │   │   ├── b0022_003_000079.ogg
+│   │   │   ├── b0024_015_000077.ogg
+│   │   │   ├── b0024_015_000078.ogg
+│   │   │   ├── b0024_015_000079.ogg
+│   │   │   ├── b002_002_0071.ogg
+│   │   │   ├── b002_002_0072.ogg
+│   │   │   ├── b002_002_0073.ogg
+│   │   │   ├── b0033_007_000049.ogg
+│   │   │   ├── b0033_007_000050.ogg
+│   │   │   ├── b0033_007_000051.ogg
+│   │   │   ├── b0033_007_000052.ogg
+│   │   │   ├── b0034_014_000078.ogg
+│   │   │   ├── b0034_014_000079.ogg
+│   │   │   ├── b0034_014_000080.ogg
+│   │   │   ├── b0034_014_000081.ogg
+│   │   │   ├── b0035_025_000095.ogg
+│   │   │   ├── b0035_025_000096.ogg
+│   │   │   ├── b0035_025_000097.ogg
+│   │   │   ├── b003_002_0071.ogg
+│   │   │   ├── b003_002_0072.ogg
+│   │   │   ├── b003_002_0073.ogg
+│   │   │   ├── b0044_021_000056.ogg
+│   │   │   ├── b0044_021_000057.ogg
+│   │   │   ├── b0044_021_000058.ogg
+│   │   │   ├── b0045_020_000066.ogg
+│   │   │   ├── b0045_020_000067.ogg
+│   │   │   ├── b0045_020_000068.ogg
+│   │   │   ├── b0045_020_000069.ogg
+│   │   │   ├── b004_012_000082.ogg
+│   │   │   ├── b004_012_000083.ogg
+│   │   │   ├── b004_012_000084.ogg
+│   │   │   ├── b004_012_000085.ogg
+│   │   │   ├── b0052_007_000061.ogg
+│   │   │   ├── b0052_007_000062.ogg
+│   │   │   ├── b0052_007_000063.ogg
+│   │   │   ├── b0052_007_000064.ogg
+│   │   │   ├── b0053_021_000059.ogg
+│   │   │   ├── b0053_021_000060.ogg
+│   │   │   ├── b0053_021_000061.ogg
+│   │   │   ├── b005_002_0063.ogg
+│   │   │   ├── b005_002_0064.ogg
+│   │   │   ├── b005_002_0065.ogg
+│   │   │   ├── b005_002_0066b.ogg
+│   │   │   ├── b0072_005_000083.ogg
+│   │   │   ├── b0072_005_000084.ogg
+│   │   │   ├── b0072_005_000085.ogg
+│   │   │   ├── b0072_005_000086.ogg
+│   │   │   ├── b0073_014_000071.ogg
+│   │   │   ├── b0073_014_000072.ogg
+│   │   │   ├── b0073_014_000073a.ogg
+│   │   │   ├── b0073_014_000073b.ogg
+│   │   │   ├── b0073_014_000074.ogg
+│   │   │   ├── b0074_027_000075.ogg
+│   │   │   ├── b0074_027_000076.ogg
+│   │   │   ├── b0074_027_000077.ogg
+│   │   │   ├── b007_002_0058.ogg
+│   │   │   ├── b007_002_0059.ogg
+│   │   │   ├── b007_002_0060.ogg
+│   │   │   ├── b0082_003_000082.ogg
+│   │   │   ├── b0082_003_000083.ogg
+│   │   │   ├── b0082_003_000084.ogg
+│   │   │   ├── b0083_017_000076.ogg
+│   │   │   ├── b0083_017_000077.ogg
+│   │   │   ├── b0083_017_000078.ogg
+│   │   │   ├── b008_002_0067_a.ogg
+│   │   │   ├── b008_002_0067_b.ogg
+│   │   │   ├── b008_002_0067_c.ogg
+│   │   │   ├── b008_002_0068.ogg
+│   │   │   ├── b008_002_0069.ogg
+│   │   │   ├── b0092_009_000078.ogg
+│   │   │   ├── b0092_009_000079.ogg
+│   │   │   ├── b0092_009_000080.ogg
+│   │   │   ├── b0092_009_000081.ogg
+│   │   │   ├── b0093_021_000061.ogg
+│   │   │   ├── b0093_021_000062.ogg
+│   │   │   ├── b0093_021_000063.ogg
+│   │   │   ├── b009_002_0070.ogg
+│   │   │   ├── b009_002_0071.ogg
+│   │   │   ├── b009_002_0072.ogg
+│   │   │   ├── b009_002_0073.ogg
+│   │   │   ├── b010_002_0067.ogg
+│   │   │   ├── b010_002_0068.ogg
+│   │   │   ├── b010_002_0069.ogg
+│   │   │   ├── b010_002_0070.ogg
+│   │   │   ├── b010_002_0071.ogg
+│   │   │   ├── b0112_003_000097.ogg
+│   │   │   ├── b0112_003_000098.ogg
+│   │   │   ├── b0112_003_000099.ogg
+│   │   │   ├── b0113_013_000109.ogg
+│   │   │   ├── b0113_013_000110.ogg
+│   │   │   ├── b0113_013_000111.ogg
+│   │   │   ├── b0114_027_000086.ogg
+│   │   │   ├── b0114_027_000087.ogg
+│   │   │   ├── b0114_027_000088.ogg
+│   │   │   ├── b011_002_0073.ogg
+│   │   │   ├── b011_002_0074.ogg
+│   │   │   ├── b011_002_0075.ogg
+│   │   │   ├── b0122_012_000074.ogg
+│   │   │   ├── b0122_012_000075.ogg
+│   │   │   ├── b0122_012_000076.ogg
+│   │   │   ├── b0122_012_000077.ogg
+│   │   │   ├── b012_002_0070.ogg
+│   │   │   ├── b012_002_0070b.ogg
+│   │   │   ├── b012_002_0071.ogg
+│   │   │   ├── b012_002_0072.ogg
+│   │   │   ├── b012_002_0073.ogg
+│   │   │   ├── b0132_009_000074.ogg
+│   │   │   ├── b0132_009_000075.ogg
+│   │   │   ├── b0132_009_000076.ogg
+│   │   │   ├── b0132_009_000077.ogg
+│   │   │   ├── b013_002_0059.ogg
+│   │   │   ├── b013_002_0060.ogg
+│   │   │   ├── b013_002_0061.ogg
+│   │   │   ├── b013_002_0062.ogg
+│   │   │   ├── b0142_011_000075.ogg
+│   │   │   ├── b0142_011_000076.ogg
+│   │   │   ├── b0142_011_000077.ogg
+│   │   │   ├── b0143_024_000083.ogg
+│   │   │   ├── b0143_024_000084.ogg
+│   │   │   ├── b0143_024_000085.ogg
+│   │   │   ├── b014_002_0057.ogg
+│   │   │   ├── b014_002_0058.ogg
+│   │   │   ├── b014_002_0059.ogg
+│   │   │   ├── b015_002_0059.ogg
+│   │   │   ├── b015_002_0060.ogg
+│   │   │   ├── b015_002_0061.ogg
+│   │   │   ├── b0162_016_000105.ogg
+│   │   │   ├── b0162_016_000106.ogg
+│   │   │   ├── b0162_016_000107.ogg
+│   │   │   ├── b016_002_0075.ogg
+│   │   │   ├── b016_002_0076.ogg
+│   │   │   ├── b016_002_0077.ogg
+│   │   │   ├── b017_002_0060.ogg
+│   │   │   ├── b017_002_0061.ogg
+│   │   │   ├── b017_002_0062.ogg
+│   │   │   ├── b018_002_0074.ogg
+│   │   │   ├── b018_002_0075.ogg
+│   │   │   ├── b018_002_0076.ogg
+│   │   │   ├── b018_002_0077.ogg
+│   │   │   ├── b0192_008_000068.ogg
+│   │   │   ├── b0192_008_000069.ogg
+│   │   │   ├── b0192_008_000070.ogg
+│   │   │   ├── b0193_027_000072.ogg
+│   │   │   ├── b0193_027_000073.ogg
+│   │   │   ├── b0193_027_000074.ogg
+│   │   │   ├── b019_003_000092.ogg
+│   │   │   ├── b019_003_000093.ogg
+│   │   │   ├── b019_003_000094.ogg
+│   │   │   ├── b0204_018_000100.ogg
+│   │   │   ├── b0204_018_000101.ogg
+│   │   │   ├── b0204_018_000102.ogg
+│   │   │   ├── b020_002_0069.ogg
+│   │   │   ├── b020_002_0070.ogg
+│   │   │   ├── b020_002_0070_1.ogg
+│   │   │   ├── b020_002_0071.ogg
+│   │   │   ├── b020_008_000072.ogg
+│   │   │   ├── b020_008_000073.ogg
+│   │   │   ├── b020_008_000074.ogg
+│   │   │   ├── b020_008_000075.ogg
+│   │   │   ├── b021_002_0062.ogg
+│   │   │   ├── b021_002_0063.ogg
+│   │   │   ├── b021_002_0064.ogg
+│   │   │   ├── b021_002_0065.ogg
+│   │   │   ├── b0222_018_000079.ogg
+│   │   │   ├── b0222_018_000080.ogg
+│   │   │   ├── b0222_018_000081.ogg
+│   │   │   ├── b0223_028_000068.ogg
+│   │   │   ├── b0223_028_000069.ogg
+│   │   │   ├── b0223_028_000070.ogg
+│   │   │   ├── b022_002_0080.ogg
+│   │   │   ├── b022_002_0081.ogg
+│   │   │   ├── b022_002_0082.ogg
+│   │   │   ├── b022_002_0083.ogg
+│   │   │   ├── b0232_006_000070.ogg
+│   │   │   ├── b0232_006_000071.ogg
+│   │   │   ├── b0232_006_000072.ogg
+│   │   │   ├── b023_003_000070.ogg
+│   │   │   ├── b023_003_000071.ogg
+│   │   │   ├── b023_003_000072.ogg
+│   │   │   ├── b0242_006_000085.ogg
+│   │   │   ├── b0242_006_000086.ogg
+│   │   │   ├── b0242_006_000087.ogg
+│   │   │   ├── b0243_024_000095.ogg
+│   │   │   ├── b0243_024_000096.ogg
+│   │   │   ├── b0243_024_000097.ogg
+│   │   │   ├── b024_002_0060.ogg
+│   │   │   ├── b024_002_0061.ogg
+│   │   │   ├── b024_002_0062.ogg
+│   │   │   ├── b024_002_0063.ogg
+│   │   │   ├── b0252_019_000074.ogg
+│   │   │   ├── b0252_019_000075.ogg
+│   │   │   ├── b0252_019_000076.ogg
+│   │   │   ├── b025_002_0072.ogg
+│   │   │   ├── b025_002_0073.ogg
+│   │   │   ├── b0262_014_000097.ogg
+│   │   │   ├── b0262_014_000098.ogg
+│   │   │   ├── b0262_014_000099.ogg
+│   │   │   ├── b0263_025_000091.ogg
+│   │   │   ├── b0263_025_000092.ogg
+│   │   │   ├── b0263_025_000093.ogg
+│   │   │   ├── b026_002_0063.ogg
+│   │   │   ├── b026_002_0064.ogg
+│   │   │   ├── b026_002_0065.ogg
+│   │   │   ├── b0272_023_000071.ogg
+│   │   │   ├── b0272_023_000072.ogg
+│   │   │   ├── b0272_023_000073.ogg
+│   │   │   ├── b027_003_000065.ogg
+│   │   │   ├── b027_003_000066.ogg
+│   │   │   ├── b027_003_000067.ogg
+│   │   │   ├── b027_003_000068.ogg
+│   │   │   ├── b028_004_000086.ogg
+│   │   │   ├── b028_004_000087.ogg
+│   │   │   ├── b028_004_000088.ogg
+│   │   │   ├── b0292_020_000084.ogg
+│   │   │   ├── b0292_020_000085.ogg
+│   │   │   ├── b0292_020_000086.ogg
+│   │   │   ├── b029_002_0065.ogg
+│   │   │   ├── b029_002_0066.ogg
+│   │   │   ├── b029_002_0067.ogg
+│   │   │   ├── b0302_012_000080.ogg
+│   │   │   ├── b0302_012_000081.ogg
+│   │   │   ├── b0302_012_000082.ogg
+│   │   │   ├── b0302_012_000083.ogg
+│   │   │   ├── b0302_012_000084.ogg
+│   │   │   ├── b030_003_000073.ogg
+│   │   │   ├── b030_003_000074.ogg
+│   │   │   ├── b030_003_000075.ogg
+│   │   │   ├── b0312_017_000095.ogg
+│   │   │   ├── b0312_017_000096.ogg
+│   │   │   ├── b0312_017_000097.ogg
+│   │   │   ├── b031_002_0074.ogg
+│   │   │   ├── b031_002_0074a.ogg
+│   │   │   ├── b031_002_0074b.ogg
+│   │   │   ├── b031_002_0075.ogg
+│   │   │   ├── b031_002_0075a.ogg
+│   │   │   ├── b031_002_0075b.ogg
+│   │   │   ├── b031_002_0076.ogg
+│   │   │   ├── b031_002_0076a.ogg
+│   │   │   ├── b0322_014_000070.ogg
+│   │   │   ├── b0322_014_000071.ogg
+│   │   │   ├── b0322_014_000072.ogg
+│   │   │   ├── b0323_028_000070.ogg
+│   │   │   ├── b0323_028_000071.ogg
+│   │   │   ├── b0323_028_000072.ogg
+│   │   │   ├── b032_002_0074.ogg
+│   │   │   ├── b032_002_0075.ogg
+│   │   │   ├── b032_002_0076.ogg
+│   │   │   ├── b032_002_0077.ogg
+│   │   │   ├── b032_002_0078.ogg
+│   │   │   ├── b032_002_0079.ogg
+│   │   │   ├── b0332_011_000066.ogg
+│   │   │   ├── b0332_011_000067.ogg
+│   │   │   ├── b0332_011_000068.ogg
+│   │   │   ├── b0332_011_000069.ogg
+│   │   │   ├── b033_003_000062.ogg
+│   │   │   ├── b033_003_000063.ogg
+│   │   │   ├── b033_003_000064.ogg
+│   │   │   ├── b034_003_000087.ogg
+│   │   │   ├── b034_003_000088.ogg
+│   │   │   ├── b034_003_000089.ogg
+│   │   │   ├── b034_003_000090.ogg
+│   │   │   ├── b034_003_000091.ogg
+│   │   │   ├── b0352_016_000107.ogg
+│   │   │   ├── b0352_016_000108.ogg
+│   │   │   ├── b0352_016_000109.ogg
+│   │   │   ├── b0353_022_000079.ogg
+│   │   │   ├── b0353_022_000080.ogg
+│   │   │   ├── b0353_022_000081.ogg
+│   │   │   ├── b0353_022_000082.ogg
+│   │   │   ├── b035_003_000107.ogg
+│   │   │   ├── b035_003_000108.ogg
+│   │   │   ├── b035_003_000109.ogg
+│   │   │   ├── b0362_022_000074.ogg
+│   │   │   ├── b0362_022_000075.ogg
+│   │   │   ├── b0362_022_000076.ogg
+│   │   │   ├── b036_003_000082.ogg
+│   │   │   ├── b036_003_000083.ogg
+│   │   │   ├── b036_003_000084.ogg
+│   │   │   ├── b0372_004_000069.ogg
+│   │   │   ├── b0372_004_000070.ogg
+│   │   │   ├── b0372_004_000071.ogg
+│   │   │   ├── b0373_025_000068.ogg
+│   │   │   ├── b0373_025_000069.ogg
+│   │   │   ├── b0373_025_000070.ogg
+│   │   │   ├── b037_003_000094.ogg
+│   │   │   ├── b037_003_000095.ogg
+│   │   │   ├── b037_003_000096.ogg
+│   │   │   ├── b0382_014_000072.ogg
+│   │   │   ├── b0382_014_000073.ogg
+│   │   │   ├── b0382_014_000074.ogg
+│   │   │   ├── b0382_014_000075.ogg
+│   │   │   ├── b038_003_000068.ogg
+│   │   │   ├── b038_003_000069.ogg
+│   │   │   ├── b038_003_000070.ogg
+│   │   │   ├── b038_003_000071.ogg
+│   │   │   ├── b039_003_000070.ogg
+│   │   │   ├── b039_003_000071.ogg
+│   │   │   ├── b039_003_000072.ogg
+│   │   │   ├── b040_003_000023.ogg
+│   │   │   ├── b040_003_000079.ogg
+│   │   │   ├── b040_003_000080.ogg
+│   │   │   ├── b040_003_000081.ogg
+│   │   │   ├── b040_003_000082.ogg
+│   │   │   ├── b0412_004_000077.ogg
+│   │   │   ├── b0412_004_000078.ogg
+│   │   │   ├── b0412_004_000079.ogg
+│   │   │   ├── b0413_022_000081.ogg
+│   │   │   ├── b0413_022_000082.ogg
+│   │   │   ├── b0413_022_000083.ogg
+│   │   │   ├── b0413_022_000084.ogg
+│   │   │   ├── b0414_026_000112.ogg
+│   │   │   ├── b0414_026_000113.ogg
+│   │   │   ├── b0414_026_000114.ogg
+│   │   │   ├── b041_003_000087.ogg
+│   │   │   ├── b041_003_000088.ogg
+│   │   │   ├── b041_003_000089.ogg
+│   │   │   ├── b0422_018_000088.ogg
+│   │   │   ├── b0422_018_000089.ogg
+│   │   │   ├── b0422_018_000090.ogg
+│   │   │   ├── b042_003_000099.ogg
+│   │   │   ├── b042_003_000100.ogg
+│   │   │   ├── b042_003_000101.ogg
+│   │   │   ├── b0432_024_000093.ogg
+│   │   │   ├── b0432_024_000094.ogg
+│   │   │   ├── b0432_024_000095.ogg
+│   │   │   ├── b043_004_000104.ogg
+│   │   │   ├── b043_004_000105.ogg
+│   │   │   ├── b043_004_000106.ogg
+│   │   │   ├── b0442_015_000077.ogg
+│   │   │   ├── b0442_015_000078.ogg
+│   │   │   ├── b0442_015_000079.ogg
+│   │   │   ├── b0442_015_000080.ogg
+│   │   │   ├── b044_004_000114.ogg
+│   │   │   ├── b044_004_000115.ogg
+│   │   │   ├── b044_004_000116.ogg
+│   │   │   ├── b045_003_000074.ogg
+│   │   │   ├── b045_003_000075.ogg
+│   │   │   ├── b045_003_000076.ogg
+│   │   │   ├── b045_003_000077.ogg
+│   │   │   ├── b046_003_000088.ogg
+│   │   │   ├── b046_003_000089.ogg
+│   │   │   ├── b046_003_000090.ogg
+│   │   │   ├── b0472_012_000069.ogg
+│   │   │   ├── b0472_012_000070.ogg
+│   │   │   ├── b0472_012_000071.ogg
+│   │   │   ├── b0472_012_000072.ogg
+│   │   │   ├── b047_002_0082.ogg
+│   │   │   ├── b047_002_0083.ogg
+│   │   │   ├── b047_002_0084.ogg
+│   │   │   ├── b0482_013_000095.ogg
+│   │   │   ├── b0482_013_000096.ogg
+│   │   │   ├── b0482_013_000097.ogg
+│   │   │   ├── b0483_025_000082.ogg
+│   │   │   ├── b0483_025_000083.ogg
+│   │   │   ├── b0483_025_000084.ogg
+│   │   │   ├── b048_002_0070.ogg
+│   │   │   ├── b048_002_0071.ogg
+│   │   │   ├── b048_002_0072.ogg
+│   │   │   ├── b0492_006_000085.ogg
+│   │   │   ├── b0492_006_000086.ogg
+│   │   │   ├── b0492_006_000087.ogg
+│   │   │   ├── b0493_023_000089.ogg
+│   │   │   ├── b0493_023_000090.ogg
+│   │   │   ├── b0493_023_000091.ogg
+│   │   │   ├── b049_002_0078.ogg
+│   │   │   ├── b049_002_0079.ogg
+│   │   │   ├── b049_002_0080.ogg
+│   │   │   ├── b050_002_0065.ogg
+│   │   │   ├── b050_002_0066.ogg
+│   │   │   ├── b050_002_0066b.ogg
+│   │   │   ├── b050_002_0067.ogg
+│   │   │   ├── b0512_010_000075.ogg
+│   │   │   ├── b0512_010_000076.ogg
+│   │   │   ├── b0512_010_000077.ogg
+│   │   │   ├── b0512_010_000078.ogg
+│   │   │   ├── b051_003_000051.ogg
+│   │   │   ├── b051_003_000052.ogg
+│   │   │   ├── b051_003_000053.ogg
+│   │   │   ├── b0522_014_000090.ogg
+│   │   │   ├── b0522_014_000091.ogg
+│   │   │   ├── b0522_014_000092.ogg
+│   │   │   ├── b0522_014_000093.ogg
+│   │   │   ├── b053_003_000079.ogg
+│   │   │   ├── b053_003_000080.ogg
+│   │   │   ├── b053_003_000081.ogg
+│   │   │   ├── b0542_009_000077.ogg
+│   │   │   ├── b0542_009_000078.ogg
+│   │   │   ├── b0542_009_000079.ogg
+│   │   │   ├── b0542_009_000080.ogg
+│   │   │   ├── b054_003_000080.ogg
+│   │   │   ├── b054_003_000081.ogg
+│   │   │   ├── b054_003_000082.ogg
+│   │   │   ├── b054_003_000083.ogg
+│   │   │   ├── b0552_025_000064.ogg
+│   │   │   ├── b0552_025_000065.ogg
+│   │   │   ├── b0552_025_000066.ogg
+│   │   │   ├── b055_003_000091.ogg
+│   │   │   ├── b055_003_000092.ogg
+│   │   │   ├── b055_003_000093.ogg
+│   │   │   ├── b0562_013_000074.ogg
+│   │   │   ├── b0562_013_000075.ogg
+│   │   │   ├── b0562_013_000076.ogg
+│   │   │   ├── b0562_013_000077.ogg
+│   │   │   ├── b056_003_000083.ogg
+│   │   │   ├── b056_003_000084.ogg
+│   │   │   ├── b056_003_000085.ogg
+│   │   │   ├── b0572_019_000064.ogg
+│   │   │   ├── b0572_019_000065.ogg
+│   │   │   ├── b0572_019_000066.ogg
+│   │   │   ├── b0573_026_000059.ogg
+│   │   │   ├── b0573_026_000060.ogg
+│   │   │   ├── b0573_026_000061.ogg
+│   │   │   ├── b057_005_000072.ogg
+│   │   │   ├── b057_005_000073.ogg
+│   │   │   ├── b057_005_000074.ogg
+│   │   │   ├── b057_005_000075.ogg
+│   │   │   ├── b0582_026_000049.ogg
+│   │   │   ├── b0582_026_000050.ogg
+│   │   │   ├── b0582_026_000051.ogg
+│   │   │   ├── b058_007_000097.ogg
+│   │   │   ├── b058_007_000098.ogg
+│   │   │   ├── b058_007_000099.ogg
+│   │   │   ├── b0592_018_000070.ogg
+│   │   │   ├── b0592_018_000071.ogg
+│   │   │   ├── b0592_018_000072.ogg
+│   │   │   ├── b059_003_000082.ogg
+│   │   │   ├── b059_003_000083.ogg
+│   │   │   ├── b059_003_000084.ogg
+│   │   │   ├── b0602_012_000079.ogg
+│   │   │   ├── b0602_012_000080.ogg
+│   │   │   ├── b0602_012_000081.ogg
+│   │   │   ├── b0602_012_000082.ogg
+│   │   │   ├── b060_003_000087.ogg
+│   │   │   ├── b060_003_000088.ogg
+│   │   │   ├── b060_003_000089.ogg
+│   │   │   ├── b0612_023_000080.ogg
+│   │   │   ├── b0612_023_000081.ogg
+│   │   │   ├── b0612_023_000082.ogg
+│   │   │   ├── b061_005_000102.ogg
+│   │   │   ├── b061_005_000103.ogg
+│   │   │   ├── b061_005_000104.ogg
+│   │   │   ├── b0622_022_000106.ogg
+│   │   │   ├── b0622_022_000107.ogg
+│   │   │   ├── b0622_022_000108.ogg
+│   │   │   ├── b062_003_000115.ogg
+│   │   │   ├── b062_003_000116.ogg
+│   │   │   ├── b062_003_000117.ogg
+│   │   │   ├── b063_004_000083.ogg
+│   │   │   ├── b063_004_000084.ogg
+│   │   │   ├── b063_004_000085.ogg
+│   │   │   ├── b064_003_000098.ogg
+│   │   │   ├── b064_003_000099.ogg
+│   │   │   ├── b064_003_000100.ogg
+│   │   │   ├── b0652_006_000078.ogg
+│   │   │   ├── b0652_006_000079.ogg
+│   │   │   ├── b0652_006_000080.ogg
+│   │   │   ├── b065_003_000083.ogg
+│   │   │   ├── b065_003_000084.ogg
+│   │   │   ├── b065_003_000086.ogg
+│   │   │   ├── b065_003_000087.ogg
+│   │   │   ├── b0662_025_000058.ogg
+│   │   │   ├── b0662_025_000059.ogg
+│   │   │   ├── b0662_025_000060.ogg
+│   │   │   ├── b066_006_000075.ogg
+│   │   │   ├── b066_006_000076.ogg
+│   │   │   ├── b066_006_000077.ogg
+│   │   │   ├── b066_006_000078.ogg
+│   │   │   ├── b067_005_000081.ogg
+│   │   │   ├── b067_005_000082.ogg
+│   │   │   ├── b067_005_000083.ogg
+│   │   │   ├── b068_005_000070.ogg
+│   │   │   ├── b068_005_000071.ogg
+│   │   │   ├── b068_005_000072.ogg
+│   │   │   ├── b0692_018_000100.ogg
+│   │   │   ├── b0692_018_000101.ogg
+│   │   │   ├── b0692_018_000102.ogg
+│   │   │   ├── b069_006_000078.ogg
+│   │   │   ├── b069_006_000079.ogg
+│   │   │   ├── b069_006_000080.ogg
+│   │   │   ├── b0702_020_000070.ogg
+│   │   │   ├── b0702_020_000071.ogg
+│   │   │   ├── b0702_020_000072.ogg
+│   │   │   ├── b0702_020_000073.ogg
+│   │   │   ├── b070_007_000066.ogg
+│   │   │   ├── b070_007_000067.ogg
+│   │   │   ├── b070_007_000068.ogg
+│   │   │   ├── b070_007_000069.ogg
+│   │   │   ├── b071_007_000074.ogg
+│   │   │   ├── b071_007_000075.ogg
+│   │   │   ├── b071_007_000076.ogg
+│   │   │   ├── b072_007_000086.ogg
+│   │   │   ├── b072_007_000087.ogg
+│   │   │   ├── b072_007_000088.ogg
+│   │   │   ├── b0732_026_000121.ogg
+│   │   │   ├── b0732_026_000122.ogg
+│   │   │   ├── b0732_026_000123.ogg
+│   │   │   ├── b073_007_000066.ogg
+│   │   │   ├── b073_007_000067.ogg
+│   │   │   ├── b073_007_000068.ogg
+│   │   │   ├── b073_007_000069.ogg
+│   │   │   ├── b074_008_000067.ogg
+│   │   │   ├── b074_008_000068.ogg
+│   │   │   ├── b074_008_000069.ogg
+│   │   │   ├── b074_008_000070.ogg
+│   │   │   ├── b075_008_000055.ogg
+│   │   │   ├── b075_008_000056.ogg
+│   │   │   ├── b075_008_000057.ogg
+│   │   │   ├── b075_008_000058.ogg
+│   │   │   ├── b076_008_000079.ogg
+│   │   │   ├── b076_008_000080.ogg
+│   │   │   ├── b076_008_000081.ogg
+│   │   │   ├── b076_008_000082.ogg
+│   │   │   ├── b0772_018_000070.ogg
+│   │   │   ├── b0772_018_000071.ogg
+│   │   │   ├── b0772_018_000072.ogg
+│   │   │   ├── b0773_024_000066.ogg
+│   │   │   ├── b0773_024_000067.ogg
+│   │   │   ├── b0773_024_000068.ogg
+│   │   │   ├── b077_008_000086.ogg
+│   │   │   ├── b077_008_000087.ogg
+│   │   │   ├── b077_008_000088.ogg
+│   │   │   ├── b078_009_000081.ogg
+│   │   │   ├── b078_009_000082.ogg
+│   │   │   ├── b078_009_000083.ogg
+│   │   │   ├── b078_009_000084.ogg
+│   │   │   ├── b079_010_000075.ogg
+│   │   │   ├── b079_010_000076.ogg
+│   │   │   ├── b079_010_000077.ogg
+│   │   │   ├── b080_010_000069.ogg
+│   │   │   ├── b080_010_000070.ogg
+│   │   │   ├── b080_010_000071.ogg
+│   │   │   ├── b080_010_000072.ogg
+│   │   │   ├── b081_010_000061.ogg
+│   │   │   ├── b081_010_000062.ogg
+│   │   │   ├── b081_010_000063.ogg
+│   │   │   ├── b082_009_000067.ogg
+│   │   │   ├── b082_009_000068.ogg
+│   │   │   ├── b082_009_000069.ogg
+│   │   │   ├── b083_009_000084.ogg
+│   │   │   ├── b083_009_000085.ogg
+│   │   │   ├── b083_009_000086.ogg
+│   │   │   ├── b084_019_000068.ogg
+│   │   │   ├── b084_019_000069.ogg
+│   │   │   ├── b084_019_000070.ogg
+│   │   │   ├── b085_010_000082.ogg
+│   │   │   ├── b085_010_000083.ogg
+│   │   │   ├── b085_010_000084.ogg
+│   │   │   ├── b086_010_000088.ogg
+│   │   │   ├── b086_010_000089.ogg
+│   │   │   ├── b086_010_000090.ogg
+│   │   │   ├── b087_011_000096.ogg
+│   │   │   ├── b087_011_000097.ogg
+│   │   │   ├── b087_011_000098.ogg
+│   │   │   ├── b087_011_000099.ogg
+│   │   │   ├── b088_011_000077.ogg
+│   │   │   ├── b088_011_000078.ogg
+│   │   │   ├── b088_011_000079.ogg
+│   │   │   ├── b089_011_000075.ogg
+│   │   │   ├── b089_011_000076.ogg
+│   │   │   ├── b089_011_000077.ogg
+│   │   │   ├── b089_011_000078.ogg
+│   │   │   ├── b0902_019_000097.ogg
+│   │   │   ├── b0902_019_000098.ogg
+│   │   │   ├── b0902_019_000099.ogg
+│   │   │   ├── b090_011_000077.ogg
+│   │   │   ├── b090_011_000078.ogg
+│   │   │   ├── b090_011_000079.ogg
+│   │   │   ├── b091_013_000071.ogg
+│   │   │   ├── b091_013_000072.ogg
+│   │   │   ├── b091_013_000073.ogg
+│   │   │   ├── b091_013_000074.ogg
+│   │   │   ├── b092_013_000079.ogg
+│   │   │   ├── b092_013_000080.ogg
+│   │   │   ├── b092_013_000081.ogg
+│   │   │   ├── b093_013_000082.ogg
+│   │   │   ├── b093_013_000083.ogg
+│   │   │   ├── b093_013_000084.ogg
+│   │   │   ├── b094_015_000073.ogg
+│   │   │   ├── b094_015_000074.ogg
+│   │   │   ├── b094_015_000075.ogg
+│   │   │   ├── b095_015_000098.ogg
+│   │   │   ├── b095_015_000099.ogg
+│   │   │   ├── b095_015_000100.ogg
+│   │   │   ├── b096_015_000073.ogg
+│   │   │   ├── b096_015_000074.ogg
+│   │   │   ├── b096_015_000075.ogg
+│   │   │   ├── b097_015_000082.ogg
+│   │   │   ├── b097_015_000083.ogg
+│   │   │   ├── b097_015_000084.ogg
+│   │   │   ├── b098_016_000093.ogg
+│   │   │   ├── b098_016_000094.ogg
+│   │   │   ├── b098_016_000095.ogg
+│   │   │   ├── b099_016_000108.ogg
+│   │   │   ├── b099_016_000109.ogg
+│   │   │   ├── b099_016_000110.ogg
+│   │   │   ├── b100_016_000073.ogg
+│   │   │   ├── b100_016_000074.ogg
+│   │   │   ├── b100_016_000075.ogg
+│   │   │   ├── b101_016_000074.ogg
+│   │   │   ├── b101_016_000075.ogg
+│   │   │   ├── b101_016_000076.ogg
+│   │   │   ├── b101_016_000077.ogg
+│   │   │   ├── b102_017_000085.ogg
+│   │   │   ├── b102_017_000086.ogg
+│   │   │   ├── b102_017_000087.ogg
+│   │   │   ├── b102_017_000088.ogg
+│   │   │   ├── b103_017_000106.ogg
+│   │   │   ├── b103_017_000107.ogg
+│   │   │   ├── b103_017_000108.ogg
+│   │   │   ├── b103_017_000109.ogg
+│   │   │   ├── b103_017_000110.ogg
+│   │   │   ├── b104_017_000073.ogg
+│   │   │   ├── b104_017_000074.ogg
+│   │   │   ├── b104_017_000075.ogg
+│   │   │   ├── b104_017_000076.ogg
+│   │   │   ├── b105_017_000069.ogg
+│   │   │   ├── b105_017_000070.ogg
+│   │   │   ├── b105_017_000071.ogg
+│   │   │   ├── b106_019_000098.ogg
+│   │   │   ├── b106_019_000099.ogg
+│   │   │   ├── b106_019_000100.ogg
+│   │   │   ├── b107_019_000084.ogg
+│   │   │   ├── b107_019_000085.ogg
+│   │   │   ├── b107_019_000086.ogg
+│   │   │   ├── b109_020_000062.ogg
+│   │   │   ├── b109_020_000063.ogg
+│   │   │   ├── b109_020_000064.ogg
+│   │   │   ├── b110_020_000060.ogg
+│   │   │   ├── b110_020_000061.ogg
+│   │   │   ├── b110_020_000062.ogg
+│   │   │   ├── b111_020_000080.ogg
+│   │   │   ├── b111_020_000081.ogg
+│   │   │   ├── b111_020_000082.ogg
+│   │   │   ├── b116_021_000067.ogg
+│   │   │   ├── b116_021_000068.ogg
+│   │   │   ├── b116_021_000069.ogg
+│   │   │   ├── b117_021_000070.ogg
+│   │   │   ├── b117_021_000071.ogg
+│   │   │   ├── b117_021_000072.ogg
+│   │   │   ├── b118_021_000072.ogg
+│   │   │   ├── b118_021_000073.ogg
+│   │   │   ├── b118_021_000074.ogg
+│   │   │   ├── b119_022_000096.ogg
+│   │   │   ├── b119_022_000097.ogg
+│   │   │   ├── b119_022_000098.ogg
+│   │   │   ├── b120_022_000074.ogg
+│   │   │   ├── b120_022_000075.ogg
+│   │   │   ├── b120_022_000076.ogg
+│   │   │   ├── b121_023_000075.ogg
+│   │   │   ├── b121_023_000076.ogg
+│   │   │   ├── b121_023_000077.ogg
+│   │   │   ├── b122_023_000082.ogg
+│   │   │   ├── b122_023_000083.ogg
+│   │   │   ├── b122_023_000084.ogg
+│   │   │   ├── b123_023_000078.ogg
+│   │   │   ├── b123_023_000079.ogg
+│   │   │   ├── b123_023_000080.ogg
+│   │   │   ├── b125_024_000074.ogg
+│   │   │   ├── b125_024_000075.ogg
+│   │   │   ├── b125_024_000076.ogg
+│   │   │   ├── b126_024_000087.ogg
+│   │   │   ├── b126_024_000088.ogg
+│   │   │   ├── b126_024_000089.ogg
+│   │   │   ├── b128_026_000096.ogg
+│   │   │   ├── b128_026_000097.ogg
+│   │   │   ├── b128_026_000098.ogg
+│   │   │   ├── b129_026_000070.ogg
+│   │   │   ├── b129_026_000071.ogg
+│   │   │   ├── b129_026_000072.ogg
+│   │   │   ├── b130_027_000070.ogg
+│   │   │   ├── b130_027_000071.ogg
+│   │   │   ├── b130_027_000072.ogg
+│   │   │   ├── b131_027_000075.ogg
+│   │   │   ├── b131_027_000076.ogg
+│   │   │   ├── b131_027_000077.ogg
+│   │   │   ├── b132_027_000067.ogg
+│   │   │   ├── b132_027_000068.ogg
+│   │   │   ├── b132_027_000069.ogg
+│   │   │   ├── b133_028_000073.ogg
+│   │   │   ├── b133_028_000074.ogg
+│   │   │   ├── b133_028_000075.ogg
+│   │   ├── [Folder] Se/ (该类文件夹的典型结构)
+│   │   │   ├── SE_0001.ogg
+│   │   │   ├── SE_0002.ogg
+│   │   │   ├── SE_0003.ogg
+│   │   │   ├── SE_0004.ogg
+│   │   │   ├── SE_0005.ogg
+│   │   │   ├── SE_0006.ogg
+│   │   │   ├── SE_0007.ogg
+│   │   │   ├── SE_0008.ogg
+│   │   │   ├── SE_0009.ogg
+│   │   │   ├── SE_0010.ogg
+│   │   │   ├── SE_0011.ogg
+│   │   │   ├── SE_0012.ogg
+│   │   │   ├── SE_0013.ogg
+│   │   │   ├── SE_0014.ogg
+│   │   │   ├── SE_0015.ogg
+│   │   │   ├── SE_0016.ogg
+│   │   │   ├── SE_0017.ogg
+│   │   │   ├── SE_0018.ogg
+│   │   │   ├── SE_0019.ogg
+│   │   │   ├── SE_0020.ogg
+│   │   │   ├── SE_0091.ogg
+│   │   │   ├── SE_0092.ogg
+│   │   │   ├── SE_0093.ogg
+│   │   │   ├── SE_0101.ogg
+│   │   │   ├── SE_0102.ogg
+│   │   │   ├── SE_0103.ogg
+│   │   │   ├── SE_0104.ogg
+│   │   │   ├── SE_0105.ogg
+│   │   │   ├── SE_0106.ogg
+│   │   │   ├── SE_0107.ogg
+│   │   │   ├── SE_0108.ogg
+│   │   │   ├── SE_0109.ogg
+│   │   │   ├── SE_0110.ogg
+│   │   │   ├── SE_0111.ogg
+│   │   │   ├── SE_0112.ogg
+│   │   │   ├── SE_0113.ogg
+│   │   │   ├── SE_0114.ogg
+│   │   │   ├── SE_0115.ogg
+│   │   │   ├── SE_0116.ogg
+│   │   │   ├── SE_0117.ogg
+│   │   │   ├── SE_0118.ogg
+│   │   │   ├── SE_0119.ogg
+│   │   │   ├── SE_0120.ogg
+│   │   │   ├── SE_0122.ogg
+│   │   │   ├── SE_0123.ogg
+│   │   │   ├── SE_0124.ogg
+│   │   │   ├── SE_0128.ogg
+│   │   │   ├── SE_0131.ogg
+│   │   │   ├── SE_0132.ogg
+│   │   │   ├── SE_0133.ogg
+│   │   │   ├── SE_0134.ogg
+│   │   │   ├── SE_0135.ogg
+│   │   │   ├── SE_0136.ogg
+│   │   │   ├── SE_0137.ogg
+│   │   │   ├── SE_0138.ogg
+│   │   │   ├── SE_0139.ogg
+│   │   │   ├── SE_0140.ogg
+│   │   │   ├── SE_0141.ogg
+│   │   │   ├── SE_0142.ogg
+│   │   │   ├── SE_0143.ogg
+│   │   │   ├── SE_0144.ogg
+│   │   │   ├── SE_0145.ogg
+│   │   │   ├── SE_0146.ogg
+│   │   │   ├── SE_0147.ogg
+│   │   │   ├── SE_0148.ogg
+│   │   │   ├── SE_0149.ogg
+│   │   │   ├── SE_0150.ogg
+│   │   │   ├── SE_0151.ogg
+│   │   │   ├── SE_0152.ogg
+│   │   │   ├── SE_0153.ogg
+│   │   │   ├── SE_0154.ogg
+│   │   │   ├── SE_0201.ogg
+│   │   │   ├── SE_0202.ogg
+│   │   │   ├── SE_0203.ogg
+│   │   │   ├── SE_0204.ogg
+│   │   │   ├── SE_0205.ogg
+│   │   │   ├── SE_0206.ogg
+│   │   │   ├── SE_0207.ogg
+│   │   │   ├── SE_0208.ogg
+│   │   │   ├── SE_0209.ogg
+│   │   │   ├── SE_0210.ogg
+│   │   │   ├── SE_0211.ogg
+│   │   │   ├── SE_0212.ogg
+│   │   │   ├── SE_0213.ogg
+│   │   │   ├── SE_0214.ogg
+│   │   │   ├── SE_0216.ogg
+│   │   │   ├── SE_0301.ogg
+│   │   │   ├── SE_0302.ogg
+│   │   │   ├── SE_0303.ogg
+│   │   │   ├── SE_0304.ogg
+│   │   │   ├── SE_0401.ogg
+│   │   │   ├── SE_0402.ogg
+│   │   │   ├── SE_0403.ogg
+│   │   │   ├── SE_0404.ogg
+│   │   │   ├── SE_0405.ogg
+│   │   │   ├── SE_0406.ogg
+│   │   │   ├── SE_0407.ogg
+│   │   │   ├── SE_0408.ogg
+│   │   │   ├── SE_0409.ogg
+│   │   │   ├── SE_0410.ogg
+│   │   │   ├── SE_0501.ogg
+│   │   │   ├── SE_0502.ogg
+│   │   │   ├── SE_0600.ogg
+│   │   │   ├── SE_0601.ogg
+│   │   │   ├── SE_0602.ogg
+│   │   │   ├── SE_0603.ogg
+│   │   │   ├── SE_0604.ogg
+│   │   │   ├── SE_0605.ogg
+│   │   │   ├── SE_0611.ogg
+│   │   │   ├── SE_0612.ogg
+│   │   │   ├── SE_0613.ogg
+│   │   │   ├── SE_0614.ogg
+│   │   │   ├── SE_0615.ogg
+│   │   │   ├── SE_0621.ogg
+│   │   │   ├── SE_0631.ogg
+│   │   │   ├── SE_1001.ogg
+│   │   │   ├── SE_1002.ogg
+│   │   │   ├── SE_1003.ogg
+│   │   │   ├── SE_1004.ogg
+│   │   │   ├── SE_1005.ogg
+│   │   │   ├── SE_1006.ogg
+│   │   │   ├── SE_1007.ogg
+│   │   │   ├── SE_1008.ogg
+│   │   │   ├── SE_1009.ogg
+│   │   │   ├── SE_1010.ogg
+│   │   │   ├── SE_1011.ogg
+│   │   │   ├── SE_1012.ogg
+│   │   │   ├── SE_1013.ogg
+│   │   │   ├── SE_1014.ogg
+│   │   │   ├── SE_1015.ogg
+│   │   │   ├── SE_1016.ogg
+│   │   │   ├── SE_1017.ogg
+│   │   │   ├── SE_1018.ogg
+│   │   │   ├── SE_1019.ogg
+│   │   │   ├── SE_1020.ogg
+│   │   │   ├── SE_1021.ogg
+│   │   │   ├── SE_1022.ogg
+│   │   │   ├── SE_1023.ogg
+│   │   │   ├── SE_1024.ogg
+│   │   │   ├── SE_1025.ogg
+│   │   │   ├── SE_1026.ogg
+│   │   │   ├── SE_1027.ogg
+│   │   │   ├── SE_1028.ogg
+│   │   │   ├── SE_2001.ogg
+│   │   │   ├── SE_2002.ogg
+│   │   │   ├── SE_2003.ogg
+│   │   │   ├── SE_2004.ogg
+│   │   │   ├── SE_2005.ogg
+│   │   │   ├── SE_2006.ogg
+│   │   │   ├── SE_2007.ogg
+│   │   │   ├── SE_2008.ogg
+│   │   │   ├── SE_2009.ogg
+│   │   │   ├── SE_2010.ogg
+│   │   │   ├── SE_2011.ogg
+│   │   │   ├── SE_2012.ogg
+│   │   │   ├── SE_2013.ogg
+│   │   │   ├── SE_2014.ogg
+│   │   │   ├── SE_2015.ogg
+│   │   │   ├── SE_2016.ogg
+│   │   │   ├── SE_2017.ogg
+│   │   │   ├── SE_2101.ogg
+│   │   │   ├── SE_2102.ogg
+│   │   │   ├── SE_2103.ogg
+│   │   │   ├── SE_2104.ogg
+│   │   │   ├── SE_2105.ogg
+│   │   │   ├── SE_2106.ogg
+│   │   │   ├── SE_2107.ogg
+│   │   │   ├── SE_2108.ogg
+│   │   │   ├── SE_2109.ogg
+│   │   │   ├── SE_2110.ogg
+│   │   │   ├── SE_2111.ogg
+│   │   │   ├── SE_2112.ogg
+│   │   │   ├── SE_2113.ogg
+│   │   │   ├── SE_2114.ogg
+│   │   │   ├── SE_2201.ogg
+│   │   │   ├── SE_2202.ogg
+│   │   │   ├── SE_2203.ogg
+│   │   │   ├── SE_2204.ogg
+│   │   │   ├── SE_2205.ogg
+│   │   │   ├── SE_2206.ogg
+│   │   │   ├── SE_2207.ogg
+│   │   │   ├── SE_2208.ogg
+│   │   │   ├── SE_2209.ogg
+│   │   │   ├── SE_2210.ogg
+│   │   │   ├── SE_2211.ogg
+│   │   │   ├── SE_2212.ogg
+│   │   │   ├── SE_2213.ogg
+│   │   │   ├── SE_2214.ogg
+│   │   │   ├── SE_2215.ogg
+│   │   │   ├── SE_2216.ogg
+│   │   │   ├── SE_2217.ogg
+│   │   │   ├── SE_2218.ogg
+│   │   │   ├── SE_2219.ogg
+│   │   │   ├── SE_2220.ogg
+│   │   │   ├── SE_2221.ogg
+│   │   │   ├── SE_3001.ogg
+│   │   │   ├── SE_3002.ogg
+│   │   │   ├── SE_3003.ogg
+│   │   │   ├── SE_3004.ogg
+│   │   │   ├── SE_3005.ogg
+│   │   │   ├── SE_3006.ogg
+│   │   │   ├── SE_3007.ogg
+│   │   │   ├── SE_3008.ogg
+│   │   │   ├── SE_3009.ogg
+│   │   │   ├── SE_3010.ogg
+│   │   │   ├── SE_3011.ogg
+│   │   │   ├── SE_3012.ogg
+│   │   │   ├── SE_3013.ogg
+│   │   │   ├── SE_3014.ogg
+│   │   │   ├── SE_3015.ogg
+│   │   │   ├── SE_3016.ogg
+│   │   │   ├── SE_3017.ogg
+│   │   │   ├── SE_3018.ogg
+│   │   │   ├── SE_3019.ogg
+│   │   │   ├── SE_3020.ogg
+│   │   │   ├── SE_3021.ogg
+│   │   │   ├── SE_3022.ogg
+│   │   │   ├── SE_3023.ogg
+│   │   │   ├── SE_3024.ogg
+│   │   │   ├── SE_3025.ogg
+│   │   │   ├── SE_3026.ogg
+│   │   │   ├── SE_3027.ogg
+│   │   │   ├── SE_3028.ogg
+│   │   │   ├── SE_3029.ogg
+│   │   │   ├── SE_3030.ogg
+│   │   │   ├── SE_3031.ogg
+│   │   │   ├── SE_3032.ogg
+│   │   │   ├── SE_3201.ogg
+│   │   │   ├── SE_3202.ogg
+│   │   │   ├── SE_3203.ogg
+│   │   │   ├── SE_3204.ogg
+│   │   │   ├── SE_3205.ogg
+│   │   │   ├── SE_3206.ogg
+│   │   │   ├── SE_3207.ogg
+│   │   │   ├── SE_3208.ogg
+│   │   │   ├── SE_3209.ogg
+│   │   │   ├── SE_3210.ogg
+│   │   │   ├── SE_3211.ogg
+│   │   │   ├── SE_3212.ogg
+│   │   │   ├── SE_3213.ogg
+│   │   │   ├── SE_3214.ogg
+│   │   │   ├── SE_3215.ogg
+│   │   │   ├── SE_3216.ogg
+│   │   │   ├── SE_3217.ogg
+│   │   │   ├── SE_3218.ogg
+│   │   │   ├── SE_3219.ogg
+│   │   │   ├── SE_3220.ogg
+│   │   │   ├── SE_3221.ogg
+│   │   │   ├── SE_3222.ogg
+│   │   │   ├── SE_3223.ogg
+│   │   │   ├── SE_3224.ogg
+│   │   │   ├── SE_3225.ogg
+│   │   │   ├── SE_3226.ogg
+│   │   │   ├── SE_3227.ogg
+│   │   │   ├── SE_3228.ogg
+│   │   │   ├── SE_3229.ogg
+│   │   │   ├── SE_3230.ogg
+│   │   │   ├── SE_3231.ogg
+│   │   │   ├── SE_3232.ogg
+│   │   │   ├── SE_3233.ogg
+│   │   │   ├── SE_3234.ogg
+│   │   │   ├── SE_3235.ogg
+│   │   │   ├── SE_3236.ogg
+│   │   │   ├── SE_3237.ogg
+│   │   │   ├── SE_3238.ogg
+│   │   │   ├── SE_3239.ogg
+│   │   │   ├── SE_3240.ogg
+│   │   │   ├── SE_3241.ogg
+│   │   │   ├── SE_3242.ogg
+│   │   │   ├── SE_3243.ogg
+│   │   │   ├── SE_3244.ogg
+│   │   │   ├── SE_3245.ogg
+│   │   │   ├── SE_3246.ogg
+│   │   │   ├── SE_3247.ogg
+│   │   │   ├── SE_3248.ogg
+│   │   │   ├── SE_3249.ogg
+│   │   │   ├── SE_3250.ogg
+│   │   │   ├── SE_3251.ogg
+│   │   │   ├── SE_3252.ogg
+│   │   │   ├── SE_3253.ogg
+│   │   │   ├── SE_3254.ogg
+│   │   │   ├── SE_3255.ogg
+│   │   │   ├── SE_3256.ogg
+│   │   │   ├── SE_3257.ogg
+│   │   │   ├── SE_3258.ogg
+│   │   │   ├── SE_3259.ogg
+│   │   │   ├── SE_3260.ogg
+│   │   │   ├── SE_3261.ogg
+│   │   │   ├── SE_3262.ogg
+│   │   │   ├── SE_3263.ogg
+│   │   │   ├── SE_3264.ogg
+│   │   │   ├── SE_3265.ogg
+│   │   │   ├── SE_3266.ogg
+│   │   │   ├── SE_3267.ogg
+│   │   │   ├── SE_3268.ogg
+│   │   │   ├── SE_3269.ogg
+│   │   │   ├── SE_3270.ogg
+│   │   │   ├── SE_3271.ogg
+│   │   │   ├── SE_3272.ogg
+│   │   │   ├── SE_3273.ogg
+│   │   │   ├── SE_3274.ogg
+│   │   │   ├── SE_3275.ogg
+│   │   │   ├── SE_3276.ogg
+│   │   │   ├── SE_3277.ogg
+│   │   │   ├── SE_3278.ogg
+│   │   │   ├── SE_3279.ogg
+│   │   │   ├── SE_3280.ogg
+│   │   │   ├── SE_3281.ogg
+│   │   │   ├── SE_3282.ogg
+│   │   │   ├── SE_3283.ogg
+│   │   │   ├── SE_3284.ogg
+│   │   │   ├── SE_3285.ogg
+│   │   │   ├── SE_3286.ogg
+│   │   │   ├── SE_3287.ogg
+│   │   │   ├── SE_3288.ogg
+│   │   │   ├── SE_3290.ogg
+│   │   │   ├── SE_3291.ogg
+│   │   │   ├── SE_3292.ogg
+│   │   ├── [Folder] Voice/ (该类文件夹的典型结构)
+│   │   │   ├── [Folder] 1001001/ (该类文件夹的典型结构)
+│   │   │   │   ├── vo_c1001001_0001.ogg
+│   │   │   │   ├── vo_c1001001_0002.ogg
+│   │   │   │   ├── vo_c1001001_0003.ogg
+│   │   │   │   ├── vo_c1001001_0004.ogg
+│   │   │   │   ├── vo_c1001001_0005.ogg
+│   │   │   │   ├── vo_c1001001_0006.ogg
+│   │   │   │   ├── vo_c1001001_0007.ogg
+│   │   │   │   ├── vo_c1001001_0008.ogg
+│   │   │   │   ├── vo_c1001001_0009.ogg
+│   │   │   │   ├── vo_c1001001_0010.ogg
+│   │   │   │   ├── vo_c1001001_0011.ogg
+│   │   │   │   ├── vo_c1001001_0012.ogg
+│   │   │   │   ├── vo_c1001001_0013.ogg
+│   │   │   │   ├── vo_c1001001_0014.ogg
+│   │   │   │   ├── vo_c1001001_0015.ogg
+│   │   │   │   ├── vo_c1001001_0016.ogg
+│   │   │   │   ├── vo_c1001001_0017.ogg
+│   │   │   │   ├── vo_c1001001_0018.ogg
+│   │   │   │   ├── vo_c1001001_0019.ogg
+│   │   │   │   ├── vo_c1001001_0020.ogg
+│   │   │   │   ├── vo_c1001001_0021.ogg
+│   │   │   │   ├── vo_c1001001_0022.ogg
+│   │   │   │   ├── vo_c1001001_0023.ogg
+│   │   │   │   ├── vo_c1001001_0024.ogg
+│   │   │   │   ├── vo_c1001001_0025.ogg
+│   │   │   │   ├── vo_c1001001_0026.ogg
+│   │   │   │   ├── vo_c1001001_0027.ogg
+│   │   │   │   ├── vo_c1001001_0028.ogg
+│   │   │   │   ├── vo_c1001001_0029.ogg
+│   │   │   │   ├── vo_c1001001_0030.ogg
+│   │   │   │   ├── vo_c1001001_0031.ogg
+│   │   │   │   ├── vo_c1001001_0032.ogg
+│   │   │   │   ├── vo_c1001001_0033.ogg
+│   │   │   │   ├── vo_c1001001_0034.ogg
+│   │   │   │   ├── vo_c1001001_0035.ogg
+│   │   │   │   ├── vo_c1001001_0036.ogg
+│   │   │   │   ├── vo_c1001001_0037.ogg
+│   │   │   │   ├── vo_c1001001_0038.ogg
+│   │   │   │   ├── vo_c1001001_0039.ogg
+│   │   │   │   ├── vo_c1001001_0040.ogg
+│   │   │   │   ├── vo_c1001001_0041.ogg
+│   │   │   │   ├── vo_c1001001_0042.ogg
+│   │   │   │   ├── vo_c1001001_0043.ogg
+│   │   │   │   ├── vo_c1001001_0044.ogg
+│   │   │   │   ├── vo_c1001001_0044_2.ogg
+│   │   │   │   ├── vo_c1001001_0045.ogg
+│   │   │   │   ├── vo_c1001001_0046.ogg
+│   │   │   │   ├── vo_c1001001_0047.ogg
+│   │   │   │   ├── vo_c1001001_0048.ogg
+│   │   │   │   ├── vo_c1001001_0049.ogg
+│   │   │   │   ├── vo_c1001001_0050.ogg
+│   │   │   │   ├── vo_c1001001_0051.ogg
+│   │   │   │   ├── vo_c1001001_0052.ogg
+│   │   │   │   ├── vo_c1001001_0053.ogg
+│   │   │   │   ├── vo_c1001001_0054.ogg
+│   │   │   │   ├── vo_c1001001_0055.ogg
+│   │   │   │   ├── vo_c1001001_0056.ogg
+│   │   │   │   ├── vo_c1001001_0057.ogg
+│   │   │   │   ├── vo_c1001001_0058.ogg
+│   │   │   │   ├── vo_c1001001_0059.ogg
+│   │   │   │   ├── vo_c1001001_0060.ogg
+│   │   │   │   ├── vo_c1001001_0061.ogg
+│   │   │   │   ├── vo_c1001001_0062.ogg
+│   │   │   │   ├── vo_c1001001_0063.ogg
+│   │   │   │   ├── vo_c1001001_0064.ogg
+│   │   │   │   ├── vo_c1001001_0065.ogg
+│   │   │   │   ├── vo_c1001001_0066.ogg
+│   │   │   │   ├── vo_c1001001_0067.ogg
+│   │   │   │   ├── vo_c1001001_0068.ogg
+│   │   │   │   ├── vo_c1001001_0069.ogg
+│   │   │   │   ├── vo_c1001001_0070.ogg
+│   │   │   │   ├── vo_c1001001_0071.ogg
+│   │   │   │   ├── vo_c1001001_0072.ogg
+│   │   │   │   ├── vo_c1001001_0073.ogg
+│   │   │   │   ├── vo_c1001001_0074.ogg
+│   │   │   │   ├── vo_c1001001_0075.ogg
+│   │   │   │   ├── vo_c1001001_0076.ogg
+│   │   │   │   ├── vo_c1001001_0077.ogg
+│   │   │   │   ├── vo_c1001001_0078.ogg
+│   │   │   │   ├── vo_c1001001_0079.ogg
+│   │   │   │   ├── vo_c1001001_0080.ogg
+│   │   │   │   ├── vo_c1001001_0081.ogg
+│   │   │   │   ├── vo_c1001001_0082.ogg
+│   │   │   │   ├── vo_c1001001_0083.ogg
+│   │   │   │   ├── vo_c1001001_0084.ogg
+│   │   │   │   ├── vo_c1001001_0085.ogg
+│   │   │   │   ├── vo_c1001001_0086.ogg
+│   │   │   │   ├── vo_c1001001_0087.ogg
+│   │   │   │   ├── vo_c1001001_0088.ogg
+│   │   │   │   ├── vo_c1001001_0089.ogg
+│   │   │   │   ├── vo_c1001001_0090.ogg
+│   │   │   │   ├── vo_c1001001_0091.ogg
+│   │   │   │   ├── vo_c1001001_0092.ogg
+│   │   │   │   ├── vo_c1001001_0093.ogg
+│   │   │   │   ├── vo_d1001001_0001.ogg
+│   │   │   │   ├── vo_d1001001_0002.ogg
+│   │   │   │   ├── vo_z1001001_0001.ogg
+│   │   │   │   ├── vo_z1001001_0002.ogg
+│   │   │   │   ├── vo_z1001001_0003.ogg
+│   │   │   │   ├── vo_z1001001_0004.ogg
+│   │   │   │   ├── vo_z1001001_0005.ogg
+│   │   │   │   ├── vo_z1001001_0006.ogg
+│   │   │   │   ├── vo_z1001001_0007.ogg
+│   │   │   │   ├── vo_z1001001_0008.ogg
+│   │   │   │   ├── vo_z1001001_0009.ogg
+│   │   │   │   ├── vo_z1001001_0010.ogg
+│   │   │   │   ├── vo_z1001001_0011.ogg
+│   │   │   │   ├── vo_z1001001_0012.ogg
+│   │   │   │   ├── vo_z1001001_0013.ogg
+│   │   │   │   ├── vo_z1001001_0014.ogg
+│   │   │   │   ├── vo_z1001001_0015.ogg
+│   │   │   │   ├── vo_z1001001_0016.ogg
+│   │   │   │   ├── vo_z1001001_0017.ogg
+│   │   │   │   ├── vo_z1001001_0018.ogg
+│   │   │   │   ├── vo_z1001001_0019.ogg
+│   │   │   │   ├── vo_z1001001_0020.ogg
+│   │   │   │   ├── vo_z1001001_0021.ogg
+│   │   │   │   ├── vo_z1001001_0022.ogg
+│   │   │   │   ├── vo_z1001001_0023.ogg
+│   │   │   │   ├── vo_z1001001_0024.ogg
+│   │   │   │   ├── vo_z1001001_0025.ogg
+│   │   │   │   ├── vo_z1001001_0026.ogg
+│   │   │   │   ├── vo_z1001001_0027.ogg
+│   │   │   │   ├── vo_z1001001_0028.ogg
+│   │   │   │   ├── vo_z1001001_0029.ogg
+│   │   │   │   ├── vo_z1001001_0030.ogg
+│   │   │   │   ├── vo_z1001001_0031.ogg
+│   │   │   │   ├── vo_z1001001_0032.ogg
+│   │   │   │   ├── vo_z1001001_0033.ogg
+│   │   │   │   ├── vo_z1001001_0034.ogg
+│   │   │   │   ├── vo_z1001001_0035.ogg
+│   │   │   │   ├── vo_z1001001_0036.ogg
+│   │   │   │   ├── vo_z1001001_0037.ogg
+│   │   │   │   ├── vo_z1001001_0038.ogg
+│   │   │   │   ├── vo_z1001001_0039.ogg
+│   │   │   ├── [Folder] ImportChara/ (该类文件夹的典型结构)
+│   │   │   │   ├── [Folder] 1001001/ (该类文件夹的典型结构)
+│   │   │   │   │   ├── a001_002_0277.ogg
+│   │   │   │   │   ├── a001_002_0278.ogg
+│   │   │   │   │   ├── a001_002_0279.ogg
+│   │   │   │   │   ├── a001_002_0280.ogg
+│   │   │   │   │   ├── a001_002_0281.ogg
+│   │   │   │   │   ├── a001_002_0282.ogg
+│   │   │   │   │   ├── a001_002_0283.ogg
+│   │   │   │   │   ├── a001_002_0284.ogg
+│   │   │   │   │   ├── a001_002_0285.ogg
+│   │   │   │   │   ├── a001_002_0286.ogg
+│   │   │   │   │   ├── a001_002_0287.ogg
+│   │   │   │   │   ├── a001_002_0288.ogg
+│   │   │   │   │   ├── a001_002_0289.ogg
+│   │   │   │   │   ├── a001_002_0290.ogg
+│   │   │   │   │   ├── a001_002_0291.ogg
+│   │   │   │   │   ├── a001_002_0292.ogg
+│   │   │   │   │   ├── a001_002_0293.ogg
+│   │   │   │   │   ├── a001_002_0294.ogg
+│   │   │   │   │   ├── a001_002_0295.ogg
+│   │   │   │   │   ├── a001_002_0296.ogg
+│   │   │   │   │   ├── a001_002_0297.ogg
+│   │   │   │   │   ├── a001_002_0298.ogg
+│   │   │   │   │   ├── a001_002_0299.ogg
+│   │   │   │   │   ├── a001_002_0300.ogg
+│   │   │   │   │   ├── a001_002_0301.ogg
+│   │   │   │   │   ├── a001_002_0302.ogg
+│   │   │   │   │   ├── a001_002_0303.ogg
+│   │   │   │   │   ├── a001_002_0304.ogg
+│   │   │   │   │   ├── a001_002_0305.ogg
+│   │   │   │   │   ├── a001_002_0306.ogg
+│   │   │   │   │   ├── a001_002_0307.ogg
+│   │   │   │   │   ├── a001_002_0308.ogg
+│   │   │   │   │   ├── a001_002_0309.ogg
+│   │   │   │   │   ├── a001_002_0310.ogg
+│   │   │   │   │   ├── a001_002_0311.ogg
+│   │   │   │   │   ├── a001_002_0312.ogg
+│   │   │   │   │   ├── a001_002_0313.ogg
+│   │   │   │   │   ├── a001_002_0314.ogg
+│   │   │   │   │   ├── a001_002_0315.ogg
+│   │   │   │   │   ├── a001_002_0316.ogg
+│   │   │   │   │   ├── a001_002_0317.ogg
+│   │   │   │   │   ├── a001_002_0318.ogg
+│   │   │   │   │   ├── a001_002_0319.ogg
+│   │   │   │   │   ├── a001_002_0320.ogg
+│   │   │   │   │   ├── a001_002_0321.ogg
+│   │   │   │   │   ├── a001_002_0322.ogg
+│   │   │   │   │   ├── a001_002_0323.ogg
+│   │   │   │   │   ├── a001_002_0324.ogg
+│   │   │   │   │   ├── a001_002_0325.ogg
+│   │   │   │   │   ├── a001_002_0326.ogg
+│   │   │   │   │   ├── a001_002_0327.ogg
+│   │   │   │   │   ├── a001_002_0328.ogg
+│   │   │   │   │   ├── a001_002_0329.ogg
+│   │   │   │   │   ├── a001_002_0330.ogg
+│   │   │   │   │   ├── a001_002_0331.ogg
+│   │   │   │   │   ├── a001_002_0332.ogg
+│   │   │   │   │   ├── a001_002_0333.ogg
+│   │   │   │   │   ├── a001_002_0334.ogg
+│   │   │   │   │   ├── a001_002_0335.ogg
+│   │   │   │   │   ├── a001_002_0336.ogg
+│   │   │   │   │   ├── a001_002_0337.ogg
+│   │   │   │   │   ├── a001_002_0338.ogg
+│   │   │   │   │   ├── a001_002_0339.ogg
+│   │   │   │   │   ├── a001_002_0340.ogg
+│   │   │   │   │   ├── a001_002_0341.ogg
+│   │   │   │   │   ├── a001_002_0342.ogg
+│   │   │   │   │   ├── a001_002_0343.ogg
+│   │   │   │   │   ├── a001_002_0344.ogg
+│   │   │   │   │   ├── a001_002_0345.ogg
+│   │   │   │   │   ├── a001_002_0346.ogg
+│   │   │   │   │   ├── a001_002_0347.ogg
+│   │   │   │   │   ├── a001_002_0348.ogg
+│   │   │   │   │   ├── a001_002_0349.ogg
+│   │   │   │   │   ├── a001_002_0350.ogg
+│   │   │   │   │   ├── a001_002_0351.ogg
+│   │   │   │   │   ├── a001_002_0352.ogg
+│   │   │   │   │   ├── a001_002_0353.ogg
+│   │   │   │   │   ├── a001_002_0354.ogg
+│   │   │   │   │   ├── a001_002_0355.ogg
+│   │   │   │   │   ├── a001_002_0356.ogg
+│   │   │   │   │   ├── a001_002_0357.ogg
+│   │   │   │   │   ├── a001_002_0358.ogg
+│   │   │   │   │   ├── a001_002_0359.ogg
+│   │   │   │   │   ├── a001_002_0360.ogg
+│   │   │   │   │   ├── a001_002_0361.ogg
+│   │   │   │   │   ├── a001_002_0362.ogg
+│   │   │   │   │   ├── a001_002_0363.ogg
+│   │   │   │   │   ├── a001_002_0364.ogg
+│   │   │   │   │   ├── a001_002_0365.ogg
+│   │   │   │   │   ├── a001_002_0366.ogg
+│   │   │   │   │   ├── a001_002_0367.ogg
+│   │   │   │   │   ├── a001_002_0368.ogg
+│   │   │   │   │   ├── a001_002_0369.ogg
+│   │   │   │   │   ├── a001_002_0370.ogg
+│   │   │   │   │   ├── a001_002_0371.ogg
+│   │   │   │   │   ├── a001_002_0372.ogg
+│   │   │   │   │   ├── a001_002_0373.ogg
+│   │   │   │   │   ├── a001_002_0374.ogg
+│   │   │   │   │   ├── a001_002_0375.ogg
+│   │   │   │   │   ├── a001_002_0376.ogg
+│   │   │   │   │   ├── a001_002_0377.ogg
+│   │   │   │   │   ├── a001_002_0378.ogg
+│   │   │   │   │   ├── a001_002_0379.ogg
+│   │   │   │   │   ├── a001_002_0380.ogg
+│   │   │   │   │   ├── a001_002_0381.ogg
+│   │   │   │   │   ├── a001_002_0382.ogg
+│   │   │   │   │   ├── a001_002_0383.ogg
+│   │   │   │   │   ├── a001_002_0384.ogg
+│   │   │   │   │   ├── a001_002_0385.ogg
+│   │   │   │   │   ├── a001_002_0386.ogg
+│   │   │   │   │   ├── a001_002_0387.ogg
+│   │   │   │   │   ├── a001_002_0388.ogg
+│   │   │   │   │   ├── a001_002_0389.ogg
+│   │   │   │   │   ├── a001_002_0390.ogg
+│   │   │   │   │   ├── a001_002_0391.ogg
+│   │   │   │   │   ├── a001_002_0392.ogg
+│   │   │   │   │   ├── a001_002_0393.ogg
+│   │   │   │   │   ├── a001_002_0394.ogg
+│   │   │   │   │   ├── a001_002_0395.ogg
+│   │   │   │   │   ├── a001_002_0396.ogg
+│   │   │   │   │   ├── a001_002_0397.ogg
+│   │   │   │   │   ├── a001_002_0398.ogg
+│   │   │   │   │   ├── a001_002_0399.ogg
+│   │   │   │   │   ├── a001_002_0400.ogg
+│   │   │   │   │   ├── a001_002_0401.ogg
+│   │   │   │   │   ├── a001_002_0402.ogg
+│   │   │   │   │   ├── a001_002_0403.ogg
+│   │   │   │   │   ├── a001_002_0404.ogg
+│   │   │   │   │   ├── a001_002_0405.ogg
+│   │   │   │   │   ├── a001_002_0406.ogg
+│   │   │   │   │   ├── a001_002_0407.ogg
+│   │   │   │   │   ├── a005_002_0096.ogg
+│   │   │   │   │   ├── a005_002_0097.ogg
+│   │   │   │   │   ├── a005_002_0098.ogg
+│   │   │   │   │   ├── a005_002_0099.ogg
+│   │   │   │   │   ├── a007_002_0087.ogg
+│   │   │   │   │   ├── a007_002_0088.ogg
+│   │   │   │   │   ├── a007_002_0089.ogg
+│   │   │   │   │   ├── a009_002_0072.ogg
+│   │   │   │   │   ├── a009_002_0073.ogg
+│   │   │   │   │   ├── a012_002_0050.ogg
+│   │   │   │   │   ├── a012_002_0051.ogg
+│   │   │   │   │   ├── a012_002_0052.ogg
+│   │   │   │   │   ├── a012_002_0053.ogg
+│   │   │   │   │   ├── a013_002_0095.ogg
+│   │   │   │   │   ├── a013_002_0096.ogg
+│   │   │   │   │   ├── a013_002_0097.ogg
+│   │   │   │   │   ├── a904_002_0108.ogg
+│   │   │   │   │   ├── a904_002_0109.ogg
+│   │   │   │   │   ├── a904_002_0110.ogg
+│   │   │   │   │   ├── a904_002_0111.ogg
+│   │   │   │   │   ├── a904_002_0111_1.ogg
+│   │   │   │   │   ├── a904_002_0111_2.ogg
+│   │   │   │   │   ├── a904_002_0112.ogg
+│   │   │   │   │   ├── a904_002_0113.ogg
+│   │   │   │   │   ├── a904_002_0114.ogg
+│   │   │   │   │   ├── a904_002_0115.ogg
+│   │   │   │   │   ├── a904_002_0116.ogg
+│   │   │   │   │   ├── a904_002_0117.ogg
+│   │   │   │   │   ├── a904_002_0118.ogg
+│   │   │   │   │   ├── a904_002_0119.ogg
+│   │   │   │   │   ├── a904_002_0120.ogg
+│   │   │   │   │   ├── a904_002_0121.ogg
+│   │   │   │   │   ├── a904_002_0122.ogg
+│   │   │   │   │   ├── a904_002_0123.ogg
+│   │   │   │   │   ├── a904_002_0124.ogg
+│   │   │   │   │   ├── a904_002_0125.ogg
+│   │   │   │   │   ├── a904_002_0126.ogg
+│   │   │   │   │   ├── a904_002_0127.ogg
+│   │   │   │   │   ├── a904_002_0128.ogg
+│   │   │   │   │   ├── a904_002_0129.ogg
+│   │   │   │   │   ├── b001_002_0001.ogg
+│   │   │   │   │   ├── b001_002_0002.ogg
+│   │   │   │   │   ├── b001_002_0003.ogg
+│   │   │   │   │   ├── b001_002_0004.ogg
+│   │   │   │   │   ├── b001_002_0005.ogg
+│   │   │   │   │   ├── b001_002_0006.ogg
+│   │   │   │   │   ├── b001_002_0007.ogg
+│   │   │   │   │   ├── b001_002_0008.ogg
+│   │   │   │   │   ├── b001_002_0009.ogg
+│   │   │   │   │   ├── b001_002_0010.ogg
+│   │   │   │   │   ├── b001_002_0011.ogg
+│   │   │   │   │   ├── b001_002_0012.ogg
+│   │   │   │   │   ├── b001_002_0013.ogg
+│   │   │   │   │   ├── b001_002_0014.ogg
+│   │   │   │   │   ├── b001_002_0015.ogg
+│   │   │   │   │   ├── b001_002_0016.ogg
+│   │   │   │   │   ├── b001_002_0017.ogg
+│   │   │   │   │   ├── b001_002_0018.ogg
+│   │   │   │   │   ├── b001_002_0019.ogg
+│   │   │   │   │   ├── b001_002_0020.ogg
+│   │   │   │   │   ├── b001_002_0021.ogg
+│   │   │   │   │   ├── b001_002_0022.ogg
+│   │   │   │   │   ├── b001_002_0023.ogg
+│   │   │   │   │   ├── b001_002_0024.ogg
+│   │   │   │   │   ├── b001_002_0025.ogg
+│   │   │   │   │   ├── b001_002_0026.ogg
+│   │   │   │   │   ├── b001_002_0027.ogg
+│   │   │   │   │   ├── b001_002_0028.ogg
+│   │   │   │   │   ├── b001_002_0029.ogg
+│   │   │   │   │   ├── b001_002_0030.ogg
+│   │   │   │   │   ├── b001_002_0031.ogg
+│   │   │   │   │   ├── b001_002_0032.ogg
+│   │   │   │   │   ├── b001_002_0033.ogg
+│   │   │   │   │   ├── b001_002_0034.ogg
+│   │   │   │   │   ├── b001_002_0035.ogg
+│   │   │   │   │   ├── b001_002_0036.ogg
+│   │   │   │   │   ├── b001_002_0037.ogg
+│   │   │   │   │   ├── b001_002_0038.ogg
+│   │   │   │   │   ├── b001_002_0039.ogg
+│   │   │   │   │   ├── b001_002_0040.ogg
+│   │   │   │   │   ├── b001_002_0041.ogg
+│   │   │   │   │   ├── b001_002_0042.ogg
+│   │   │   │   │   ├── b001_002_0043.ogg
+│   │   │   │   │   ├── b001_002_0044.ogg
+│   │   │   │   │   ├── b001_002_0045.ogg
+│   │   │   │   │   ├── b001_002_0046.ogg
+│   │   │   │   │   ├── b001_002_0047.ogg
+│   │   │   │   │   ├── b001_002_0048.ogg
+│   │   │   │   │   ├── b001_002_0049.ogg
+│   │   │   │   │   ├── b001_002_0050.ogg
+│   │   │   │   │   ├── b001_002_0051.ogg
+│   │   │   │   │   ├── b001_002_0052.ogg
+│   │   │   │   │   ├── b001_002_0053.ogg
+│   │   │   │   │   ├── b001_002_0054.ogg
+│   │   │   │   │   ├── b001_002_0055.ogg
+│   │   │   │   │   ├── b001_002_0056.ogg
+│   │   │   │   │   ├── b001_002_0057.ogg
+│   │   │   │   │   ├── b001_002_0058.ogg
+│   │   │   │   │   ├── b001_002_0059.ogg
+│   │   │   │   │   ├── b001_002_0060.ogg
+│   │   │   │   │   ├── b001_002_0061.ogg
+│   │   │   │   │   ├── b001_002_0062.ogg
+│   │   │   │   │   ├── b001_002_0063.ogg
+│   │   │   │   │   ├── b001_002_0064.ogg
+│   │   │   │   │   ├── b001_002_0065.ogg
+│   │   │   │   │   ├── b001_002_0066.ogg
+│   │   │   │   │   ├── b001_002_0067.ogg
+│   │   │   │   │   ├── b001_002_0068.ogg
+│   │   │   │   │   ├── b001_002_0069.ogg
+│   │   │   │   │   ├── b001_002_0070.ogg
+│   │   │   │   │   ├── b001_002_0071.ogg
+│   │   │   │   │   ├── b001_002_0072.ogg
+│   ├── [Folder] Sprites/ (该类文件夹的典型结构)
+│   │   ├── [Folder] Bg/ (该类文件夹的典型结构)
+│   │   │   ├── [Folder] Home/ (该类文件夹的典型结构)
+│   │   │   │   ├── home_bg_001_1_1_c_back.png
+│   │   │   │   ├── home_bg_001_1_1_c_front.png
+│   │   │   │   ├── home_bg_001_1_1_l_back.png
+│   │   │   │   ├── home_bg_001_1_1_l_front.png
+│   │   │   │   ├── home_bg_001_1_1_r_back.png
+│   │   │   │   ├── home_bg_001_1_1_r_front.png
+│   │   │   │   ├── home_bg_001_1_2_c_back.png
+│   │   │   │   ├── home_bg_001_1_2_c_front.png
+│   │   │   │   ├── home_bg_001_1_2_l_back.png
+│   │   │   │   ├── home_bg_001_1_2_l_front.png
+│   │   │   │   ├── home_bg_001_1_2_r_back.png
+│   │   │   │   ├── home_bg_001_1_2_r_front.png
+│   │   │   │   ├── home_bg_001_1_3_c_back.png
+│   │   │   │   ├── home_bg_001_1_3_c_front.png
+│   │   │   │   ├── home_bg_001_1_3_l_back.png
+│   │   │   │   ├── home_bg_001_1_3_l_front.png
+│   │   │   │   ├── home_bg_001_1_3_r_back.png
+│   │   │   │   ├── home_bg_001_1_3_r_front.png
+│   │   │   │   ├── home_bg_001_2_1_c_back.png
+│   │   │   │   ├── home_bg_001_2_1_c_front.png
+│   │   │   │   ├── home_bg_001_2_1_l_back.png
+│   │   │   │   ├── home_bg_001_2_1_l_front.png
+│   │   │   │   ├── home_bg_001_2_1_r_back.png
+│   │   │   │   ├── home_bg_001_2_1_r_front.png
+│   │   │   │   ├── home_bg_001_2_2_c_back.png
+│   │   │   │   ├── home_bg_001_2_2_c_front.png
+│   │   │   │   ├── home_bg_001_2_2_l_back.png
+│   │   │   │   ├── home_bg_001_2_2_l_front.png
+│   │   │   │   ├── home_bg_001_2_2_r_back.png
+│   │   │   │   ├── home_bg_001_2_2_r_front.png
+│   │   │   │   ├── home_bg_001_2_3_c_back.png
+│   │   │   │   ├── home_bg_001_2_3_c_front.png
+│   │   │   │   ├── home_bg_001_2_3_l_back.png
+│   │   │   │   ├── home_bg_001_2_3_l_front.png
+│   │   │   │   ├── home_bg_001_2_3_r_back.png
+│   │   │   │   ├── home_bg_001_2_3_r_front.png
+│   │   │   │   ├── home_bg_001_3_1_c_front.png
+│   │   │   │   ├── home_bg_001_3_1_l_back.png
+│   │   │   │   ├── home_bg_001_3_1_l_front.png
+│   │   │   │   ├── home_bg_001_3_1_r_back.png
+│   │   │   │   ├── home_bg_001_3_1_r_front.png
+│   │   │   │   ├── home_bg_001_3_2_c_back.png
+│   │   │   │   ├── home_bg_001_3_2_c_front.png
+│   │   │   │   ├── home_bg_001_3_2_l_back.png
+│   │   │   │   ├── home_bg_001_3_2_l_front.png
+│   │   │   │   ├── home_bg_001_3_2_r_back.png
+│   │   │   │   ├── home_bg_001_3_2_r_front.png
+│   │   │   │   ├── home_bg_001_3_3_c_back.png
+│   │   │   │   ├── home_bg_001_3_3_c_front.png
+│   │   │   │   ├── home_bg_001_3_3_l_back.png
+│   │   │   │   ├── home_bg_001_3_3_l_front.png
+│   │   │   │   ├── home_bg_001_3_3_r_back.png
+│   │   │   │   ├── home_bg_001_3_3_r_front.png
+│   │   │   │   ├── home_bg_001_4_1_c_back.png
+│   │   │   │   ├── home_bg_001_4_1_c_front.png
+│   │   │   │   ├── home_bg_001_4_1_l_back.png
+│   │   │   │   ├── home_bg_001_4_1_l_front.png
+│   │   │   │   ├── home_bg_001_4_1_r_back.png
+│   │   │   │   ├── home_bg_001_4_1_r_front.png
+│   │   │   │   ├── home_bg_001_4_2_c_back.png
+│   │   │   │   ├── home_bg_001_4_2_c_front.png
+│   │   │   │   ├── home_bg_001_4_2_l_back.png
+│   │   │   │   ├── home_bg_001_4_2_l_front.png
+│   │   │   │   ├── home_bg_001_4_2_r_back.png
+│   │   │   │   ├── home_bg_001_4_2_r_front.png
+│   │   │   │   ├── home_bg_001_4_3_c_back.png
+│   │   │   │   ├── home_bg_001_4_3_c_front.png
+│   │   │   │   ├── home_bg_001_4_3_l_back.png
+│   │   │   │   ├── home_bg_001_4_3_l_front.png
+│   │   │   │   ├── home_bg_001_4_3_r_back.png
+│   │   │   │   ├── home_bg_001_4_3_r_front.png
+│   │   │   │   ├── home_bg_002_4_3_c_back.png
+│   │   │   │   ├── home_bg_002_4_3_c_cloud.png
+│   │   │   │   ├── home_bg_002_4_3_c_front.png
+│   │   │   │   ├── home_bg_002_4_3_l_back.png
+│   │   │   │   ├── home_bg_002_4_3_l_cloud.png
+│   │   │   │   ├── home_bg_002_4_3_l_front.png
+│   │   │   │   ├── home_bg_002_4_3_r_back.png
+│   │   │   │   ├── home_bg_002_4_3_r_cloud.png
+│   │   │   │   ├── home_bg_002_4_3_r_front.png
+│   │   │   │   ├── home_bg_003_4_1_c_back.png
+│   │   │   │   ├── home_bg_003_4_1_c_front.png
+│   │   │   │   ├── home_bg_003_4_1_l_back.png
+│   │   │   │   ├── home_bg_003_4_1_l_front.png
+│   │   │   │   ├── home_bg_003_4_1_r_back.png
+│   │   │   │   ├── home_bg_003_4_1_r_front.png
+│   │   │   │   ├── home_bg_003_4_3_c_back.png
+│   │   │   │   ├── home_bg_003_4_3_c_front.png
+│   │   │   │   ├── home_bg_003_4_3_l_back.png
+│   │   │   │   ├── home_bg_003_4_3_l_front.png
+│   │   │   │   ├── home_bg_003_4_3_r_back.png
+│   │   │   │   ├── home_bg_003_4_3_r_front.png
+│   │   │   │   ├── home_bg_004_2_1_c_back.png
+│   │   │   │   ├── home_bg_004_2_1_c_cloud.png
+│   │   │   │   ├── home_bg_004_2_1_c_front.png
+│   │   │   │   ├── home_bg_004_2_1_l_back.png
+│   │   │   │   ├── home_bg_004_2_1_l_cloud.png
+│   │   │   │   ├── home_bg_004_2_1_l_front.png
+│   │   │   │   ├── home_bg_004_2_1_r_back.png
+│   │   │   │   ├── home_bg_004_2_1_r_cloud.png
+│   │   │   │   ├── home_bg_004_2_1_r_front.png
+│   │   │   │   ├── home_bg_004_2_2_c_back.png
+│   │   │   │   ├── home_bg_004_2_2_c_cloud.png
+│   │   │   │   ├── home_bg_004_2_2_c_front.png
+│   │   │   │   ├── home_bg_004_2_2_l_back.png
+│   │   │   │   ├── home_bg_004_2_2_l_cloud.png
+│   │   │   │   ├── home_bg_004_2_2_l_front.png
+│   │   │   │   ├── home_bg_004_2_2_r_back.png
+│   │   │   │   ├── home_bg_004_2_2_r_cloud.png
+│   │   │   │   ├── home_bg_004_2_2_r_front.png
+│   │   │   │   ├── home_bg_004_2_3_c_back.png
+│   │   │   │   ├── home_bg_004_2_3_c_cloud.png
+│   │   │   │   ├── home_bg_004_2_3_c_front.png
+│   │   │   │   ├── home_bg_004_2_3_l_back.png
+│   │   │   │   ├── home_bg_004_2_3_l_cloud.png
+│   │   │   │   ├── home_bg_004_2_3_l_front.png
+│   │   │   │   ├── home_bg_004_2_3_r_back.png
+│   │   │   │   ├── home_bg_004_2_3_r_cloud.png
+│   │   │   │   ├── home_bg_004_2_3_r_front.png
+│   │   │   │   ├── home_bg_005_3_3_c_back.png
+│   │   │   │   ├── home_bg_005_3_3_c_cloud.png
+│   │   │   │   ├── home_bg_005_3_3_c_front.png
+│   │   │   │   ├── home_bg_005_3_3_l_back.png
+│   │   │   │   ├── home_bg_005_3_3_l_cloud.png
+│   │   │   │   ├── home_bg_005_3_3_l_front.png
+│   │   │   │   ├── home_bg_005_3_3_r_back.png
+│   │   │   │   ├── home_bg_005_3_3_r_cloud.png
+│   │   │   │   ├── home_bg_005_3_3_r_front.png
+│   │   │   ├── [Folder] Jukebox/ (该类文件夹的典型结构)
+│   │   │   │   ├── jukebox_001.png
+│   │   │   │   ├── jukebox_002.png
+│   │   │   │   ├── jukebox_003.png
+│   │   │   │   ├── jukebox_004.png
+│   │   │   │   ├── jukebox_005.png
+│   │   │   │   ├── jukebox_effect.png
+│   │   │   ├── [Folder] OutGame/ (该类文件夹的典型结构)
+│   │   │   │   ├── bg_finistower_1.png
+│   │   │   │   ├── bg_finistower_2.png
+│   │   │   │   ├── bg_home_1.png
+│   │   │   │   ├── bg_home_2.png
+│   │   │   │   ├── bg_home_3.png
+│   │   │   │   ├── bg_organization_1.png
+│   │   │   │   ├── bg_quest_1.png
+│   │   │   │   ├── bg_quest_2.png
+│   │   │   │   ├── bg_quest_3.png
+│   │   │   │   ├── bg_shop_1.png
+│   │   │   │   ├── bg_story_1.png
+│   │   │   │   ├── bg_story_2.png
+│   │   │   │   ├── bg_story_3.png
+│   │   ├── [Folder] Chara/ (该类文件夹的典型结构)
+│   │   │   ├── [Folder] Thumb_005/ (该类文件夹的典型结构)
+│   │   │   │   ├── chara_1001001_2_1.png
+│   │   │   │   ├── chara_1001002_2_1.png
+│   │   │   │   ├── chara_1001003_2_1.png
+│   │   │   │   ├── chara_1001004_2_1.png
+│   │   │   │   ├── chara_1001005_2_1.png
+│   │   │   │   ├── chara_1002001_2_1.png
+│   │   │   │   ├── chara_1002002_2_1.png
+│   │   │   │   ├── chara_1002004_2_1.png
+│   │   │   │   ├── chara_1003001_2_1.png
+│   │   │   │   ├── chara_1003003_2_1.png
+│   │   │   │   ├── chara_1003004_2_1.png
+│   │   │   │   ├── chara_1003005_2_1.png
+│   │   │   │   ├── chara_1004003_2_1.png
+│   │   │   │   ├── chara_1004004_2_1.png
+│   │   │   │   ├── chara_1004005_2_1.png
+│   │   │   │   ├── chara_1005001_2_1.png
+│   │   │   │   ├── chara_1005002_2_1.png
+│   │   │   │   ├── chara_1005003_2_1.png
+│   │   │   │   ├── chara_1007001_2_1.png
+│   │   │   │   ├── chara_1007002_2_1.png
+│   │   │   │   ├── chara_1007003_2_1.png
+│   │   │   │   ├── chara_1007004_2_1.png
+│   │   │   │   ├── chara_1008001_2_1.png
+│   │   │   │   ├── chara_1008002_2_1.png
+│   │   │   │   ├── chara_1008003_2_1.png
+│   │   │   │   ├── chara_1009001_2_1.png
+│   │   │   │   ├── chara_1009002_2_1.png
+│   │   │   │   ├── chara_1009003_2_1.png
+│   │   │   │   ├── chara_1010001_2_1.png
+│   │   │   │   ├── chara_1011001_2_1.png
+│   │   │   │   ├── chara_1011002_2_1.png
+│   │   │   │   ├── chara_1011003_2_1.png
+│   │   │   │   ├── chara_1011004_2_1.png
+│   │   │   │   ├── chara_1012001_2_1.png
+│   │   │   │   ├── chara_1012002_2_1.png
+│   │   │   │   ├── chara_1013001_2_1.png
+│   │   │   │   ├── chara_1013002_2_1.png
+│   │   │   │   ├── chara_1014001_2_1.png
+│   │   │   │   ├── chara_1014002_2_1.png
+│   │   │   │   ├── chara_1014003_2_1.png
+│   │   │   │   ├── chara_1015001_2_1.png
+│   │   │   │   ├── chara_1016001_2_1.png
+│   │   │   │   ├── chara_1016002_2_1.png
+│   │   │   │   ├── chara_1017001_2_1.png
+│   │   │   │   ├── chara_1018001_2_1.png
+│   │   │   │   ├── chara_1019001_2_1.png
+│   │   │   │   ├── chara_1019002_2_1.png
+│   │   │   │   ├── chara_1019003_2_1.png
+│   │   │   │   ├── chara_1020001_2_1.png
+│   │   │   │   ├── chara_1020002_2_1.png
+│   │   │   │   ├── chara_1020004_2_1.png
+│   │   │   │   ├── chara_1021001_2_1.png
+│   │   │   │   ├── chara_1022001_2_1.png
+│   │   │   │   ├── chara_1022002_2_1.png
+│   │   │   │   ├── chara_1022003_2_1.png
+│   │   │   │   ├── chara_1023001_2_1.png
+│   │   │   │   ├── chara_1023002_2_1.png
+│   │   │   │   ├── chara_1024001_2_1.png
+│   │   │   │   ├── chara_1024002_2_1.png
+│   │   │   │   ├── chara_1024003_2_1.png
+│   │   │   │   ├── chara_1025001_2_1.png
+│   │   │   │   ├── chara_1025002_2_1.png
+│   │   │   │   ├── chara_1026001_2_1.png
+│   │   │   │   ├── chara_1026002_2_1.png
+│   │   │   │   ├── chara_1026003_2_1.png
+│   │   │   │   ├── chara_1027001_2_1.png
+│   │   │   │   ├── chara_1027002_2_1.png
+│   │   │   │   ├── chara_1028001_2_1.png
+│   │   │   │   ├── chara_1029001_2_1.png
+│   │   │   │   ├── chara_1029002_2_1.png
+│   │   │   │   ├── chara_1030001_2_1.png
+│   │   │   │   ├── chara_1030002_2_1.png
+│   │   │   │   ├── chara_1031001_2_1.png
+│   │   │   │   ├── chara_1031002_2_1.png
+│   │   │   │   ├── chara_1032001_2_1.png
+│   │   │   │   ├── chara_1032002_2_1.png
+│   │   │   │   ├── chara_1032003_2_1.png
+│   │   │   │   ├── chara_1033001_2_1.png
+│   │   │   │   ├── chara_1033002_2_1.png
+│   │   │   │   ├── chara_1034001_2_1.png
+│   │   │   │   ├── chara_1035001_2_1.png
+│   │   │   │   ├── chara_1035002_2_1.png
+│   │   │   │   ├── chara_1035003_2_1.png
+│   │   │   │   ├── chara_1036001_2_1.png
+│   │   │   │   ├── chara_1036002_2_1.png
+│   │   │   │   ├── chara_1037001_2_1.png
+│   │   │   │   ├── chara_1037002_2_1.png
+│   │   │   │   ├── chara_1037003_2_1.png
+│   │   │   │   ├── chara_1038001_2_1.png
+│   │   │   │   ├── chara_1038002_2_1.png
+│   │   │   │   ├── chara_1039001_2_1.png
+│   │   │   │   ├── chara_1040001_2_1.png
+│   │   │   │   ├── chara_1041001_2_1.png
+│   │   │   │   ├── chara_1041002_2_1.png
+│   │   │   │   ├── chara_1041003_2_1.png
+│   │   │   │   ├── chara_1041004_2_1.png
+│   │   │   │   ├── chara_1042001_2_1.png
+│   │   │   │   ├── chara_1042002_2_1.png
+│   │   │   │   ├── chara_1043001_2_1.png
+│   │   │   │   ├── chara_1043002_2_1.png
+│   │   │   │   ├── chara_1044001_2_1.png
+│   │   │   │   ├── chara_1044002_2_1.png
+│   │   │   │   ├── chara_1045001_2_1.png
+│   │   │   │   ├── chara_1046001_2_1.png
+│   │   │   │   ├── chara_1047001_2_1.png
+│   │   │   │   ├── chara_1047002_2_1.png
+│   │   │   │   ├── chara_1048001_2_1.png
+│   │   │   │   ├── chara_1048002_2_1.png
+│   │   │   │   ├── chara_1048003_2_1.png
+│   │   │   │   ├── chara_1049001_2_1.png
+│   │   │   │   ├── chara_1049002_2_1.png
+│   │   │   │   ├── chara_1049003_2_1.png
+│   │   │   │   ├── chara_1050001_2_1.png
+│   │   │   │   ├── chara_1051001_2_1.png
+│   │   │   │   ├── chara_1051002_2_1.png
+│   │   │   │   ├── chara_1052001_2_1.png
+│   │   │   │   ├── chara_1052002_2_1.png
+│   │   │   │   ├── chara_1053001_2_1.png
+│   │   │   │   ├── chara_1054001_2_1.png
+│   │   │   │   ├── chara_1054002_2_1.png
+│   │   │   │   ├── chara_1055001_2_1.png
+│   │   │   │   ├── chara_1055002_2_1.png
+│   │   │   │   ├── chara_1056001_2_1.png
+│   │   │   │   ├── chara_1056002_2_1.png
+│   │   │   │   ├── chara_1057001_2_1.png
+│   │   │   │   ├── chara_1057002_2_1.png
+│   │   │   │   ├── chara_1057003_2_1.png
+│   │   │   │   ├── chara_1058001_2_1.png
+│   │   │   │   ├── chara_1058002_2_1.png
+│   │   │   │   ├── chara_1059001_2_1.png
+│   │   │   │   ├── chara_1059002_2_1.png
+│   │   │   │   ├── chara_1060001_2_1.png
+│   │   │   │   ├── chara_1060002_2_1.png
+│   │   │   │   ├── chara_1061001_2_1.png
+│   │   │   │   ├── chara_1061002_2_1.png
+│   │   │   │   ├── chara_1062001_2_1.png
+│   │   │   │   ├── chara_1062002_2_1.png
+│   │   │   │   ├── chara_1063001_2_1.png
+│   │   │   │   ├── chara_1064001_2_1.png
+│   │   │   │   ├── chara_1065001_2_1.png
+│   │   │   │   ├── chara_1065002_2_1.png
+│   │   │   │   ├── chara_1066001_2_1.png
+│   │   │   │   ├── chara_1066002_2_1.png
+│   │   │   │   ├── chara_1067001_2_1.png
+│   │   │   │   ├── chara_1068001_2_1.png
+│   │   │   │   ├── chara_1069001_2_1.png
+│   │   │   │   ├── chara_1069002_2_1.png
+│   │   │   │   ├── chara_1070001_2_1.png
+│   │   │   │   ├── chara_1070002_2_1.png
+│   │   │   │   ├── chara_1071001_2_1.png
+│   │   │   │   ├── chara_1072001_2_1.png
+│   │   │   │   ├── chara_1073001_2_1.png
+│   │   │   │   ├── chara_1073002_2_1.png
+│   │   │   │   ├── chara_1074001_2_1.png
+│   │   │   │   ├── chara_1075001_2_1.png
+│   │   │   │   ├── chara_1076001_2_1.png
+│   │   │   │   ├── chara_1077001_2_1.png
+│   │   │   │   ├── chara_1077002_2_1.png
+│   │   │   │   ├── chara_1077003_2_1.png
+│   │   │   │   ├── chara_1078001_2_1.png
+│   │   │   │   ├── chara_1079001_2_1.png
+│   │   │   │   ├── chara_1080001_2_1.png
+│   │   │   │   ├── chara_1081001_2_1.png
+│   │   │   │   ├── chara_1082001_2_1.png
+│   │   │   │   ├── chara_1083001_2_1.png
+│   │   │   │   ├── chara_1084001_2_1.png
+│   │   │   │   ├── chara_1085001_2_1.png
+│   │   │   │   ├── chara_1086001_2_1.png
+│   │   │   │   ├── chara_1087001_2_1.png
+│   │   │   │   ├── chara_1088001_2_1.png
+│   │   │   │   ├── chara_1089001_2_1.png
+│   │   │   │   ├── chara_1090001_2_1.png
+│   │   │   │   ├── chara_1090002_2_1.png
+│   │   │   │   ├── chara_1091001_2_1.png
+│   │   │   │   ├── chara_1092001_2_1.png
+│   │   │   │   ├── chara_1093001_2_1.png
+│   │   │   │   ├── chara_1094001_2_1.png
+│   │   │   │   ├── chara_1095001_2_1.png
+│   │   │   │   ├── chara_1096001_2_1.png
+│   │   │   │   ├── chara_1097001_2_1.png
+│   │   │   │   ├── chara_1098001_2_1.png
+│   │   │   │   ├── chara_1099001_2_1.png
+│   │   │   │   ├── chara_1100001_2_1.png
+│   │   │   │   ├── chara_1101001_2_1.png
+│   │   │   │   ├── chara_1102001_2_1.png
+│   │   │   │   ├── chara_1103001_2_1.png
+│   │   │   │   ├── chara_1104001_2_1.png
+│   │   │   │   ├── chara_1105001_2_1.png
+│   │   │   │   ├── chara_1106001_2_1.png
+│   │   │   │   ├── chara_1107001_2_1.png
+│   │   │   │   ├── chara_1109001_2_1.png
+│   │   │   │   ├── chara_1110001_2_1.png
+│   │   │   │   ├── chara_1111001_2_1.png
+│   │   │   │   ├── chara_1112001_2_1.png
+│   │   │   │   ├── chara_1116001_2_1.png
+│   │   │   │   ├── chara_1117001_2_1.png
+│   │   │   │   ├── chara_1118001_2_1.png
+│   │   │   │   ├── chara_1119001_2_1.png
+│   │   │   │   ├── chara_1120001_2_1.png
+│   │   │   │   ├── chara_1121001_2_1.png
+│   │   │   │   ├── chara_1122001_2_1.png
+│   │   │   │   ├── chara_1123001_2_1.png
+│   │   │   │   ├── chara_1125001_2_1.png
+│   │   │   │   ├── chara_1126001_2_1.png
+│   │   │   │   ├── chara_1128001_2_1.png
+│   │   │   │   ├── chara_1129001_2_1.png
+│   │   │   │   ├── chara_1130001_2_1.png
+│   │   │   │   ├── chara_1131001_2_1.png
+│   │   │   │   ├── chara_1132001_2_1.png
+│   │   │   │   ├── chara_1133001_2_1.png
+│   │   ├── [Folder] PictureBook/ (该类文件夹的典型结构)
+│   │   │   ├── still_018.png
+│   │   │   ├── still_516.png
+│   │   │   ├── still_517.png
+│   │   │   ├── still_518.png
+│   │   │   ├── still_519.png
+│   │   │   ├── [Folder] Still/ (该类文件夹的典型结构)
+│   │   │   │   ├── still_001.png
+│   │   │   │   ├── still_002.png
+│   │   │   │   ├── still_003.png
+│   │   │   │   ├── still_004.png
+│   │   │   │   ├── still_005.png
+│   │   │   │   ├── still_006.png
+│   │   │   │   ├── still_007.png
+│   │   │   │   ├── still_008.png
+│   │   │   │   ├── still_009.png
+│   │   │   │   ├── still_010.png
+│   │   │   │   ├── still_011.png
+│   │   │   │   ├── still_012.png
+│   │   │   │   ├── still_013.png
+│   │   │   │   ├── still_014.png
+│   │   │   │   ├── still_015.png
+│   │   │   │   ├── still_016.png
+│   │   │   │   ├── still_017.png
+│   │   │   │   ├── still_500.png
+│   │   │   │   ├── still_501.png
+│   │   │   │   ├── still_502.png
+│   │   │   │   ├── still_503.png
+│   │   │   │   ├── still_504.png
+│   │   │   │   ├── still_505.png
+│   │   │   │   ├── still_506.png
+│   │   │   │   ├── still_507.png
+│   │   │   │   ├── still_508.png
+│   │   │   │   ├── still_509.png
+│   │   │   │   ├── still_510.png
+│   │   │   │   ├── still_511.png
+│   │   │   │   ├── still_512.png
+│   │   │   │   ├── still_513.png
+│   │   │   │   ├── still_514.png
+│   │   │   │   ├── still_515.png
+│   ├── [Folder] Stills/ (该类文件夹的典型结构)
+│   │   ├── [Folder] st_1001001/ (该类文件夹的典型结构)
+│   │   │   ├── st_1001001.atlas.txt
+│   │   │   ├── st_1001001.png
+│   │   │   ├── st_1001001.skel.bytes
