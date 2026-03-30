@@ -76,11 +76,11 @@ Twinkle Star Knights X_Data/StreamingAssets/Twinkle Star Knights X/
 
 ### 方法二：Python 脚本
 
-#### 使用 uv
+#### 使用 uv（推荐）
 
 ```bash
 uv venv --python 3.12
-uv pip install addressablestools requests UnityPy fsspec
+uv pip install -r requirements.txt
 uv run auto_updater.py
 ```
 
@@ -94,8 +94,8 @@ python auto_updater.py
 ## 打包 EXE
 
 ```bash
-pip install pyinstaller
-python build_exe.py
+uv pip install pyinstaller
+uv run python build_exe.py
 ```
 
 生成的 EXE 在 `dist/TSK_Updater.exe`

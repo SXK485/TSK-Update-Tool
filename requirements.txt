@@ -2,5 +2,4 @@ addressablestools>=0.1.0
 requests>=2.31.0
 UnityPy>=1.10.0
 fsspec>=2023.1.0
-pydub>=0.25.1
 imageio-ffmpeg>=0.4.9
