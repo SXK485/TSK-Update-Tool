@@ -1,8 +1,8 @@
 """
 Twinkle Star Knights X 离线版资源自动更新工具
-版本: v1.6.3 (Stable)
+版本: v1.8.3 (Stable)
 说明: 自动化同步、精简并转换游戏资源至离线播放器格式。
-新增: 彻底阻断中间态碎片文件(.chapter)落盘，保障剧本目录极限纯净。
+优化: 引入温和的动态多线程调度算法，完美适配低配与高配电脑，防止 I/O 阻塞卡死。
 """
 
 import os
@@ -11,37 +11,51 @@ import UnityPy
 import logging
 import time
 import json
+import subprocess
 from AddressablesTools import parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 
+# ================= 依赖检查与初始化 =================
+try:
+    import imageio_ffmpeg
+    FFMPEG_EXE = imageio_ffmpeg.get_ffmpeg_exe()
+except ImportError:
+    print("="*65)
+    print("[!!!] 致命错误: 缺少核心音频转码引擎！")
+    print(" -> 离线播放器严格要求原生的 Ogg Vorbis 编码，必须转码。")
+    print(" -> 请先在终端中运行以下命令安装:")
+    print("    uv pip install imageio-ffmpeg")
+    print(" -> 安装完成后再次运行本脚本即可！")
+    print("="*65)
+    os.system("pause")
+    exit(1)
+
 # ================= 工具配置区 =================
 SERVER_URL = "https://dz87n5pasv7ep.cloudfront.net/assetbundle/game/"
 CATALOG_URL = SERVER_URL + "catalog_0.0.0.json"
-
-# 默认相对于脚本运行目录的资源路径
 OUTPUT_DIR = "Twinkle Star Knights X_Data/StreamingAssets/Twinkle Star Knights X"
 # ============================================
 
-# 初始化日志系统
 logger = logging.getLogger("TSK_Updater")
 logger.setLevel(logging.INFO)
 file_handler = logging.FileHandler("update_log.txt", mode="a", encoding="utf-8")
-file_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s'))
+file_handler.setFormatter(logging.Formatter('%(asctime)s[%(levelname)s] %(message)s'))
 logger.addHandler(file_handler)
 
 progress_lock = Lock()
+queue_lock = Lock()
 global_progress = 0
 total_bundles_to_dl = 0
+audio_convert_queue =[]
 
 def sanitize_dict(obj_data):
-    """递归序列化引擎：将 C# 对象安全转换为标准 JSON 字典"""
     if isinstance(obj_data, (int, float, str, bool, type(None))):
         return obj_data
     elif isinstance(obj_data, dict):
         return {str(k): sanitize_dict(v) for k, v in obj_data.items()}
     elif isinstance(obj_data, list):
-        return[sanitize_dict(v) for v in obj_data]
+        return [sanitize_dict(v) for v in obj_data]
     elif isinstance(obj_data, bytes):
         return list(obj_data)
     elif hasattr(obj_data, "file_id") and hasattr(obj_data, "path_id"):
@@ -57,7 +71,6 @@ def sanitize_dict(obj_data):
         return str(obj_data)
 
 def get_target_relative_path(key):
-    """核心路径解析器：将打包路径映射到本地离线目录，实施严格拦截与精简"""
     path = key
     for prefix in ["Assets/AssetBundles/", "Assets/"]:
         if path.startswith(prefix):
@@ -65,7 +78,7 @@ def get_target_relative_path(key):
             
     parts = path.split('/')
     tags_to_remove = {"HighQuality", "LowQuality", "adult", "general"}
-    parts = [p for p in parts if p not in tags_to_remove]
+    parts =[p for p in parts if p not in tags_to_remove]
     
     if not parts: return None
         
@@ -91,35 +104,25 @@ def get_target_relative_path(key):
         
     parts = parts[found_idx:]
     parts[0] = root_name 
-    root = root_name
     basename = parts[-1]
     
-    # 路径裁切：去除 Cutin 多余的子目录
-    if root == "Cutin":
-        if len(parts) > 1 and parts[1].lower() in["characters", "character"]:
+    if root_name == "Cutin":
+        if len(parts) > 1 and parts[1].lower() in ["characters", "character"]:
             parts.pop(1)
             
-    # 头像精简系统：仅保留 L 级大图的觉醒形态（_2_1），剥离冗余层级、剔除无 R18 的 ID 及 SD 小人
-    if root == "Sprites" and len(parts) > 2 and parts[1].lower() == "chara" and parts[2].startswith("Thumb_"):
-        if "_2_1" not in basename:
-            return None
-        if "S" in parts[:-1]:
-            return None
-        if basename.lower().startswith("sd_"):
-            return None
-            
+    if root_name == "Sprites" and len(parts) > 2 and parts[1].lower() == "chara" and parts[2].startswith("Thumb_"):
+        if "_2_1" not in basename: return None
+        if "S" in parts[:-1]: return None
+        if basename.lower().startswith("sd_"): return None
         if basename.lower().startswith("chara_"):
             name_parts = basename.split('_')
             if len(name_parts) >= 2 and name_parts[1].isdigit():
-                chara_id = int(name_parts[1])
-                if chara_id >= 1900001:
+                if int(name_parts[1]) >= 1900001:
                     return None
-                    
         if "L" in parts[:-1]:
             parts.remove("L")
             
-    # 【完美修正】剧本专项路由：只放行 .book 剧本实体和 Master.chapter，拦截一切碎片！
-    if root == "Adventure":
+    if root_name == "Adventure":
         if basename == "Master.chapter.asset" or basename == "Master.chapter.json":
             return "Adventure/Master.chapter.json"
         elif ".book" in basename:
@@ -130,10 +133,9 @@ def get_target_relative_path(key):
             elif basename.startswith("SubjugationEventScenario"): return f"Adventure/SubjugationEventScenario/{b_name}"
             else: return None
         else:
-            # 彻底拉黑诸如 1001001.chapter.asset 等中间态文件
             return None 
 
-    if root == "GachaCharaAnim" and len(parts) >= 2 and parts[1].startswith("tf_"):
+    if root_name == "GachaCharaAnim" and len(parts) >= 2 and parts[1].startswith("tf_"):
         parts.insert(1, "GachaCharaAnim")
         
     valid_structure = {
@@ -148,7 +150,7 @@ def get_target_relative_path(key):
         "Stills": None
     }
     
-    allowed_subs = valid_structure[root]
+    allowed_subs = valid_structure[root_name]
     
     if allowed_subs is not None and len(parts) > 1:
         sub = parts[1]
@@ -162,7 +164,6 @@ def get_target_relative_path(key):
             
     final_path = "/".join(parts)
     
-    # 转换为离线播放器适配后缀
     if '.atlas' in final_path: final_path = final_path.split('.atlas')[0] + '.atlas.txt'
     elif '.skel' in final_path: final_path = final_path.split('.skel')[0] + '.skel.bytes'
     elif '.book' in final_path: final_path = final_path.split('.book')[0] + '.book.json'
@@ -189,36 +190,69 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                     norm_name = name.split('.')[0]
                     target_path = None
                     
-                    # 1. 常规后缀匹配
-                    for s in["", ".png", ".jpg", ".txt", ".bytes", ".json", ".atlas", ".skel", ".book", ".chapter"]:
-                        if f"{norm_name}{s}" in missing_files:
-                            target_path = missing_files[f"{norm_name}{s}"]
-                            break
+                    if obj.type.name in ["Texture2D", "Sprite"]:
+                        for suffix in[".png", ".jpg", ".jpeg"]:
+                            if f"{norm_name}{suffix}" in missing_files:
+                                target_path = missing_files[f"{norm_name}{suffix}"]
+                                break
+                                
+                    elif obj.type.name == "TextAsset":
+                        content = getattr(data, "script", getattr(data, "m_Script", b""))
+                        if isinstance(content, str):
+                            content = content.encode('utf-8', errors='surrogateescape')
                             
-                    # 2. 内存级剧本关联贪婪提取
-                    if not target_path and obj.type.name == "MonoBehaviour":
-                        if name.startswith("CharaScenario") and name.endswith(".book"):
-                            target_path = f"Adventure/CharaScenario/{name}.json"
-                        elif name.startswith("MainScenario") and name.endswith(".book"):
-                            target_path = f"Adventure/MainScenario/{name}.json"
-                        elif name.startswith("StoryEventScenario") and name.endswith(".book"):
-                            target_path = f"Adventure/StoryEventScenario/{name}.json"
-                        elif name.startswith("SubjugationEventScenario") and name.endswith(".book"):
-                            target_path = f"Adventure/SubjugationEventScenario/{name}.json"
-                        elif name == "Master.chapter":
-                            target_path = "Adventure/Master.chapter.json"
+                        is_bin = False
+                        try:
+                            content.decode('utf-8')
+                        except UnicodeDecodeError:
+                            is_bin = True
                             
-                    if not target_path:
-                        continue
+                        if is_bin:
+                            suffixes_to_try =[".skel", ".bytes"]
+                        else:
+                            content_str = content.decode('utf-8', errors='ignore')
+                            if "size:" in content_str and "filter:" in content_str and "bounds:" in content_str:
+                                suffixes_to_try = [".atlas"]
+                            elif '"skeleton"' in content_str and '"bones"' in content_str:
+                                suffixes_to_try = [".skel"]
+                            else:
+                                suffixes_to_try =[".book", ".chapter", ".json", ".txt"]
+                                
+                        for suffix in suffixes_to_try:
+                            if f"{norm_name}{suffix}" in missing_files:
+                                target_path = missing_files[f"{norm_name}{suffix}"]
+                                break
+                                    
+                    elif obj.type.name == "AudioClip":
+                        for suffix in [".ogg", ".wav"]:
+                            if f"{norm_name}{suffix}" in missing_files:
+                                target_path = missing_files[f"{norm_name}{suffix}"]
+                                break
+                                
+                    elif obj.type.name == "MonoBehaviour":
+                        for suffix in[".book", ".chapter", ".json"]:
+                            if f"{norm_name}{suffix}" in missing_files:
+                                target_path = missing_files[f"{norm_name}{suffix}"]
+                                break
+                                
+                        if not target_path:
+                            name_lower = name.lower()
+                            if "scenario" in name_lower and name.endswith(".book"):
+                                if name.startswith("CharaScenario"): target_path = f"Adventure/CharaScenario/{name}.json"
+                                elif name.startswith("MainScenario"): target_path = f"Adventure/MainScenario/{name}.json"
+                                elif name.startswith("StoryEventScenario"): target_path = f"Adventure/StoryEventScenario/{name}.json"
+                                elif name.startswith("SubjugationEventScenario"): target_path = f"Adventure/SubjugationEventScenario/{name}.json"
+                            elif name == "Master.chapter":
+                                target_path = "Adventure/Master.chapter.json"
+                                
+                    if not target_path: continue
                         
                     full_save_path = os.path.join(OUTPUT_DIR, target_path)
                     
-                    # 统一图片扩展名为小写 png
-                    if obj.type.name in ["Texture2D", "Sprite"]:
+                    if obj.type.name in["Texture2D", "Sprite"]:
                         if not full_save_path.lower().endswith(".png"):
                             full_save_path = os.path.splitext(full_save_path)[0] + ".png"
                             
-                    # Master.chapter.json 拥有绝对覆盖特权，其余文件防重复写入
                     if os.path.exists(full_save_path) and not full_save_path.endswith("Master.chapter.json"):
                         continue
                         
@@ -230,29 +264,30 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                             local_extracted += 1
                             
                         elif obj.type.name == "TextAsset":
-                            content = getattr(data, "script", getattr(data, "m_Script", b""))
-                            if isinstance(content, str): content = content.encode('utf-8', errors='surrogateescape')
                             with open(full_save_path, "wb") as f: f.write(content)
                             local_extracted += 1
                             
                         elif obj.type.name == "AudioClip":
                             samples = data.samples
                             if samples:
-                                with open(full_save_path, "wb") as f: f.write(list(samples.values())[0])
+                                raw_audio_data = list(samples.values())[0]
+                                temp_wav_path = full_save_path + ".temp.wav"
+                                with open(temp_wav_path, "wb") as f: 
+                                    f.write(raw_audio_data)
+                                
+                                with queue_lock:
+                                    audio_convert_queue.append((temp_wav_path, full_save_path, name))
                                 local_extracted += 1
                                 
                         elif obj.type.name == "MonoBehaviour":
                             tree = None
-                            if hasattr(data, "read_dict"):
-                                try: tree = data.read_dict()
-                                except: pass
-                            if not tree and hasattr(data, "read_typetree"):
-                                try: tree = data.read_typetree()
-                                except: pass
-                            if not tree and hasattr(obj, "read_typetree"):
-                                try: tree = obj.read_typetree()
-                                except: pass
-                                
+                            for method in["read_dict", "read_typetree"]:
+                                if hasattr(data, method):
+                                    try: tree = getattr(data, method)()
+                                    except: pass
+                                if not tree and hasattr(obj, method):
+                                    try: tree = getattr(obj, method)()
+                                    except: pass
                             if not tree:
                                 tree = data.__dict__
                                 
@@ -271,26 +306,42 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
     with progress_lock:
         global_progress += 1
         if local_extracted > 0:
-            print(f"[{global_progress}/{total_bundles_to_dl}] 成功提取资源项: {local_extracted}")
+            print(f"[{global_progress}/{total_bundles_to_dl}] 成功提取资源包文件: {local_extracted} 项")
 
     return local_extracted
+
+def convert_audio_task(temp_wav, final_ogg, name):
+    """独立的 FFmpeg 音频转码任务"""
+    try:
+        cmd =[
+            FFMPEG_EXE, "-y", 
+            "-i", temp_wav, 
+            "-c:a", "libvorbis", 
+            "-q:a", "4", 
+            final_ogg
+        ]
+        subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+    except Exception as e:
+        logger.warning(f"音频转码异常 [{name}]: {e}")
+    finally:
+        if os.path.exists(temp_wav):
+            try: os.remove(temp_wav)
+            except: pass
 
 def main():
     global total_bundles_to_dl
     print("=================================================================")
-    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.6.3")
+    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.8.3")
     print("=================================================================")
-    print(f"[*] 资源输出目录: {os.path.abspath(OUTPUT_DIR)}")
+    print(f"[*] 资源存放路径: {os.path.abspath(OUTPUT_DIR)}")
     print(f"[*] 运行状态日志: update_log.txt\n")
     
-    # 历史遗留文件智能清理系统
     cleaned_count = 0
     if os.path.exists(OUTPUT_DIR):
         for root_dir, dirs, files in os.walk(OUTPUT_DIR):
             for f in files:
-                # 1. 清理假骨骼
+                full_path = os.path.join(root_dir, f)
                 if f.endswith(".skel.bytes"):
-                    full_path = os.path.join(root_dir, f)
                     try:
                         with open(full_path, "r", encoding="utf-8") as file:
                             head = file.read(2048)
@@ -299,18 +350,20 @@ def main():
                                 os.remove(full_path) 
                                 cleaned_count += 1
                     except Exception: pass 
-                # 2. 自动清理被弃用的 .chapter.json 碎片文件
-                if f.endswith(".chapter.json") and f != "Master.chapter.json":
-                    full_path = os.path.join(root_dir, f)
+                elif f.endswith(".chapter.json") and f != "Master.chapter.json":
                     try:
                         os.remove(full_path)
                         cleaned_count += 1
                     except Exception: pass
+                elif f.endswith(".temp.wav"):
+                    try:
+                        os.remove(full_path)
+                    except Exception: pass
                     
     if cleaned_count > 0:
-        print(f"[*] 启动自检: 已自动清理历史遗留及冲突文件 {cleaned_count} 项\n")
+        print(f"[*] 启动自检: 已自动清理历史冲突及无用碎片 {cleaned_count} 项\n")
 
-    print("[1/4] 正在连接服务器获取最新资源索引...")
+    print("[1/5] 正在连接服务器获取最新资源索引...")
     try:
         res = requests.get(CATALOG_URL, timeout=30)
         res.raise_for_status()
@@ -320,7 +373,7 @@ def main():
         os.system("pause")
         return
 
-    print("[2/4] 正在解析并构建双轨合并资源依赖树...")
+    print("[2/5] 正在解析并构建双轨合并资源树...")
     catalog = parse(catalog_data)
     valid_exts = {".png", ".txt", ".bytes", ".json", ".ogg", ".wav", ".asset", ".atlas", ".skel"}
     
@@ -338,7 +391,6 @@ def main():
 
         clean_path = get_target_relative_path(key)
         
-        # 保留 chapter 作为引导猎犬
         if not clean_path and ".chapter" not in basename:
             continue
         
@@ -380,7 +432,6 @@ def main():
             if clean_path:
                 target_bundles[bundle_url][norm_key] = clean_path
 
-            # 【隐性依赖拉取】发现 .chapter 时挂上 .book 的逮捕令
             if ".chapter" in norm_key and "Master.chapter" not in norm_key:
                 base_num = norm_key.split(".")[0] 
                 synth_key = None
@@ -401,7 +452,7 @@ def main():
                 if synth_key:
                     target_bundles[bundle_url][synth_key] = synth_path
 
-    print("[3/4] 正在执行本地文件差分比对 (排查遗漏与更新项)...")
+    print("[3/5] 正在扫描本地文件差异 (智能跳过已下载内容)...")
     bundles_to_download = {}
     for url, files in target_bundles.items():
         missing_files = {}
@@ -413,7 +464,6 @@ def main():
                 png_path = os.path.splitext(check_path)[0] + '.png'
                 if os.path.exists(png_path): continue 
                     
-            # Master.chapter.json 无条件强制更新
             if not os.path.exists(check_path) or check_path.endswith("Master.chapter.json"):
                 missing_files[norm_key] = rel_path
                 
@@ -422,22 +472,38 @@ def main():
 
     total_bundles_to_dl = len(bundles_to_download)
     if total_bundles_to_dl == 0:
-        print("\n[+] 校验完成，本地资源已全部是最新版本。")
+        print("\n[+] 校验完成，本地各项资源均已是最新版本！")
         os.system("pause")
         return
 
-    print(f" -> 对比完成！本次共计需要增量同步/强制更新 {total_bundles_to_dl} 个包裹。")
-    print(f"\n[4/4] 启动多核并发下载引擎...")
+    print(f" -> 对比完成！本次需要更新或下载 {total_bundles_to_dl} 个资源包。")
+    print(f"\n[4/5] 启动多线程资源下载与解析引擎...")
     logger.info(f"Update started. Targets: {total_bundles_to_dl}")
     
     extracted_total = 0
+    # 下载解包阶段：网络 IO 密集型，保持 10 线程并发
     with ThreadPoolExecutor(max_workers=10) as executor:
         futures =[executor.submit(process_bundle, url, files) for url, files in bundles_to_download.items()]
         for future in as_completed(futures):
             extracted_total += future.result()
+            
+    if audio_convert_queue:
+        print(f"\n[5/5] 启动音频安全转码引擎，待处理音频: {len(audio_convert_queue)} 个")
+        # 【核心修正】根据网友电脑的 CPU 核心数动态分配安全线程，防止 I/O 卡死
+        # 最大不超过 16 线程，最少 2 线程
+        safe_workers = min(16, max(2, (os.cpu_count() or 4) + 2))
+        logger.info(f"分配转码线程数: {safe_workers}")
+        
+        converted_count = 0
+        with ThreadPoolExecutor(max_workers=safe_workers) as audio_executor:
+            futures =[audio_executor.submit(convert_audio_task, temp, final, name) for temp, final, name in audio_convert_queue]
+            for future in as_completed(futures):
+                converted_count += 1
+                if converted_count % 100 == 0 or converted_count == len(audio_convert_queue):
+                    print(f" -> 转码进度:[{converted_count}/{len(audio_convert_queue)}]")
 
-    print(f"\n[+] 资源同步成功！本次共计新增/覆盖文件 {extracted_total} 项。")
-    logger.info(f"Update finished. Files written: {extracted_total}")
+    print(f"\n[+] 更新与转码任务圆满完成！本次共计新增/修复文件: {extracted_total} 个。")
+    logger.info(f"Update finished. Files processed: {extracted_total}")
     os.system("pause")
 
 if __name__ == "__main__":

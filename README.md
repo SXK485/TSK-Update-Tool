@@ -8,9 +8,21 @@
 
 - 自动从官方服务器下载最新资源
 - 智能解析和转换 Unity 资源文件
+- 音频自动转换为 OGG 格式（Vorbis 编码）
 - 增量更新（只下载需要的文件）
-- 多线程下载
+- 多线程下载和处理
 - 自动清理旧文件
+
+## 更新日志
+
+### v1.8.3 (2026-03-30)
+- ✨ 新增音频自动转换功能（WAV → OGG Vorbis）
+- ⚡ 优化多线程处理，动态分配转码线程
+- 🔧 改进音频提取逻辑，使用 ffmpeg 进行格式转换
+- 📦 EXE 版本包含所有必要依赖（fmod.dll, ffmpeg）
+
+### v1.6.3
+- 初始版本发布
 
 ## 播放器资源文件结构
 
@@ -97,7 +109,16 @@ python build_exe.py
 
 ## 依赖
 
+### EXE 版本
+无需安装任何依赖，开箱即用。
+
+### Python 脚本版本
+- Python 3.12+
 - addressablestools
 - requests
 - UnityPy
 - fsspec
+- imageio-ffmpeg（音频转换）
+- fmod_toolkit（音频解码）
+
+完整依赖列表见 `requirements.txt`
