@@ -15,6 +15,23 @@
 
 ## 更新日志
 
+### v1.8.5 (2026-06-20)
+- 📊 增强日志输出，记录每个文件的提取详情
+- 🎯 Master.chapter.json 智能内容对比，避免无变化时重复更新
+- 🔍 添加详细的文件处理日志，便于排查问题
+- 📝 日志记录文件类型、跳过原因等关键信息
+
+### v1.8.4 (2026-06-20)
+- 🐛 修复 Spine 动画和 CG 图片分辨率错误问题
+- ✨ 新增"修复模式"可选功能，用户可选择是否强制覆盖
+- ⚡ 修复模式会强制重新下载并覆盖以下目录的所有 PNG：
+  - Characters/ (角色 Spine 动画)
+  - Adventure/Spine/ (剧情 Spine 动画)
+  - GachaCharaAnim/ (抽卡动画)
+  - Stills/ (CG 图片)
+- 🎯 解决 Sprite 和 Texture2D 分辨率不一致问题（仅提取 Texture2D）
+- 💡 正常更新模式保持快速增量更新，只下载缺失文件
+
 ### v1.8.3 (2026-03-30)
 - ✨ 新增音频自动转换功能（WAV → OGG Vorbis）
 - ⚡ 优化多线程处理，动态分配转码线程
@@ -73,6 +90,9 @@ Twinkle Star Knights X_Data/StreamingAssets/Twinkle Star Knights X/
 1. 下载 `TSK_Updater.exe`
 2. 放在播放器根目录（包含 `Twinkle Star Knights X_Data` 文件夹）
 3. 双击运行
+4. 根据提示选择模式：
+   - **修复模式 (Y)**：强制覆盖所有动画和 CG 图片，解决分辨率错误（耗时较长）
+   - **正常模式 (N)**：只下载缺失文件，速度更快（推荐日常使用）
 
 ### 方法二：Python 脚本
 

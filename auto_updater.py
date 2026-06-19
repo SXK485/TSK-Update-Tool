@@ -1,8 +1,10 @@
 """
 Twinkle Star Knights X 离线版资源自动更新工具
-版本: v1.8.3 (Stable)
+版本: v1.8.5 (Stable)
 说明: 自动化同步、精简并转换游戏资源至离线播放器格式。
-优化: 引入温和的动态多线程调度算法，完美适配低配与高配电脑，防止 I/O 阻塞卡死。
+优化: 引入温和的动态多线程调度算法,完美适配低配与高配电脑，防止 I/O 阻塞卡死。
+修复: Spine 动画 PNG 仅从 Texture2D 提取，自动强制覆盖确保正确分辨率。
+改进: 增强日志输出，Master.chapter.json 智能内容对比避免重复更新。
 """
 
 import os
@@ -252,8 +254,26 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                     if obj.type.name in["Texture2D", "Sprite"]:
                         if not full_save_path.lower().endswith(".png"):
                             full_save_path = os.path.splitext(full_save_path)[0] + ".png"
-                            
-                    if os.path.exists(full_save_path) and not full_save_path.endswith("Master.chapter.json"):
+                    
+                    # 检查是否是需要优先从 Texture2D 提取的 PNG（Spine 动画和 CG）
+                    is_texture2d_priority = False
+                    if full_save_path.lower().endswith(".png"):
+                        rel_path_lower = target_path.lower()
+                        is_texture2d_priority = (
+                            rel_path_lower.startswith("characters/") or
+                            rel_path_lower.startswith("adventure/spine/") or
+                            rel_path_lower.startswith("gachacharaanim/") or
+                            rel_path_lower.startswith("stills/")
+                        )
+                    
+                    # Sprite 类型的特殊 PNG 直接跳过，只保留 Texture2D（解决分辨率问题）
+                    if obj.type.name == "Sprite" and is_texture2d_priority:
+                        logger.debug(f"Skipped Sprite (Texture2D priority): {norm_name}")
+                        continue
+                    
+                    # 特殊 PNG 强制覆盖，其他文件跳过已存在的
+                    if os.path.exists(full_save_path) and not is_texture2d_priority and not full_save_path.endswith("Master.chapter.json"):
+                        logger.debug(f"Skipped existing: {os.path.basename(full_save_path)}")
                         continue
                         
                     os.makedirs(os.path.dirname(full_save_path), exist_ok=True)
@@ -262,10 +282,12 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                         if obj.type.name in["Texture2D", "Sprite"]:
                             data.image.save(full_save_path)
                             local_extracted += 1
+                            logger.info(f"Saved: {os.path.basename(full_save_path)} ({obj.type.name})")
                             
                         elif obj.type.name == "TextAsset":
                             with open(full_save_path, "wb") as f: f.write(content)
                             local_extracted += 1
+                            logger.info(f"Saved: {os.path.basename(full_save_path)} (TextAsset)")
                             
                         elif obj.type.name == "AudioClip":
                             samples = data.samples
@@ -278,6 +300,7 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                                 with queue_lock:
                                     audio_convert_queue.append((temp_wav_path, full_save_path, name))
                                 local_extracted += 1
+                                logger.info(f"Queued for conversion: {os.path.basename(full_save_path)} (AudioClip)")
                                 
                         elif obj.type.name == "MonoBehaviour":
                             tree = None
@@ -293,9 +316,25 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                                 
                             if tree:
                                 safe_tree = sanitize_dict(tree)
+                                new_content = json.dumps(safe_tree, ensure_ascii=False, indent=2)
+                                
+                                # Master.chapter.json 内容对比
+                                if full_save_path.endswith("Master.chapter.json") and os.path.exists(full_save_path):
+                                    try:
+                                        with open(full_save_path, "r", encoding="utf-8") as f:
+                                            old_content = f.read()
+                                        if old_content == new_content:
+                                            logger.info("Master.chapter.json content unchanged, skipped")
+                                            continue  # 内容相同，跳过
+                                        else:
+                                            logger.info("Master.chapter.json content changed, updating")
+                                    except:
+                                        pass  # 读取失败就更新
+                                
                                 with open(full_save_path, "w", encoding="utf-8") as f:
-                                    json.dump(safe_tree, f, ensure_ascii=False, indent=2)
+                                    f.write(new_content)
                                 local_extracted += 1
+                                logger.info(f"Saved: {os.path.basename(full_save_path)} (MonoBehaviour)")
                                     
                     except Exception as e:
                         logger.error(f"提取失败 [{name}]: {e}")
@@ -331,10 +370,34 @@ def convert_audio_task(temp_wav, final_ogg, name):
 def main():
     global total_bundles_to_dl
     print("=================================================================")
-    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.8.3")
+    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.8.5")
     print("=================================================================")
     print(f"[*] 资源存放路径: {os.path.abspath(OUTPUT_DIR)}")
     print(f"[*] 运行状态日志: update_log.txt\n")
+    
+    # 询问用户是否开启修复模式
+    print("【修复模式选择】")
+    print("修复模式会强制覆盖更新以下目录的所有 PNG 图片（解决分辨率错误）：")
+    print("  - Characters/      (角色 Spine 动画)")
+    print("  - Adventure/Spine/ (剧情 Spine 动画)")
+    print("  - GachaCharaAnim/  (抽卡动画)")
+    print("  - Stills/          (CG 图片)")
+    print("\n注意：修复模式会重新下载所有相关图片，耗时较长！")
+    print("     正常更新模式只下载缺失文件，速度更快。\n")
+    
+    force_fix_mode = False
+    while True:
+        choice = input("是否启用修复模式？(Y=启用 / N=正常更新): ").strip().upper()
+        if choice in ['Y', 'YES', '是']:
+            force_fix_mode = True
+            print("\n[√] 已启用修复模式，将强制覆盖所有动画和 CG 图片！\n")
+            break
+        elif choice in ['N', 'NO', '否']:
+            force_fix_mode = False
+            print("\n[√] 正常更新模式，只下载缺失的文件。\n")
+            break
+        else:
+            print("输入无效，请输入 Y 或 N\n")
     
     cleaned_count = 0
     if os.path.exists(OUTPUT_DIR):
@@ -391,16 +454,19 @@ def main():
 
         clean_path = get_target_relative_path(key)
         
+        # 跳过无法映射到目标路径的资源（但保留 .chapter 用于后续合成）
         if not clean_path and ".chapter" not in basename:
             continue
         
+        # 只添加有效映射的资源
         if clean_path:
             if clean_path not in best_keys:
                 best_keys[clean_path] = key
             else:
                 if "/adult/" in key or "_adult" in key:
                     best_keys[clean_path] = key
-        else:
+        elif ".chapter" in basename:
+            # .chapter 文件即使没有 clean_path 也保留（用于后续合成）
             best_keys[basename] = key
 
     allowed_keys = set(best_keys.values())
@@ -426,12 +492,13 @@ def main():
             bundle_url = catalog.Resources[dep_key][0].InternalId
             if not bundle_url.endswith(".bundle"): continue
             
-            if bundle_url not in target_bundles:
-                target_bundles[bundle_url] = {}
-                
+            # 只有确实有文件要添加时，才创建 bundle（避免空 bundle）
             if clean_path:
+                if bundle_url not in target_bundles:
+                    target_bundles[bundle_url] = {}
                 target_bundles[bundle_url][norm_key] = clean_path
 
+            # .chapter 文件的特殊处理：合成对应的 .book 文件
             if ".chapter" in norm_key and "Master.chapter" not in norm_key:
                 base_num = norm_key.split(".")[0] 
                 synth_key = None
@@ -450,6 +517,8 @@ def main():
                     synth_path = f"Adventure/SubjugationEventScenario/{synth_key}.json"
                     
                 if synth_key:
+                    if bundle_url not in target_bundles:
+                        target_bundles[bundle_url] = {}
                     target_bundles[bundle_url][synth_key] = synth_path
 
     print("[3/5] 正在扫描本地文件差异 (智能跳过已下载内容)...")
@@ -462,13 +531,40 @@ def main():
             check_path = full_path
             if os.path.splitext(check_path)[1].lower() not in['.png', '.jpg', '.jpeg']:
                 png_path = os.path.splitext(check_path)[0] + '.png'
-                if os.path.exists(png_path): continue 
-                    
-            if not os.path.exists(check_path) or check_path.endswith("Master.chapter.json"):
+                if os.path.exists(png_path): continue
+            
+            # 检查是否是需要修复的 PNG 图片（Spine 动画和 CG）
+            is_fixable_png = False
+            if force_fix_mode and check_path.lower().endswith(".png"):
+                rel_path_lower = rel_path.lower()
+                is_fixable_png = (
+                    rel_path_lower.startswith("characters/") or
+                    rel_path_lower.startswith("adventure/spine/") or
+                    rel_path_lower.startswith("gachacharaanim/") or
+                    rel_path_lower.startswith("stills/")
+                )
+            
+            # Master.chapter.json 需要内容对比
+            needs_update = False
+            if check_path.endswith("Master.chapter.json"):
+                if os.path.exists(check_path):
+                    logger.info("Master.chapter.json exists, will compare after download")
+                    needs_update = True  # 先下载，提取时对比
+                else:
+                    logger.info("Master.chapter.json not found locally, will download")
+                    needs_update = True
+            elif not os.path.exists(check_path):
+                needs_update = True
+            elif is_fixable_png:
+                logger.info(f"Fix mode: force update {rel_path}")
+                needs_update = True
+            
+            if needs_update:
                 missing_files[norm_key] = rel_path
                 
         if missing_files:
             bundles_to_download[url] = missing_files
+            logger.info(f"Bundle queued: {len(missing_files)} files - {list(missing_files.keys())[:10]}")
 
     total_bundles_to_dl = len(bundles_to_download)
     if total_bundles_to_dl == 0:
