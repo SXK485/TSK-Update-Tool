@@ -38,6 +38,16 @@ env/
 *.log
 update_log.txt
 
+# Wiki 爬虫生成的文件
+角色数据.csv
+角色数据.json
+角色检索.html
+角色头像/
+images/
+characters.csv
+characters.json
+index.html
+
 # Game Resources (不上传游戏资源)
 Twinkle Star Knights X_Data/
 *.bundle
