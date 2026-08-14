@@ -1,6 +1,6 @@
 """
 Twinkle Star Knights X 离线版资源自动更新工具
-版本: v1.9.2 (Stable)
+版本: v1.11.0 (Stable)
 说明: 自动化同步、精简并转换游戏资源至离线播放器格式。
 优化: 引入温和的动态多线程调度算法,完美适配低配与高配电脑，防止 I/O 阻塞卡死。
 修复: Spine 动画 PNG 仅从 Texture2D 提取，自动强制覆盖确保正确分辨率。
@@ -11,6 +11,8 @@ Twinkle Star Knights X 离线版资源自动更新工具
 新增: 过滤不完整角色资源（无剧情的角色），避免其在播放器角色列表中显示 (v1.9.0)。
 修复: 修正 Adventure 目录资源过滤逻辑，解决背景图片、特效等资源无法下载的严重 Bug (v1.9.1)。
 优化: 过滤无用的 .chapter.json 文件（仅保留 Master.chapter.json），减少不必要的下载 (v1.9.2)。
+新增: 角色完整更新模式（模式3），可指定角色重新下载其全部资源 (v1.10.0)。
+优化: 音频转码改用真实 m4a 格式、对象级失败隔离、日志全流程记录、CDN 支持环境变量 (v1.11.0)。
 """
 
 import os
@@ -36,12 +38,20 @@ except ImportError:
     print("    uv pip install imageio-ffmpeg")
     print(" -> 安装完成后再次运行本脚本即可！")
     print("="*65)
-    os.system("pause")
+    input("\n按回车键退出...")
     exit(1)
 
 # ================= 工具配置区 =================
-CATALOG_BUNDLE_URL = "https://d3mya90gbacu0m.cloudfront.net/prod/StreamingAssets/aa/catalog.bundle"
-RUNTIME_PATH = "https://d3mya90gbacu0m.cloudfront.net/prod/StreamingAssets/aa"
+# CDN 地址支持环境变量覆盖（服务器换地址时无需改代码重打包）：
+#   set TSK_CATALOG_BUNDLE_URL=...   set TSK_RUNTIME_PATH=...
+CATALOG_BUNDLE_URL = os.environ.get(
+    "TSK_CATALOG_BUNDLE_URL",
+    "https://d3mya90gbacu0m.cloudfront.net/prod/StreamingAssets/aa/catalog.bundle",
+)
+RUNTIME_PATH = os.environ.get(
+    "TSK_RUNTIME_PATH",
+    "https://d3mya90gbacu0m.cloudfront.net/prod/StreamingAssets/aa",
+)
 OUTPUT_DIR = "Twinkle Star Knights X_Data/StreamingAssets/Twinkle Star Knights X"
 INCOMPLETE_CHARS_CACHE = "incomplete_character_ids.txt"
 # ============================================
@@ -52,13 +62,26 @@ file_handler = logging.FileHandler("update_log.txt", mode="a", encoding="utf-8")
 file_handler.setFormatter(logging.Formatter('%(asctime)s[%(levelname)s] %(message)s'))
 logger.addHandler(file_handler)
 
-progress_lock = Lock()
-queue_lock = Lock()
-global_progress = 0
-total_bundles_to_dl = 0
-audio_convert_queue =[]
-incomplete_character_ids = set()  # 动态检测的不完整角色 ID 集合
-force_update_characters = []  # 需要强制完整更新的角色ID列表
+
+def log_progress(msg):
+    """同时输出到控制台和 update_log.txt，用于记录执行流程里程碑"""
+    print(msg)
+    logger.info(msg)
+
+class AppState:
+    """全局共享状态（多线程共享的字段用锁保护）"""
+
+    def __init__(self):
+        self.progress_lock = Lock()
+        self.queue_lock = Lock()
+        self.global_progress = 0
+        self.total_bundles_to_dl = 0
+        self.audio_convert_queue = []
+        self.incomplete_character_ids = set()  # 动态检测的不完整角色 ID 集合
+        self.force_update_characters = []  # 需要强制完整更新的角色ID列表
+
+
+state = AppState()
 
 def detect_incomplete_characters():
     """
@@ -66,20 +89,19 @@ def detect_incomplete_characters():
     只检测玩家角色 ID 范围（1000000 ~ 1999999），其他范围（敌人、NPC、素材等）不管
     优先从缓存文件读取，如果缓存不存在则扫描游戏目录
     """
-    global incomplete_character_ids
     
     # 尝试从缓存文件读取
     if os.path.exists(INCOMPLETE_CHARS_CACHE):
         try:
             with open(INCOMPLETE_CHARS_CACHE, 'r', encoding='utf-8') as f:
-                incomplete_character_ids = set()
+                state.incomplete_character_ids = set()
                 for line in f:
                     line = line.strip()
                     if line and line.isdigit():
-                        incomplete_character_ids.add(int(line))
-            if incomplete_character_ids:
-                print(f"[信息] 从缓存加载了 {len(incomplete_character_ids)} 个不完整角色 ID")
-                logger.info(f"从缓存加载了 {len(incomplete_character_ids)} 个不完整角色 ID: {sorted(incomplete_character_ids)}")
+                        state.incomplete_character_ids.add(int(line))
+            if state.incomplete_character_ids:
+                print(f"[信息] 从缓存加载了 {len(state.incomplete_character_ids)} 个不完整角色 ID")
+                logger.info(f"从缓存加载了 {len(state.incomplete_character_ids)} 个不完整角色 ID: {sorted(state.incomplete_character_ids)}")
                 return
         except Exception as e:
             print(f"[警告] 读取缓存文件失败: {e}，将重新扫描")
@@ -131,11 +153,11 @@ def detect_incomplete_characters():
             logger.warning(f"扫描 Adventure/CharaScenario 目录失败: {e}")
     
     # 不完整角色 = 有 Spine 但没有剧情（仅限玩家角色范围）
-    incomplete_character_ids = character_ids_with_spine - character_ids_with_scenario
+    state.incomplete_character_ids = character_ids_with_spine - character_ids_with_scenario
     
-    if incomplete_character_ids:
-        print(f"[信息] 检测到 {len(incomplete_character_ids)} 个不完整的玩家角色: {sorted(incomplete_character_ids)}")
-        logger.info(f"检测到不完整的玩家角色: {sorted(incomplete_character_ids)}")
+    if state.incomplete_character_ids:
+        print(f"[信息] 检测到 {len(state.incomplete_character_ids)} 个不完整的玩家角色: {sorted(state.incomplete_character_ids)}")
+        logger.info(f"检测到不完整的玩家角色: {sorted(state.incomplete_character_ids)}")
         
         # 保存到缓存文件
         try:
@@ -145,7 +167,7 @@ def detect_incomplete_characters():
                 f.write("# 只包含玩家角色 ID 范围（1000000 ~ 1999999），不包含敌人、NPC、素材等\n")
                 f.write("# 如需重新扫描，请删除此文件\n")
                 f.write("\n")
-                for char_id in sorted(incomplete_character_ids):
+                for char_id in sorted(state.incomplete_character_ids):
                     f.write(f"{char_id}\n")
             print(f"[信息] 已保存到缓存文件: {INCOMPLETE_CHARS_CACHE}")
             logger.info(f"已保存不完整角色列表到缓存文件: {INCOMPLETE_CHARS_CACHE}")
@@ -274,6 +296,7 @@ def choose_update_mode():
         '3': f'角色完整更新模式 (角色: {", ".join(force_chars)})'
     }
     print(f"\n[√] 已选择: {mode_names[choice]}\n")
+    logger.info(f"已选择更新模式: {mode_names[choice]}")
     
     return choice, force_chars
 
@@ -298,99 +321,106 @@ def sanitize_dict(obj_data):
     else:
         return str(obj_data)
 
-def get_target_relative_path(key, bypass_blacklist=False):
-    """
-    将资源key转换为目标相对路径
-    
-    参数:
-        key: 资源路径key
-        bypass_blacklist: 是否绕过黑名单过滤（模式3使用）
-    """
+# ===== 路径映射规则表（数据驱动，供 get_target_relative_path 使用） =====
+_PATH_PREFIXES = ["Assets/AssetBundles/", "Assets/"]
+_PATH_TAGS_TO_REMOVE = {"HighQuality", "LowQuality", "adult", "general"}
+_VALID_ROOTS_MAP = {
+    "Adventure": "Adventure", "Adv": "Adventure",
+    "Characters": "Characters", "Character": "Characters",
+    "Cutin": "Cutin",
+    "GachaCharaAnim": "GachaCharaAnim", "GachaAnim": "GachaCharaAnim",
+    "Sound": "Sound", "Sounds": "Sound",
+    "Sprites": "Sprites", "Sprite": "Sprites",
+    "Stills": "Stills", "Still": "Stills",
+}
+_VALID_STRUCTURE = {
+    "Adventure": {"BackGrounds", "CharaScenario", "Effects", "MainScenario",
+                  "Spine", "StoryEventScenario", "SubjugationEventScenario", "Textures"},
+    "Characters": None,
+    "Cutin": None,
+    "GachaCharaAnim": {"GachaCharaAnim", "gacha_bg_effect", "gacha_intro",
+                       "new_chara_staging", "transform_eff", "ReferenceAssets"},
+    "Sound": {"Bgm", "BgSe", "BgVoice", "Se", "Voice"},
+    "Sprites": {"Bg", "Jukebox", "OutGame", "Chara", "PictureBook"},
+    "Stills": None,
+}
+
+
+def _strip_prefix_and_tags(key):
+    """去掉资源前缀并切分路径，过滤质量标签"""
     path = key
-    for prefix in ["Assets/AssetBundles/", "Assets/"]:
+    for prefix in _PATH_PREFIXES:
         if path.startswith(prefix):
             path = path[len(prefix):]
-            
     parts = path.split('/')
-    tags_to_remove = {"HighQuality", "LowQuality", "adult", "general"}
-    parts =[p for p in parts if p not in tags_to_remove]
-    
-    if not parts: return None
-        
-    valid_roots_map = {
-        "Adventure": "Adventure", "Adv": "Adventure",
-        "Characters": "Characters", "Character": "Characters",
-        "Cutin": "Cutin",
-        "GachaCharaAnim": "GachaCharaAnim", "GachaAnim": "GachaCharaAnim",
-        "Sound": "Sound", "Sounds": "Sound",
-        "Sprites": "Sprites", "Sprite": "Sprites",
-        "Stills": "Stills", "Still": "Stills"
-    }
-    
-    found_idx = -1
-    root_name = None
+    return [p for p in parts if p not in _PATH_TAGS_TO_REMOVE]
+
+
+def _locate_root(parts):
+    """定位根目录并归一化名称；返回 (root_name, parts)，未找到返回 (None, None)"""
     for i, p in enumerate(parts):
-        if p in valid_roots_map:
-            found_idx = i
-            root_name = valid_roots_map[p]
-            break
-            
-    if found_idx == -1: return None 
-        
-    parts = parts[found_idx:]
-    parts[0] = root_name 
+        if p in _VALID_ROOTS_MAP:
+            parts = parts[i:]
+            parts[0] = _VALID_ROOTS_MAP[p]
+            return _VALID_ROOTS_MAP[p], parts
+    return None, None
+
+
+def _apply_special_rules(root_name, parts, bypass_blacklist):
+    """应用各根目录特殊规则；返回 (parts, early_final)。
+    parts 为 None 表示应过滤；early_final 非 None 表示已得到最终路径"""
     basename = parts[-1]
-    
+
     if root_name == "Cutin":
         if len(parts) > 1 and parts[1].lower() in ["characters", "character"]:
             parts.pop(1)
-            
+
     if root_name == "Sprites" and len(parts) > 2 and parts[1].lower() == "chara" and parts[2].startswith("Thumb_"):
-        if "_2_1" not in basename: return None
-        if "S" in parts[:-1]: return None
-        if basename.lower().startswith("sd_"): return None
+        if "_2_1" not in basename:
+            return None, None
+        if "S" in parts[:-1]:
+            return None, None
+        if basename.lower().startswith("sd_"):
+            return None, None
         if basename.lower().startswith("chara_"):
             name_parts = basename.split('_')
             if len(name_parts) >= 2 and name_parts[1].isdigit():
                 char_id = int(name_parts[1])
                 # 过滤不完整角色（动态检测），但模式3可以绕过
-                if not bypass_blacklist and char_id in incomplete_character_ids:
-                    return None
+                if not bypass_blacklist and char_id in state.incomplete_character_ids:
+                    return None, None
                 # 过滤高 ID 角色（>= 1900001）
                 if char_id >= 1900001:
-                    return None
+                    return None, None
         if "L" in parts[:-1]:
             parts.remove("L")
-            
+
     if root_name == "Adventure":
         if basename == "Master.chapter.asset" or basename == "Master.chapter.json":
-            return "Adventure/Master.chapter.json"
+            return parts, "Adventure/Master.chapter.json"
         elif ".book" in basename:
             b_name = basename.replace('.asset', '.json')
-            if basename.startswith("CharaScenario"): return f"Adventure/CharaScenario/{b_name}"
-            elif basename.startswith("MainScenario"): return f"Adventure/MainScenario/{b_name}"
-            elif basename.startswith("StoryEventScenario"): return f"Adventure/StoryEventScenario/{b_name}"
-            elif basename.startswith("SubjugationEventScenario"): return f"Adventure/SubjugationEventScenario/{b_name}"
-            else: return None
-        # 其他 Adventure 资源（BackGrounds、Spine、Effects 等）继续往下处理 
+            if basename.startswith("CharaScenario"):
+                return parts, f"Adventure/CharaScenario/{b_name}"
+            elif basename.startswith("MainScenario"):
+                return parts, f"Adventure/MainScenario/{b_name}"
+            elif basename.startswith("StoryEventScenario"):
+                return parts, f"Adventure/StoryEventScenario/{b_name}"
+            elif basename.startswith("SubjugationEventScenario"):
+                return parts, f"Adventure/SubjugationEventScenario/{b_name}"
+            else:
+                return None, None
+        # 其他 Adventure 资源（BackGrounds、Spine、Effects 等）继续往下处理
 
     if root_name == "GachaCharaAnim" and len(parts) >= 2 and parts[1].startswith("tf_"):
         parts.insert(1, "GachaCharaAnim")
-        
-    valid_structure = {
-        "Adventure": {"BackGrounds", "CharaScenario", "Effects", "MainScenario", 
-                      "Spine", "StoryEventScenario", "SubjugationEventScenario", "Textures"},
-        "Characters": None, 
-        "Cutin": None,
-        "GachaCharaAnim": {"GachaCharaAnim", "gacha_bg_effect", "gacha_intro", 
-                           "new_chara_staging", "transform_eff", "ReferenceAssets"},
-        "Sound": {"Bgm", "BgSe", "BgVoice", "Se", "Voice"},
-        "Sprites": {"Bg", "Jukebox", "OutGame", "Chara", "PictureBook"},
-        "Stills": None
-    }
-    
-    allowed_subs = valid_structure[root_name]
-    
+
+    return parts, None
+
+
+def _validate_structure(root_name, parts):
+    """校验二级子目录结构并归一化大小写；不合法返回 None"""
+    allowed_subs = _VALID_STRUCTURE[root_name]
     if allowed_subs is not None and len(parts) > 1:
         sub = parts[1]
         if len(parts) == 2 and '.' in sub:
@@ -398,35 +428,76 @@ def get_target_relative_path(key, bypass_blacklist=False):
         else:
             sub_lower = sub.lower()
             allowed_subs_lower = {s.lower(): s for s in allowed_subs}
-            if sub_lower not in allowed_subs_lower: return None 
-            parts[1] = allowed_subs_lower[sub_lower] 
-            
-    final_path = "/".join(parts)
-    
-    # 过滤不完整角色的 Spine 动画文件（Characters/ch_XXXXXX/...），但模式3可以绕过
+            if sub_lower not in allowed_subs_lower:
+                return None
+            parts[1] = allowed_subs_lower[sub_lower]
+    return parts
+
+
+def _is_incomplete_character(root_name, parts, bypass_blacklist):
+    """判断是否为不完整角色的 Spine 动画文件（模式3可绕过）"""
     if not bypass_blacklist and root_name == "Characters" and len(parts) >= 2:
         char_folder = parts[1]
         if char_folder.startswith("ch_"):
             try:
                 char_id = int(char_folder[3:])  # 提取 ch_ 后面的数字
-                if char_id in incomplete_character_ids:
-                    return None
+                if char_id in state.incomplete_character_ids:
+                    return True
             except ValueError:
                 pass  # 如果不是数字，继续处理
-    
-    if '.atlas' in final_path: final_path = final_path.split('.atlas')[0] + '.atlas.txt'
-    elif '.skel' in final_path: final_path = final_path.split('.skel')[0] + '.skel.bytes'
-    elif '.book' in final_path: final_path = final_path.split('.book')[0] + '.book.json'
+    return False
+
+
+def _convert_extension(final_path):
+    """转换目标文件扩展名；应过滤的返回 None"""
+    if '.atlas' in final_path:
+        return final_path.split('.atlas')[0] + '.atlas.txt'
+    elif '.skel' in final_path:
+        return final_path.split('.skel')[0] + '.skel.bytes'
+    elif '.book' in final_path:
+        return final_path.split('.book')[0] + '.book.json'
     elif '.chapter' in final_path:
         # 只保留 Master.chapter.json，其他 .chapter 文件都过滤掉（它们只有 1KB，没有用）
         final_path = final_path.split('.chapter')[0] + '.chapter.json'
         if final_path != "Adventure/Master.chapter.json":
             return None
-        
     return final_path
 
+
+def get_target_relative_path(key, bypass_blacklist=False):
+    """
+    将资源key转换为目标相对路径
+
+    参数:
+        key: 资源路径key
+        bypass_blacklist: 是否绕过黑名单过滤（模式3使用）
+    """
+    parts = _strip_prefix_and_tags(key)
+    if not parts:
+        return None
+
+    root_name, parts = _locate_root(parts)
+    if root_name is None:
+        return None
+
+    parts, early_final = _apply_special_rules(root_name, parts, bypass_blacklist)
+    if parts is None:
+        return None
+    if early_final is not None:
+        return early_final
+
+    parts = _validate_structure(root_name, parts)
+    if parts is None:
+        return None
+
+    final_path = "/".join(parts)
+
+    if _is_incomplete_character(root_name, parts, bypass_blacklist):
+        return None
+
+    return _convert_extension(final_path)
+
 def process_bundle(bundle_url, missing_files, max_retries=3):
-    global global_progress
     local_extracted = 0
     
     for attempt in range(max_retries):
@@ -437,7 +508,11 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
             
             for obj in env.objects:
                 if obj.type.name in["Texture2D", "Sprite", "TextAsset", "AudioClip", "MonoBehaviour"]:
-                    data = obj.read()
+                    try:
+                        data = obj.read()
+                    except Exception as e:
+                        logger.warning(f"跳过无法读取的对象 [{obj.type.name}]: {e}")
+                        continue
                     name = str(getattr(data, "m_Name", getattr(data, "name", "")))
                     if not name: continue
                     
@@ -562,12 +637,16 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                             samples = data.samples
                             if samples:
                                 raw_audio_data = list(samples.values())[0]
-                                temp_wav_path = full_save_path + ".temp.wav"
-                                with open(temp_wav_path, "wb") as f: 
+                                # 源音频实际是 m4a/aac（UnityPy samples 的 key 带真实扩展名），
+                                # 用真实扩展名做临时文件，让 FFmpeg 明确按该格式解码，不再靠嗅探
+                                sample_key = next(iter(samples), "")
+                                temp_ext = os.path.splitext(sample_key)[1] or ".m4a"
+                                temp_audio_path = full_save_path + ".temp" + temp_ext
+                                with open(temp_audio_path, "wb") as f: 
                                     f.write(raw_audio_data)
                                 
-                                with queue_lock:
-                                    audio_convert_queue.append((temp_wav_path, full_save_path, name))
+                                with state.queue_lock:
+                                    state.audio_convert_queue.append((temp_audio_path, full_save_path, name))
                                 local_extracted += 1
                                 logger.info(f"Queued for conversion: {os.path.basename(full_save_path)} (AudioClip)")
                                 
@@ -576,10 +655,10 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                             for method in["read_dict", "read_typetree"]:
                                 if hasattr(data, method):
                                     try: tree = getattr(data, method)()
-                                    except: pass
+                                    except Exception: pass
                                 if not tree and hasattr(obj, method):
                                     try: tree = getattr(obj, method)()
-                                    except: pass
+                                    except Exception: pass
                             if not tree:
                                 tree = data.__dict__
                                 
@@ -597,8 +676,8 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                                             continue  # 内容相同，跳过
                                         else:
                                             logger.info("Master.chapter.json content changed, updating")
-                                    except:
-                                        pass  # 读取失败就更新
+                                    except Exception as e:
+                                        logger.warning(f"读取 Master.chapter.json 失败，将重新下载: {e}")
                                 
                                 with open(full_save_path, "w", encoding="utf-8") as f:
                                     f.write(new_content)
@@ -609,47 +688,55 @@ def process_bundle(bundle_url, missing_files, max_retries=3):
                         logger.error(f"提取失败 [{name}]: {e}")
             break 
         except Exception as e:
-            if attempt < max_retries - 1: time.sleep(2)
+            if attempt < max_retries - 1:
+                logger.warning(f"资源包下载/解析失败，第 {attempt + 1} 次重试 [{bundle_url}]: {e}")
+                time.sleep(2)
+            else:
+                logger.error(f"资源包最终失败（已重试 {max_retries} 次）[{bundle_url}]: {e}")
             
-    with progress_lock:
-        global_progress += 1
+    with state.progress_lock:
+        state.global_progress += 1
         if local_extracted > 0:
-            print(f"[{global_progress}/{total_bundles_to_dl}] 成功提取资源包文件: {local_extracted} 项")
+            log_progress(f"[{state.global_progress}/{state.total_bundles_to_dl}] 成功提取资源包文件: {local_extracted} 项")
 
     return local_extracted
 
-def convert_audio_task(temp_wav, final_ogg, name):
+def convert_audio_task(temp_audio, final_ogg, name):
     """独立的 FFmpeg 音频转码任务"""
     try:
         cmd =[
-            FFMPEG_EXE, "-y", 
-            "-i", temp_wav, 
+            FFMPEG_EXE, "-y", "-loglevel", "error",
+            "-i", temp_audio, 
             "-c:a", "libvorbis", 
             "-q:a", "4", 
             final_ogg
         ]
-        subprocess.run(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
+        result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+        if result.returncode != 0:
+            stderr_msg = result.stderr.decode('utf-8', errors='replace').strip()
+            logger.warning(f"音频转码失败 [{name}]: {stderr_msg[:500]}")
     except Exception as e:
         logger.warning(f"音频转码异常 [{name}]: {e}")
     finally:
-        if os.path.exists(temp_wav):
-            try: os.remove(temp_wav)
-            except: pass
+        if os.path.exists(temp_audio):
+            try: os.remove(temp_audio)
+            except Exception as e:
+                logger.debug(f"清理临时文件失败 [{temp_audio}]: {e}")
 
 def main():
-    global total_bundles_to_dl, force_update_characters
     print("=================================================================")
-    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.9.2")
+    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.11.0")
     print("=================================================================")
     print(f"[*] 资源存放路径: {os.path.abspath(OUTPUT_DIR)}")
     print(f"[*] 运行状态日志: update_log.txt\n")
+    logger.info(f"========== 启动 v1.11.0，资源路径: {os.path.abspath(OUTPUT_DIR)} ==========")
     
     # 检测不完整角色
     detect_incomplete_characters()
     print()
     
     # 选择更新模式
-    update_mode, force_update_characters = choose_update_mode()
+    update_mode, state.force_update_characters = choose_update_mode()
     
     cleaned_count = 0
     if os.path.exists(OUTPUT_DIR):
@@ -664,21 +751,24 @@ def main():
                                 file.close()
                                 os.remove(full_path) 
                                 cleaned_count += 1
-                    except Exception: pass 
+                    except Exception as e:
+                        logger.debug(f"清理 .skel.bytes 失败 [{full_path}]: {e}")
                 elif f.endswith(".chapter.json") and f != "Master.chapter.json":
                     try:
                         os.remove(full_path)
                         cleaned_count += 1
-                    except Exception: pass
-                elif f.endswith(".temp.wav"):
+                    except Exception as e:
+                        logger.debug(f"清理 .chapter.json 失败 [{full_path}]: {e}")
+                elif ".temp." in f:
                     try:
                         os.remove(full_path)
-                    except Exception: pass
+                    except Exception as e:
+                        logger.debug(f"清理音频临时文件失败 [{full_path}]: {e}")
                     
     if cleaned_count > 0:
-        print(f"[*] 启动自检: 已自动清理历史冲突及无用碎片 {cleaned_count} 项\n")
+        log_progress(f"[*] 启动自检: 已自动清理历史冲突及无用碎片 {cleaned_count} 项")
 
-    print("[1/5] 正在连接服务器获取最新资源索引...")
+    log_progress("[1/5] 正在连接服务器获取最新资源索引...")
     try:
         # 下载 catalog.bundle
         res = requests.get(CATALOG_BUNDLE_URL, timeout=60)
@@ -710,9 +800,9 @@ def main():
                 
                 try:
                     catalog_json = json.loads(json_text)
-                    print(f"✓ 成功解析资源索引，共 {len(catalog_json.get('m_InternalIds', []))} 个资源")
+                    log_progress(f"✓ 成功解析资源索引，共 {len(catalog_json.get('m_InternalIds', []))} 个资源")
                     break
-                except:
+                except Exception:
                     continue
                     
         if not catalog_json:
@@ -721,10 +811,15 @@ def main():
         catalog_data = catalog_json
     except Exception as e:
         print(f"[!] 网络异常，无法获取清单: {e}")
-        os.system("pause")
+        print(f"    当前 catalog 地址: {CATALOG_BUNDLE_URL}")
+        print("    提示: 若地址已失效，请开网页/游戏用 F12 确认新地址后，")
+        print("    通过环境变量 TSK_CATALOG_BUNDLE_URL / TSK_RUNTIME_PATH 覆盖，")
+        print("    或直接修改脚本顶部『工具配置区』的常量。")
+        logger.error(f"获取资源索引失败: {e}")
+        input("\n按回车键退出...")
         return
 
-    print("[2/5] 正在解析并构建双轨合并资源树...")
+    log_progress("[2/5] 正在解析并构建双轨合并资源树...")
     catalog = parse(json.dumps(catalog_data))
     valid_exts = {".png", ".txt", ".bytes", ".json", ".ogg", ".wav", ".asset", ".atlas", ".skel"}
     
@@ -815,7 +910,7 @@ def main():
                         target_bundles[bundle_url] = {}
                     target_bundles[bundle_url][synth_key] = synth_path
 
-    print("[3/5] 正在扫描本地文件差异 (智能跳过已下载内容)...")
+    log_progress("[3/5] 正在扫描本地文件差异 (智能跳过已下载内容)...")
     bundles_to_download = {}
     for url, files in target_bundles.items():
         missing_files = {}
@@ -874,7 +969,7 @@ def main():
             elif update_mode == '3':  # 角色完整更新模式
                 if not os.path.exists(check_path):
                     needs_update = True
-                elif is_character_file(rel_path, force_update_characters):
+                elif is_character_file(rel_path, state.force_update_characters):
                     # 属于指定角色，强制更新
                     logger.info(f"Character update mode: force update {rel_path}")
                     needs_update = True
@@ -886,15 +981,15 @@ def main():
             bundles_to_download[url] = missing_files
             logger.info(f"Bundle queued: {len(missing_files)} files - {list(missing_files.keys())[:10]}")
 
-    total_bundles_to_dl = len(bundles_to_download)
-    if total_bundles_to_dl == 0:
-        print("\n[+] 校验完成，本地各项资源均已是最新版本！")
-        os.system("pause")
+    state.total_bundles_to_dl = len(bundles_to_download)
+    if state.total_bundles_to_dl == 0:
+        log_progress("[+] 校验完成，本地各项资源均已是最新版本！")
+        input("\n按回车键退出...")
         return
 
-    print(f" -> 对比完成！本次需要更新或下载 {total_bundles_to_dl} 个资源包。")
-    print(f"\n[4/5] 启动多线程资源下载与解析引擎...")
-    logger.info(f"Update started. Targets: {total_bundles_to_dl}")
+    log_progress(f" -> 对比完成！本次需要更新或下载 {state.total_bundles_to_dl} 个资源包。")
+    log_progress("[4/5] 启动多线程资源下载与解析引擎...")
+    logger.info(f"Update started. Targets: {state.total_bundles_to_dl}")
     
     extracted_total = 0
     # 下载解包阶段：网络 IO 密集型，保持 10 线程并发
@@ -903,8 +998,8 @@ def main():
         for future in as_completed(futures):
             extracted_total += future.result()
             
-    if audio_convert_queue:
-        print(f"\n[5/5] 启动音频安全转码引擎，待处理音频: {len(audio_convert_queue)} 个")
+    if state.audio_convert_queue:
+        log_progress(f"[5/5] 启动音频安全转码引擎，待处理音频: {len(state.audio_convert_queue)} 个")
         # 【核心修正】根据网友电脑的 CPU 核心数动态分配安全线程，防止 I/O 卡死
         # 最大不超过 16 线程，最少 2 线程
         safe_workers = min(16, max(2, (os.cpu_count() or 4) + 2))
@@ -912,15 +1007,15 @@ def main():
         
         converted_count = 0
         with ThreadPoolExecutor(max_workers=safe_workers) as audio_executor:
-            futures =[audio_executor.submit(convert_audio_task, temp, final, name) for temp, final, name in audio_convert_queue]
+            futures =[audio_executor.submit(convert_audio_task, temp, final, name) for temp, final, name in state.audio_convert_queue]
             for future in as_completed(futures):
                 converted_count += 1
-                if converted_count % 100 == 0 or converted_count == len(audio_convert_queue):
-                    print(f" -> 转码进度:[{converted_count}/{len(audio_convert_queue)}]")
+                if converted_count % 100 == 0 or converted_count == len(state.audio_convert_queue):
+                    print(f" -> 转码进度:[{converted_count}/{len(state.audio_convert_queue)}]")
 
-    print(f"\n[+] 更新与转码任务圆满完成！本次共计新增/修复文件: {extracted_total} 个。")
+    log_progress(f"[+] 更新与转码任务圆满完成！本次共计新增/修复文件: {extracted_total} 个。")
     logger.info(f"Update finished. Files processed: {extracted_total}")
-    os.system("pause")
+    input("\n按回车键退出...")
 
 if __name__ == "__main__":
     main()
