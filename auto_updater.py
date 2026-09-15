@@ -1,6 +1,6 @@
 """
 Twinkle Star Knights X 离线版资源自动更新工具
-版本: v1.11.0 (Stable)
+版本: v1.11.1 (Stable)
 说明: 自动化同步、精简并转换游戏资源至离线播放器格式。
 优化: 引入温和的动态多线程调度算法,完美适配低配与高配电脑，防止 I/O 阻塞卡死。
 修复: Spine 动画 PNG 仅从 Texture2D 提取，自动强制覆盖确保正确分辨率。
@@ -13,9 +13,11 @@ Twinkle Star Knights X 离线版资源自动更新工具
 优化: 过滤无用的 .chapter.json 文件（仅保留 Master.chapter.json），减少不必要的下载 (v1.9.2)。
 新增: 角色完整更新模式（模式3），可指定角色重新下载其全部资源 (v1.10.0)。
 优化: 音频转码改用真实 m4a 格式、对象级失败隔离、日志全流程记录、CDN 支持环境变量 (v1.11.0)。
+修复: 官方把音频资源拆分为独立的 catalog_sound.bundle，现支持多 catalog 合并加载 (v1.11.1, Issue #3)。
 """
 
 import os
+import sys
 import requests
 import UnityPy
 import logging
@@ -25,6 +27,15 @@ import subprocess
 from AddressablesTools import parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
+from types import SimpleNamespace
+
+# 控制台输出强制 UTF-8：Windows 下输出被重定向（如 TSK_Updater.exe > log.txt）时
+# 默认按 GBK 编码，遇到「•」「✓」这类字符会直接抛 UnicodeEncodeError 崩溃
+try:
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+except Exception:
+    pass
 
 # ================= 依赖检查与初始化 =================
 try:
@@ -43,15 +54,19 @@ except ImportError:
 
 # ================= 工具配置区 =================
 # CDN 地址支持环境变量覆盖（服务器换地址时无需改代码重打包）：
-#   set TSK_CATALOG_BUNDLE_URL=...   set TSK_RUNTIME_PATH=...
-CATALOG_BUNDLE_URL = os.environ.get(
-    "TSK_CATALOG_BUNDLE_URL",
-    "https://d3mya90gbacu0m.cloudfront.net/prod/StreamingAssets/aa/catalog.bundle",
-)
+#   set TSK_RUNTIME_PATH=...              CDN 根地址
+#   set TSK_CATALOG_BUNDLE_URL=...        主资源索引
+#   set TSK_CATALOG_SOUND_BUNDLE_URL=...  音频资源索引（官方 2026-09-14 拆出的独立 catalog）
 RUNTIME_PATH = os.environ.get(
     "TSK_RUNTIME_PATH",
     "https://d3mya90gbacu0m.cloudfront.net/prod/StreamingAssets/aa",
 )
+# 官方会把资源拆成多个 catalog，这里按顺序全部加载并合并；
+# 第一个（主索引）失败视为致命，其余（附加索引）失败只警告并跳过。
+CATALOG_BUNDLE_URLS = [
+    os.environ.get("TSK_CATALOG_BUNDLE_URL", f"{RUNTIME_PATH}/catalog.bundle"),
+    os.environ.get("TSK_CATALOG_SOUND_BUNDLE_URL", f"{RUNTIME_PATH}/catalog_sound.bundle"),
+]
 OUTPUT_DIR = "Twinkle Star Knights X_Data/StreamingAssets/Twinkle Star Knights X"
 INCOMPLETE_CHARS_CACHE = "incomplete_character_ids.txt"
 # ============================================
@@ -723,13 +738,47 @@ def convert_audio_task(temp_audio, final_ogg, name):
             except Exception as e:
                 logger.debug(f"清理临时文件失败 [{temp_audio}]: {e}")
 
+def fetch_catalog_json(catalog_url):
+    """下载一个 catalog.bundle 并提取里面的 catalog JSON；解析失败返回 None"""
+    res = requests.get(catalog_url, timeout=60)
+    res.raise_for_status()
+
+    env = UnityPy.load(res.content)
+    for obj in env.objects:
+        if obj.type.name != "TextAsset":
+            continue
+
+        data = obj.read()
+        # 兼容不同的属性名
+        raw_data = getattr(data, "m_Script", getattr(data, "script", None))
+        if raw_data is None:
+            continue
+
+        # 处理不同的数据类型
+        if isinstance(raw_data, str):
+            json_text = raw_data
+        elif isinstance(raw_data, bytes):
+            json_text = raw_data.decode('utf-8', errors='ignore')
+        else:
+            continue
+
+        # 清理末尾的空字符
+        json_text = json_text.strip('\x00')
+
+        try:
+            return json.loads(json_text)
+        except Exception:
+            continue
+
+    return None
+
 def main():
     print("=================================================================")
-    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.11.0")
+    print("    Twinkle Star Knights X 离线版资源自动更新工具 v1.11.1")
     print("=================================================================")
     print(f"[*] 资源存放路径: {os.path.abspath(OUTPUT_DIR)}")
     print(f"[*] 运行状态日志: update_log.txt\n")
-    logger.info(f"========== 启动 v1.11.0，资源路径: {os.path.abspath(OUTPUT_DIR)} ==========")
+    logger.info(f"========== 启动 v1.11.1，资源路径: {os.path.abspath(OUTPUT_DIR)} ==========")
     
     # 检测不完整角色
     detect_incomplete_characters()
@@ -769,58 +818,42 @@ def main():
         log_progress(f"[*] 启动自检: 已自动清理历史冲突及无用碎片 {cleaned_count} 项")
 
     log_progress("[1/5] 正在连接服务器获取最新资源索引...")
-    try:
-        # 下载 catalog.bundle
-        res = requests.get(CATALOG_BUNDLE_URL, timeout=60)
-        res.raise_for_status()
-        
-        # 解析 Unity Bundle 提取 catalog JSON
-        env = UnityPy.load(res.content)
-        catalog_json = None
-        
-        for obj in env.objects:
-            if obj.type.name == "TextAsset":
-                data = obj.read()
-                # 兼容不同的属性名
-                raw_data = getattr(data, "m_Script", getattr(data, "script", None))
-                
-                if raw_data is None:
-                    continue
-                    
-                # 处理不同的数据类型
-                if isinstance(raw_data, str):
-                    json_text = raw_data
-                elif isinstance(raw_data, bytes):
-                    json_text = raw_data.decode('utf-8', errors='ignore')
-                else:
-                    continue
-                
-                # 清理末尾的空字符
-                json_text = json_text.strip('\x00')
-                
-                try:
-                    catalog_json = json.loads(json_text)
-                    log_progress(f"✓ 成功解析资源索引，共 {len(catalog_json.get('m_InternalIds', []))} 个资源")
-                    break
-                except Exception:
-                    continue
-                    
-        if not catalog_json:
-            raise Exception("无法从 catalog.bundle 中提取资源索引")
-            
-        catalog_data = catalog_json
-    except Exception as e:
-        print(f"[!] 网络异常，无法获取清单: {e}")
-        print(f"    当前 catalog 地址: {CATALOG_BUNDLE_URL}")
-        print("    提示: 若地址已失效，请开网页/游戏用 F12 确认新地址后，")
-        print("    通过环境变量 TSK_CATALOG_BUNDLE_URL / TSK_RUNTIME_PATH 覆盖，")
-        print("    或直接修改脚本顶部『工具配置区』的常量。")
-        logger.error(f"获取资源索引失败: {e}")
-        input("\n按回车键退出...")
-        return
+    merged_resources = {}
+    for index, catalog_url in enumerate(CATALOG_BUNDLE_URLS):
+        is_main_catalog = (index == 0)
+        try:
+            catalog_json = fetch_catalog_json(catalog_url)
+            if not catalog_json:
+                raise Exception("无法从 catalog.bundle 中提取资源索引")
+        except Exception as e:
+            if not is_main_catalog:
+                # 附加 catalog（如音频）失败不阻塞主流程，避免官方调整结构后整个工具不可用
+                print(f"[!] 附加资源索引获取失败（已跳过）: {os.path.basename(catalog_url)} -> {e}")
+                logger.warning(f"附加资源索引获取失败 [{catalog_url}]: {e}")
+                continue
+
+            print(f"[!] 网络异常，无法获取清单: {e}")
+            print(f"    当前 catalog 地址: {catalog_url}")
+            print("    提示: 若地址已失效，请开网页/游戏用 F12 确认新地址后，")
+            print("    通过环境变量 TSK_CATALOG_BUNDLE_URL / TSK_RUNTIME_PATH 覆盖，")
+            print("    或直接修改脚本顶部『工具配置区』的常量。")
+            logger.error(f"获取资源索引失败: {e}")
+            input("\n按回车键退出...")
+            return
+
+        # 主索引优先：同 key 以先加载的 catalog 为准
+        resources = parse(json.dumps(catalog_json)).Resources
+        added = 0
+        for key, locs in resources.items():
+            if key not in merged_resources:
+                merged_resources[key] = locs
+                added += 1
+        log_progress(f"✓ 解析资源索引 [{os.path.basename(catalog_url)}]: {len(resources)} 项，新增 {added} 项")
+
+    catalog = SimpleNamespace(Resources=merged_resources)
+    log_progress(f" -> 资源索引合并完成，共 {len(merged_resources)} 项可寻址资源")
 
     log_progress("[2/5] 正在解析并构建双轨合并资源树...")
-    catalog = parse(json.dumps(catalog_data))
     valid_exts = {".png", ".txt", ".bytes", ".json", ".ogg", ".wav", ".asset", ".atlas", ".skel"}
     
     # 模式3需要绕过黑名单过滤
